@@ -24,7 +24,7 @@ export class Pipeline {
             message: (body as any).message
         }
         let selections: Selections = {};
-        let result: string;
+        let result: [string, number];
         for (const i of this.pipelines) {
             switch (step) {
                 case Steps.STEP_INPUT: {
@@ -36,11 +36,11 @@ export class Pipeline {
                 case Steps.STEP_CHANGE: {
                     if (i.type === "change") {
                         let ret = (i as ChangeMiddleware).payload(selections, data);
-                        if (typeof ret === "string") {
-                            result = ret;
+                        if (typeof ret === "object" && typeof ret[0] === "string" && typeof ret[1] === "number") {
+                            result = (ret as [string, number]);
                             step = Steps.STEP_FINAL;
                         } else {
-                            selections = ret;
+                            selections = (ret as Selections);
                         }
                     } else if (i.type === "mutate") {
                         data = Object.assign(data, i.payload(selections, data));
