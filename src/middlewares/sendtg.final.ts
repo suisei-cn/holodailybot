@@ -5,6 +5,7 @@ const BOT_KEY = process.env.TELEGRAM_BOT_KEY;
 const me: FinalMiddleware = {
     type: "final",
     payload(result, data: any) {
+        if (!data.valid) return;
         fetch(
             `https://api.telegram.org/bot${BOT_KEY}/sendMessage`,
             {
