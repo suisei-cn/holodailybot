@@ -31,7 +31,7 @@ const me: MutationMiddleware = {
         query = ret.msg.replace(/^\/my(@holodailybot)? ?/i, "")
       }
     } else {
-      query = "";
+      query = message.query;
     }
     return Object.assign(ret, {
       valid, query, inline
