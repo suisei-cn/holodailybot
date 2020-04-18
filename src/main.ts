@@ -21,7 +21,7 @@ export class Pipeline {
         let step: Steps = Steps.STEP_INPUT;
         let data: EnvData = {
             now: new Date(),
-            message: (body as any).message
+            message: (body as any)
         }
         let selections: Selections = {};
         let result: [string, number];

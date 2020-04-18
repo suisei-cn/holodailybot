@@ -24,20 +24,45 @@ const me: FinalMiddleware = {
                 }
             }
         }
-        fetch(
-            `https://api.telegram.org/bot${BOT_KEY}/sendMessage`,
-            {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json; charset=utf-8",
-                },
-                body: JSON.stringify({
-                    chat_id: data.chatid,
-                    text,
-                    parse_mode: "markdown"
-                }),
-            }
-        );
+        if (data.inline) {
+            fetch(
+                `https://api.telegram.org/bot${BOT_KEY}/answerInlineQuery`,
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json; charset=utf-8",
+                    },
+                    body: JSON.stringify({
+                        inline_query_id: String(data.id),
+                        results: [{
+                            type: "article",
+                            id: String(Math.random()) + String(Math.random()),
+                            title: "告诉我吧！今天的幸运 Hololiver",
+                            input_message_content: {
+                                message_text: text,
+                                parse_mode: "markdown"
+                            }
+                        }],
+                        cache_time: 0
+                    }),
+                }
+            );
+        } else {
+            fetch(
+                `https://api.telegram.org/bot${BOT_KEY}/sendMessage`,
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json; charset=utf-8",
+                    },
+                    body: JSON.stringify({
+                        chat_id: data.chatid,
+                        text,
+                        parse_mode: "markdown"
+                    }),
+                }
+            );
+        }
     }
 }
 
