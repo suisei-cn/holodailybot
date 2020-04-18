@@ -7,8 +7,8 @@
     "start:dev": "nodemon dist/index.js",
     "build:dev": "tsc --watch --preserveWatchOutput",
     "dev": "concurrently \"npm:build:dev\" \"npm:start:dev\"",
-    "build:prod": "tsc",
-    "run:prod": "nodedist/index.js"
+    "build": "tsc",
+    "run": "node dist/index.js"
   },
   "private": true,
   "repository": {
