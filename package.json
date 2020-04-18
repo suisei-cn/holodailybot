@@ -1,0 +1,38 @@
+{
+  "name": "holodaily",
+  "version": "1.0.0",
+  "description": "A interesting telegram bot.",
+  "main": "src/index.js",
+  "scripts": {
+    "start:dev": "nodemon dist/index.js",
+    "build:dev": "tsc --watch --preserveWatchOutput",
+    "dev": "concurrently \"npm:build:dev\" \"npm:start:dev\""
+  },
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/suisei-cn/holodailybot.git"
+  },
+  "keywords": [
+    "telegram",
+    "bot"
+  ],
+  "author": "Outvi V",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/suisei-cn/holodailybot/issues"
+  },
+  "homepage": "https://github.com/suisei-cn/holodailybot#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.0",
+    "seedrandom": "^3.0.5",
+    "typescript": "^3.8.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.6",
+    "concurrently": "^5.1.0",
+    "eslint": "^6.8.0",
+    "nodemon": "^2.0.3"
+  }
+}
