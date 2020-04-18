@@ -6,10 +6,21 @@ export default {
   星街彗星: [
     "イヒヒヒヒ",
     "んなああああああああああああ",
+    "しゃばだばだーーーーー*ଘ(੭๑❛ᴗ❛๑)੭* ੈ✩‧₊˚", // https://twitter.com/suisei_hosimati/status/1250742891296636928
     {
       type: "urlimage",
       payload: "https://pbs.twimg.com/media/EUnI3HeVAAE0hJK?format=jpg",
     },
+    {
+      // https://twitter.com/suisei_music/status/1249254665092337665
+      type: "urlimage",
+      payload: "https://pbs.twimg.com/media/EVY-fioUwAEFbN-?format=jpg"
+    },
+    {
+      // https://twitter.com/blade4649/status/1248989241868029953
+      type: "urlimage",
+      payload: "https://pbs.twimg.com/media/EVVM3JxUwAEn9BB?format=jpg"
+    }
   ],
   夜空梅露: [],
   "亚绮·罗森塔尔": [],
