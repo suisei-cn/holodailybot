@@ -25,8 +25,8 @@ const me: MutationMiddleware = {
     };
 
     if (!inline) {
-      let query = ret.msg.toLowerCase();
-      if (query.startsWith("/my ") || query.startsWith("/my@holodailybot") || query === "/my" || query === "/my@holodailybot") {
+      let lowerQuery = ret.msg.toLowerCase();
+      if (lowerQuery.startsWith("/my ") || lowerQuery.startsWith("/my@holodailybot") || lowerQuery === "/my" || lowerQuery === "/my@holodailybot") {
         valid = true;
         query = ret.msg.replace(/^\/my(@holodailybot)? ?/i, "")
       }
