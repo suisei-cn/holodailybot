@@ -1,6 +1,12 @@
 export default {
   时乃空: ["そらとものみんな、元気？ときのそらです！"],
-  友人A: [],
+  友人A: [
+    {
+      // https://twitter.com/achan_UGA/status/1251420511290023936
+      type: "urlimage",
+      payload: "https://twitter.com/purin_a_la_mode/status/1251369188104351744"
+    }
+  ],
   萝卜子: [],
   樱巫女: [],
   星街彗星: [
