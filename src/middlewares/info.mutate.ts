@@ -11,11 +11,12 @@ const me: MutationMiddleware = {
     };
     let message = ret.msg.toLowerCase();
     if (message.startsWith("/my ") || message.startsWith("/my@holodailybot") || message === "/my" || message === "/my@holodailybot") {
-      return Object.assign(ret, {
+      ret = Object.assign(ret, {
         valid: true,
         query: ret.msg.replace(/^\/my(@holodailybot)? ?/i,"")
       })
     }
+    return ret;
   },
 };
 
