@@ -6,7 +6,7 @@ import InfoMutation from "./middlewares/info.mutate"
 import NameBonusChange from "./middlewares/names.change"
 import RandomSelection from "./middlewares/random.select"
 import ConsoleFinal from "./middlewares/console.final"
-import sendTGFinal from "./middlewares/sendtg.final"
+import SendTGFinal from "./middlewares/sendtg.final"
 
 const app = express();
 const pipeline = new Pipeline([HololiveInput, InfoMutation, NameBonusChange, RandomSelection, ConsoleFinal, SendTGFinal]);
@@ -14,7 +14,6 @@ const pipeline = new Pipeline([HololiveInput, InfoMutation, NameBonusChange, Ran
 app.use(express.json());
 // @ts-ignore
 app.post("/botd027b3d59c15", (req: Request, res: Response) => {
-  console.log(req.body);
   let result = pipeline.act(req);
   // @ts-ignore
   res.sendStatus(result);
