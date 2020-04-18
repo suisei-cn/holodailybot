@@ -1,3 +1,5 @@
+export var BreakException = "f3caf30c-291c-44e3-983d-9c33b229968b";
+
 export interface Selections {
     [key: string]: number;
 }

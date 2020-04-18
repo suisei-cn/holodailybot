@@ -1,4 +1,4 @@
-import { Selections, PipelineMiddleware, ChangeMiddleware, EnvData, SelectMiddleware } from "./types";
+import { Selections, PipelineMiddleware, ChangeMiddleware, EnvData, SelectMiddleware, BreakException } from "./types";
 
 enum Steps {
     STEP_INPUT,
@@ -29,34 +29,55 @@ export class Pipeline {
             switch (step) {
                 case Steps.STEP_INPUT: {
                     if (i.type !== "input") continue;
-                    selections = i.payload(data);
+                    try {
+                        selections = i.payload(data);
+                    } catch (BreakException) {
+                        return 200;
+                    }
                     step = Steps.STEP_CHANGE;
                     break;
                 }
                 case Steps.STEP_CHANGE: {
                     if (i.type === "change") {
-                        let ret = (i as ChangeMiddleware).payload(selections, data);
-                        if (typeof ret === "object" && typeof ret[0] === "string" && typeof ret[1] === "number") {
-                            result = (ret as [string, number]);
-                            step = Steps.STEP_FINAL;
-                        } else {
-                            selections = (ret as Selections);
+                        try {
+                            let ret = (i as ChangeMiddleware).payload(selections, data);
+                            if (typeof ret === "object" && typeof ret[0] === "string" && typeof ret[1] === "number") {
+                                result = (ret as [string, number]);
+                                step = Steps.STEP_FINAL;
+                            } else {
+                                selections = (ret as Selections);
+                            }
+                        } catch (BreakException) {
+                            return 200;
                         }
                     } else if (i.type === "mutate") {
-                        data = Object.assign(data, i.payload(selections, data));
+                        try {
+                            data = Object.assign(data, i.payload(selections, data));
+                        } catch (BreakException) {
+                            return 200;
+                        }
                     } else if (i.type === "select") {
-                        result = (i as SelectMiddleware).payload(selections, data);
-                        step = Steps.STEP_FINAL;
+                        try {
+                            result = (i as SelectMiddleware).payload(selections, data);
+                            step = Steps.STEP_FINAL;
+                        } catch (BreakException) {
+                            return 200;
+                        }
                     }
                     break;
                 }
                 case Steps.STEP_FINAL: {
                     if (i.type !== "final") continue;
-                    // @ts-ignore: Variable 'result' is used before being assigned.
-                    let ret = i.payload(result, data);
-                    if (ret !== undefined) {
-                        data = Object.assign(data, ret);
+                    try {
+                        // @ts-ignore: Variable 'result' is used before being assigned.
+                        let ret = i.payload(result, data);
+                        if (ret !== undefined) {
+                            data = Object.assign(data, ret);
+                        }
+                    } catch (BreakException) {
+                        return 200;
                     }
+
                 }
             }
         }

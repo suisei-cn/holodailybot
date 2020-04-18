@@ -1,9 +1,12 @@
-import { MutationMiddleware, Selections } from "../types";
+import { MutationMiddleware, BreakException } from "../types";
 
 const me: MutationMiddleware = {
   type: "mutate",
   payload(_, data) {
     let message = data.message.message;
+    if (!message) {
+      throw BreakException;
+    }
     let inline = false;
     let valid = false;
     let query;
