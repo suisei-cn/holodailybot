@@ -4,9 +4,6 @@ const me: MutationMiddleware = {
   type: "mutate",
   payload(_, data) {
     let message = data.message.message;
-    if (!message) {
-      throw BreakException;
-    }
     let inline = false;
     let valid = false;
     let query;
@@ -14,6 +11,9 @@ const me: MutationMiddleware = {
       message = data.message.inline_query;
       inline = true;
       valid = true;
+    }
+    if (!message) {
+      throw BreakException;
     }
 
     let ret = {
