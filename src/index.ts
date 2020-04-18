@@ -8,6 +8,7 @@ import BirthdayChange from "./middlewares/birthday.change"
 import RandomSelection from "./middlewares/random.select"
 import ConsoleFinal from "./middlewares/console.final"
 import SendTGFinal from "./middlewares/sendtg.final"
+import AnalyticsFinal from "./middlewares/analytics.final"
 
 const app = express();
 const pipeline = new Pipeline([
@@ -17,7 +18,8 @@ const pipeline = new Pipeline([
   // GoldenFinger,
   RandomSelection,
   ConsoleFinal,
-  SendTGFinal
+  SendTGFinal,
+  AnalyticsFinal
 ]);
 
 app.use(express.json());
