@@ -6,7 +6,7 @@ const me: MutationMiddleware = {
     return {
       username: data.message.from.first_name + (data.message.from.last_name ? " " + data.message.from.last_name : ""),
       userid: data.message.from.id,
-      chatid: data.message.chat_id
+      chatid: data.message.chat.id
     };
   },
 };
