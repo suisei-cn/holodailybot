@@ -15,7 +15,7 @@ const me: FinalMiddleware = {
                 },
                 body: JSON.stringify({
                     chat_id: data.chatid,
-                    text: `${data.username} 的结果是： ${result}`,
+                    text: `今天是${data.now.getFullYear()}年${data.now.getMonth() + 1}月${data.now.getDate()}日，${data.username} 的幸运 Hololiver 是： ${result}`,
                     parse_mode: "markdown"
                 }),
             }
