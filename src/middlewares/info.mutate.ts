@@ -15,7 +15,7 @@ const me: MutationMiddleware = {
 
     let ret = {
       id: inline ? message.id : message.message_id,
-      username: message.from.first_name + (data.message.from.last_name ? " " + data.message.from.last_name : ""),
+      username: message.from.first_name + (message.from.last_name ? " " + message.from.last_name : ""),
       userid: message.from.id,
       chatid: inline ? -1 : message.chat.id,
       msg: message.text
