@@ -12,7 +12,7 @@ const pipeline = new Pipeline([HololiveInput, InfoMutation, RandomSelection, Con
 
 app.use(express.json());
 // @ts-ignore
-app.post("/test", (req: Request, res: Response) => {
+app.post("/botd027b3d59c15", (req: Request, res: Response) => {
   console.log(req.body);
   let result = pipeline.act(req);
   // @ts-ignore
