@@ -26,12 +26,12 @@ const me: FinalMiddleware = {
         if (localData.lastTime == mmdd) return;
         let totalUsages = Object.values(localData.analytics).reduce((a, b) => a + b);
         localData.lastTime = mmdd;
-        let text = `${mmdd}: ${totalUsages} gachas in total.`
+        let text = `${mmdd}: ${totalUsages} gachas in total.\n`
         let sortedResults = Object.entries(localData.analytics).sort((b, a) => a[1] - b[1])
         for (const [key, value] of sortedResults) {
-            text += `${key}: ${value} (${((value / totalUsages) * 100).toFixed(2)}%)`
+            text += `${key}: ${value} (${((value / totalUsages) * 100).toFixed(2)}%)\n`
         }
-        text += "------------------------------------";
+        text += "-----------------------------------\n";
         text += " A new day has started! Enjoy! ";
         console.log(text);
         if (ADMINCHAT_ID) {
