@@ -3,13 +3,13 @@ import { Pipeline } from "./main";
 
 import HololiveInput from "./middlewares/hololive.input"
 import InfoMutation from "./middlewares/info.mutate"
-import NameBonusSelection from "./middlewares/names.select"
+import NameBonusChange from "./middlewares/names.change"
 import RandomSelection from "./middlewares/random.select"
 import ConsoleFinal from "./middlewares/console.final"
 import sendTGFinal from "./middlewares/sendtg.final"
 
 const app = express();
-const pipeline = new Pipeline([HololiveInput, InfoMutation, NameBonusSelection, RandomSelection, ConsoleFinal, sendTGFinal]);
+const pipeline = new Pipeline([HololiveInput, InfoMutation, NameBonusChange, RandomSelection, ConsoleFinal, SendTGFinal]);
 
 app.use(express.json());
 // @ts-ignore
