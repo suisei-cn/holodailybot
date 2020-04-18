@@ -20,6 +20,9 @@ const me: ChangeMiddleware = {
             case "0322": {
                 return ["星街彗星", Math.random()];
             }
+            case "0422": {
+                return ["天音彼方", Math.random()];
+            }
             case "0515": {
                 return ["时乃空", Math.random()];
             }
