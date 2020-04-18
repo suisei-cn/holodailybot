@@ -6,7 +6,9 @@
   "scripts": {
     "start:dev": "nodemon dist/index.js",
     "build:dev": "tsc --watch --preserveWatchOutput",
-    "dev": "concurrently \"npm:build:dev\" \"npm:start:dev\""
+    "dev": "concurrently \"npm:build:dev\" \"npm:start:dev\"",
+    "build": "tsc",
+    "run": "dist/index.js"
   },
   "private": true,
   "repository": {
