@@ -11,7 +11,7 @@ const me: FinalMiddleware = {
         let rnd = result[1];
         // @ts-ignore: Element implicitly has an 'any' type
         let extraInfo = hololiverInfo[name] || [];
-        let text = `今天是${data.now.getFullYear()}年${data.now.getMonth() + 1}月${data.now.getDate()}日，${data.username} 的幸运 Hololiver 是： ${name}`;
+        let text = `今天是${data.now.getFullYear()}年${data.now.getMonth() + 1}月${data.now.getDate()}日，${data.username} 的幸运 Hololiver 是： ${name}！`;
         if (extraInfo.length !== 0) {
             let cookie = extraInfo[Math.floor(rnd * extraInfo.length)];
             if (typeof cookie === "string") {
