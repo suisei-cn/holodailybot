@@ -13,7 +13,7 @@ const me: SelectMiddleware = {
     type: "select",
     payload(selection, data: any) {
         let dateSeed = getRandomSeedBasedOnDate(data.now);
-        let rand = getRngFromSeed(dateSeed + data.userid);
+        let rand = getRngFromSeed(dateSeed + data.userid + (data.query || ""));
         let powerTotal = Object.values(selection).reduce((a, b) => a + b);
         let targetPower = rand * powerTotal;
         for (let [key, power] of Object.entries(selection)) {
