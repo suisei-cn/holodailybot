@@ -1,4 +1,4 @@
-import { SelectMiddleware, Selections } from "../types";
+import { SelectMiddleware } from "../types";
 const random = require("seedrandom")
 
 function getRandomSeedBasedOnDate(date: Date) {
@@ -18,9 +18,9 @@ const me: SelectMiddleware = {
         let targetPower = rand * powerTotal;
         for (let [key, power] of Object.entries(selection)) {
             targetPower -= power;
-            if (targetPower <= 0) return key;
+            if (targetPower <= 0) return [key, rand];
         }
-        return Object.keys(selection)[0];
+        return [Object.keys(selection)[0], rand];
     }
 }
 

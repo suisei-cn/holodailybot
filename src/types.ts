@@ -25,7 +25,7 @@ export interface MutationMiddleware {
     payload: MutationPayload;
 }
 
-type ChangeMiddlewareResponse = Selections | string;
+type ChangeMiddlewareResponse = Selections | [string, number];
 
 interface ChangePayload {
     (selections: Selections, data: EnvData): ChangeMiddlewareResponse
@@ -37,7 +37,7 @@ export interface ChangeMiddleware {
 }
 
 interface SelectPayload {
-    (selections: Selections, data: EnvData): string
+    (selections: Selections, data: EnvData): [string, number]
 };
 
 export interface SelectMiddleware {
@@ -46,7 +46,7 @@ export interface SelectMiddleware {
 }
 
 interface FinalPayload {
-    (result: string, data: EnvData): void | Object
+    (result: [string, number], data: EnvData): void | Object
 }
 
 export interface FinalMiddleware {
