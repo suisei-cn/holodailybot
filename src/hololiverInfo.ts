@@ -10,7 +10,11 @@ export default {
   萝卜子: [],
   樱巫女: [],
   星街彗星: [
-    "イヒヒヒヒ",
+    {
+      type: "voice",
+      payload: "イヒヒヒヒ",
+      extra: "AwACAgEAAxkDAAN4XpwsAq7rQGZFfXvDxKuc0aD_oD8AAhMBAALvL-BE4albCP9sp3QYBA"
+    },
     "んなああああああああああああ",
     "しゃばだばだーーーーー*ଘ(੭๑❛ᴗ❛๑)੭* ੈ✩‧₊˚", // https://twitter.com/suisei_hosimati/status/1250742891296636928
     {
@@ -31,7 +35,20 @@ export default {
   夜空梅露: [],
   "亚绮·罗森塔尔": [],
   赤井心: [],
-  白上吹雪: [],
+  白上吹雪: [
+    {
+      type: "voice",
+      payload: "猫じゃない!猫じゃないよ!もう!",
+      // https://sfubuki.moe/voices/f-017.mp3
+      extra: "AwACAgEAAxkDAAN2XpwqN2zOfY4Gt50lmFLaF7MGNAQAAhEBAALvL-BEG5-Fv5Rk9_gYBA"
+    },
+    {
+      type: "voice",
+      payload: "猫じゃない!",
+      // https://sfubuki.moe/voices/f-018.mp3
+      extra: "AwACAgEAAxkDAAN3XpwqbIxwTpDaE_uB4CIwpBaGHucAAhIBAALvL-BEgAiimgJi9WcYBA"
+    }
+  ],
   夏色祭: ["フブキ！フブキフブキフブキ！"],
   湊阿库娅: [],
   紫咲诗音: [],
