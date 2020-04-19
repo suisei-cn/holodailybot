@@ -13,7 +13,7 @@ export default {
     {
       type: "voice",
       payload: "イヒヒヒヒ",
-      extra: "AwACAgEAAxkDAAN4XpwsAq7rQGZFfXvDxKuc0aD_oD8AAhMBAALvL-BE4albCP9sp3QYBA"
+      extra: "AwACAgEAAxkDAAIBUF6cMkf776w_q6RIKUWn3O_dsklcAAKVAANeg-FEX6bwNW30ZhkYBA"
     },
     "んなああああああああああああ",
     "しゃばだばだーーーーー*ଘ(੭๑❛ᴗ❛๑)੭* ੈ✩‧₊˚", // https://twitter.com/suisei_hosimati/status/1250742891296636928
@@ -40,13 +40,13 @@ export default {
       type: "voice",
       payload: "猫じゃない!猫じゃないよ!もう!",
       // https://sfubuki.moe/voices/f-017.mp3
-      extra: "AwACAgEAAxkDAAN2XpwqN2zOfY4Gt50lmFLaF7MGNAQAAhEBAALvL-BEG5-Fv5Rk9_gYBA"
+      extra: "AwACAgEAAxkDAAIBVF6cMq9N7lpP-Wndmqjdj5o96s0bAAKWAANeg-FE7S72GjsRg-4YBA"
     },
     {
       type: "voice",
       payload: "猫じゃない!",
       // https://sfubuki.moe/voices/f-018.mp3
-      extra: "AwACAgEAAxkDAAN3XpwqbIxwTpDaE_uB4CIwpBaGHucAAhIBAALvL-BEgAiimgJi9WcYBA"
+      extra: "AwACAgEAAxkDAAIBVV6cMsCdUeY7M3LrFuQjho6ugEgUAAJoAAM0iuFEnIHc5ETr4egYBA"
     }
   ],
   夏色祭: ["フブキ！フブキフブキフブキ！"],
