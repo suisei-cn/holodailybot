@@ -21,10 +21,12 @@ const me: FinalMiddleware = {
             } else if (typeof cookie === "object") {
                 switch (cookie.type) {
                     case "urlimage": {
-                        text += `\n今天的 Hololiver 梗图：[\u200b](${cookie.payload})`
+                        text += `\n今天的 Hololiver 梗图：[\u200b](${cookie.payload})`;
+                        break;
                     }
                     case "voice": {
-                        text += `\n今天的 Hololiver 语录：${cookie.payload}`
+                        text += `\n今天的 Hololiver 语录：${cookie.payload}`;
+                        break;
                     }
                 }
             }
