@@ -77,7 +77,17 @@ export default {
   白银诺艾尔: [],
   宝钟玛琳: [],
   天音彼方: [
-    "ハードッコイショドッコイショ！ ソーラン ソーラン！"
+    "ハードッコイショドッコイショ！ ソーラン ソーラン！",
+    {
+      // https://twitter.com/amanekanatach/status/1252230443581108229
+      type: "urlimage",
+      payload: "https://pbs.twimg.com/media/EWDQ8sRUYAEzwoA?format=jpg"
+    },
+    {
+      // https://twitter.com/amanekanatach/status/1251985887543480321
+      type: "urlimage",
+      payload: "https://pbs.twimg.com/media/EV_wnvFUwAAIaiw?format=jpg"
+    }
   ],
   桐生可可: [],
   角卷绵芽: [],
