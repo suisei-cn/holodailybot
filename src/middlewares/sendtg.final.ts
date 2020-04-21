@@ -25,7 +25,10 @@ const me: FinalMiddleware = {
                         break;
                     }
                     case "voice": {
-                        text += `\n今天的 Hololiver 语录：${cookie.payload}`;
+                        if (cookie.payload)
+                            text += `\n今天的 Hololiver 语录：${cookie.payload}`;
+                        else
+                            text += `\n今天的 Hololiver 语音：`;
                         break;
                     }
                 }
