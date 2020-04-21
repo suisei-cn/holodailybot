@@ -87,6 +87,12 @@ export default {
       // https://twitter.com/amanekanatach/status/1251985887543480321
       type: "urlimage",
       payload: "https://pbs.twimg.com/media/EV_wnvFUwAAIaiw?format=jpg"
+    },
+    {
+      type: "voice",
+      payload: "(Rapping...)",
+      // https://t.me/suiseihosimati/13591 , notice that it's a little too long (82s)
+      extra: "AwACAgEAAxkDAAIBk16fEZdiN96uZrdETUO6cW_IkiHPAAKrAAOOKvlEM6Q_WvHjT2IYBA"
     }
   ],
   桐生可可: [],
