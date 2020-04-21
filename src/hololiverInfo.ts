@@ -49,7 +49,14 @@ export default {
       extra: "AwACAgEAAxkDAAIBVV6cMsCdUeY7M3LrFuQjho6ugEgUAAJoAAM0iuFEnIHc5ETr4egYBA"
     }
   ],
-  夏色祭: ["フブキ！フブキフブキフブキ！"],
+  夏色祭: [
+    {
+      type: "voice",
+      payload: "フブキ！フブキフブキフブキ！",
+      // https://t.me/suiseihosimati/12938
+      extra: "AwACAgEAAxkDAAIBhF6eXgyM4AI1DL2E7A3ZES0-PdwvAAKVAAOOKvlEwIerykkHkKsYBA",
+    }
+  ],
   湊阿库娅: [],
   紫咲诗音: [],
   百鬼绫目: [],
