@@ -59,7 +59,13 @@ export default {
   ],
   湊阿库娅: [],
   紫咲诗音: [],
-  百鬼绫目: [],
+  百鬼绫目: [
+    {
+      type: "voice",
+      // https://t.me/suiseihosimati/12973
+      extra: "AwACAgEAAxkDAAIBhl6eeOz5etl5vXzb7Bq2vsql_nEaAAKbAAOOKvlEQT6dWIzzWngYBA"
+    }
+  ],
   癒月巧可: [],
   大空昴: [],
   大神澪: [],
