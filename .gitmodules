@@ -1,3 +1,3 @@
 [submodule "src/middlewares/goldenfinger"]
 	path = src/middlewares/goldenfinger
-	url = git@github.com:outloudvi/holodaily-goldenfinger.git
+	url = git@github.com:suisei-cn/holodaily-goldenfinger.git
