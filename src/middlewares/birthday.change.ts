@@ -15,6 +15,9 @@ const me: ChangeMiddleware = {
             case "0515": {
                 return ["时乃空", Math.random()];
             }
+            case "0702": {
+                return ["大空昴", Math.random()];
+            }
             case "0722": {
                 return ["夏色祭", Math.random()];
             }
