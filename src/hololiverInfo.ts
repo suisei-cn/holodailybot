@@ -33,7 +33,7 @@ export default {
     },
     {
       type: "voice",
-      payload: "(あ゛ぁ゛ぁ゛ぁ゛ぁ゛ぁ゛) ... しみません。",
+      payload: "(あ゛ぁ゛ぁ゛ぁ゛ぁ゛ぁ゛) ... しみません。 (音量警告)",
       extra: "AwACAgEAAxkDAAICLV66Ylf4kRiC2O28yD2mfeuHOXmpAAJmAQACEZXRRSU1x88DnZCJGQQ"
     }
   ],
