@@ -30,6 +30,11 @@ export default {
       // https://twitter.com/blade4649/status/1248989241868029953
       type: "urlimage",
       payload: "https://pbs.twimg.com/media/EVVM3JxUwAEn9BB?format=jpg"
+    },
+    {
+      type: "voice",
+      payload: "(あ゛ぁ゛ぁ゛ぁ゛ぁ゛ぁ゛) ... しみません。",
+      extra: "AwACAgEAAxkDAAICLV66Ylf4kRiC2O28yD2mfeuHOXmpAAJmAQACEZXRRSU1x88DnZCJGQQ"
     }
   ],
   夜空梅露: [],
