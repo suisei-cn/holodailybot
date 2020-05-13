@@ -39,7 +39,13 @@ export default {
   ],
   夜空梅露: [],
   "亚绮·罗森塔尔": [],
-  赤井心: [],
+  赤井心: [
+    {
+      type: "voice",
+      payload: "はあちゃまっちゃま！ ( by REDALiCE, youtu.be/H3KvMgoA1C4 )",
+      extra: "AwACAgEAAxkDAAICVV68H5CbQwJKDqIpKKakp0NXZTPeAAJ3AAPNAAHhRShI3e5YLQ5kGQQ"
+    }
+  ],
   白上吹雪: [
     {
       type: "voice",
