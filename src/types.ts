@@ -7,7 +7,7 @@ export interface Selections {
 export type SimpleSelectionResult = [string, number];
 export type AdvancedSelectionResult = [string, number, any];
 
-type SelectionResult = SimpleSelectionResult | AdvancedSelectionResult;
+export type SelectionResult = SimpleSelectionResult | AdvancedSelectionResult;
 
 export interface EnvData {
     now: Date;

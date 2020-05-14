@@ -1,4 +1,4 @@
-import { Selections, PipelineMiddleware, ChangeMiddleware, EnvData, SelectMiddleware, BreakException } from "./types";
+import { Selections, PipelineMiddleware, ChangeMiddleware, EnvData, SelectMiddleware, SelectionResult } from "./types";
 
 enum Steps {
     STEP_INPUT,
@@ -24,7 +24,7 @@ export class Pipeline {
             message: (body as any)
         }
         let selections: Selections = {};
-        let result: [string, number];
+        let result: SelectionResult;
         for (const i of this.pipelines) {
             switch (step) {
                 case Steps.STEP_INPUT: {
