@@ -4,6 +4,11 @@ export interface Selections {
     [key: string]: number;
 }
 
+export type SimpleSelectionResult = [string, number];
+export type AdvancedSelectionResult = [string, number, any];
+
+type SelectionResult = SimpleSelectionResult | AdvancedSelectionResult;
+
 export interface EnvData {
     now: Date;
     message: any;
@@ -27,7 +32,7 @@ export interface MutationMiddleware {
     payload: MutationPayload;
 }
 
-type ChangeMiddlewareResponse = Selections | [string, number];
+type ChangeMiddlewareResponse = Selections | SelectionResult;
 
 interface ChangePayload {
     (selections: Selections, data: EnvData): ChangeMiddlewareResponse
@@ -39,7 +44,7 @@ export interface ChangeMiddleware {
 }
 
 interface SelectPayload {
-    (selections: Selections, data: EnvData): [string, number]
+    (selections: Selections, data: EnvData): SelectionResult
 };
 
 export interface SelectMiddleware {
@@ -48,7 +53,7 @@ export interface SelectMiddleware {
 }
 
 interface FinalPayload {
-    (result: [string, number], data: EnvData): void | Object
+    (result: SelectionResult, data: EnvData): void | Object
 }
 
 export interface FinalMiddleware {

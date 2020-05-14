@@ -31,7 +31,9 @@ const me: ChangeMiddleware = {
                 return ["天音彼方", Math.random()];
             }
             case "0515": {
-                return ["时乃空", Math.random()];
+                return ["时乃空", Math.random(), {
+                    prefix: "时乃空生日快乐！"
+                }];
             }
             case "0523": {
                 return ["萝卜子", Math.random()];
