@@ -5,6 +5,7 @@ import HololiveInput from "./middlewares/hololive.input"
 import InfoMutation from "./middlewares/info.mutate"
 // import GoldenFinger from "./middlewares/goldenfinger/gf.change"
 import BirthdayChange from "./middlewares/birthday.change"
+import DebugChange from "./middlewares/debug.change"
 import RandomSelection from "./middlewares/random.select"
 import ConsoleFinal from "./middlewares/console.final"
 import SendTGFinal from "./middlewares/sendtg.final"
@@ -16,6 +17,7 @@ const pipeline = new Pipeline([
   InfoMutation,
   BirthdayChange,
   // GoldenFinger,
+  DebugChange,
   RandomSelection,
   ConsoleFinal,
   SendTGFinal,
