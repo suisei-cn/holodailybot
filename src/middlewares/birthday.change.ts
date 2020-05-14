@@ -1,11 +1,11 @@
-import { ChangeMiddleware } from "../types";
+import { ChangeMiddleware, AdvancedSelectionResult } from "../types";
 import { getMMDD } from "./utils";
 
 const me: ChangeMiddleware = {
     type: "change",
     payload(selection, data: any) {
         let md = getMMDD(data.now);
-        let result: [string, number] | undefined;
+        let result: [string, number] | undefined = undefined;
         switch (md) {
             case "0112": {
                 result = ["兔田佩克拉", Math.random()];
@@ -90,7 +90,7 @@ const me: ChangeMiddleware = {
         if (result) {
             return [...result, {
                 prefix: `${result[0]}生日快乐！`
-            }]
+            }] as AdvancedSelectionResult;
         }
         return selection;
     }
