@@ -1,10 +1,15 @@
-import { Selections, PipelineMiddleware, ChangeMiddleware, EnvData, SelectMiddleware, SelectionResult } from "./types";
+import { Selections, PipelineMiddleware, ChangeMiddleware, EnvData, SelectMiddleware, SelectionResult, BreakException } from "./types";
 
 enum Steps {
     STEP_INPUT,
     STEP_CHANGE,
     STEP_FINAL
 };
+
+function exceptionHandler(e: any, body: any, data: any) {
+    if (e === BreakException) return;
+    console.error(`Exception happens: ${String(e)}\nCurrent body: ${JSON.stringify(body)}\nCurrent data: ${JSON.stringify(data)}`)
+}
 
 export class Pipeline {
     private pipelines: PipelineMiddleware[];
@@ -31,7 +36,8 @@ export class Pipeline {
                     if (i.type !== "input") continue;
                     try {
                         selections = i.payload(data);
-                    } catch (BreakException) {
+                    } catch (e) {
+                        exceptionHandler(e, body, data);
                         return 200;
                     }
                     step = Steps.STEP_CHANGE;
@@ -47,20 +53,23 @@ export class Pipeline {
                             } else {
                                 selections = (ret as Selections);
                             }
-                        } catch (BreakException) {
+                        } catch (e) {
+                            exceptionHandler(e, body, data);
                             return 200;
                         }
                     } else if (i.type === "mutate") {
                         try {
                             data = Object.assign(data, i.payload(selections, data));
-                        } catch (BreakException) {
+                        } catch (e) {
+                            exceptionHandler(e, body, data);
                             return 200;
                         }
                     } else if (i.type === "select") {
                         try {
                             result = (i as SelectMiddleware).payload(selections, data);
                             step = Steps.STEP_FINAL;
-                        } catch (BreakException) {
+                        } catch (e) {
+                            exceptionHandler(e, body, data);
                             return 200;
                         }
                     }
@@ -74,7 +83,8 @@ export class Pipeline {
                         if (ret !== undefined) {
                             data = Object.assign(data, ret);
                         }
-                    } catch (BreakException) {
+                    } catch (e) {
+                        exceptionHandler(e, body, data);
                         return 200;
                     }
 
