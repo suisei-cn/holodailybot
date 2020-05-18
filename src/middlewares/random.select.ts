@@ -16,11 +16,12 @@ const me: SelectMiddleware = {
         let rand = getRngFromSeed(dateSeed + data.userid + (data.query || ""));
         let powerTotal = Object.values(selection).reduce((a, b) => a + b);
         let targetPower = rand * powerTotal;
+        let extras = data.extras || {};
         for (let [key, power] of Object.entries(selection)) {
             targetPower -= power;
-            if (targetPower <= 0) return [key, rand];
+            if (targetPower <= 0) return [key, rand, extras];
         }
-        return [Object.keys(selection)[0], rand];
+        return [Object.keys(selection)[0], rand, extras];
     }
 }
 
