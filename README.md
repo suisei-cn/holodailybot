@@ -20,7 +20,7 @@ Also, we have a `ecosystem.config.js` for [`pm2`](https://pm2.io) users.
 
 Currently we need help on:
 
-* [`hololiverInfo.ts`](https://github.com/suisei-cn/holodailybot/blob/master/src/hololiverInfo.ts): For Hololiver's memes.
+* [`liverInfo.ts`](https://github.com/suisei-cn/holodailybot/blob/master/src/liverInfo.ts): For liver's memes.
 
 ## Golden Fingers
 

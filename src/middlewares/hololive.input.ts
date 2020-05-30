@@ -1,11 +1,11 @@
 import { InputMiddleware, Selections } from "../types";
-import hololiverInfo from "../hololiverInfo";
+import liverInfo from "../liverInfo";
 
 const me: InputMiddleware = {
     type: "input",
     payload() {
         let info: Selections = {}
-        for (const i of Object.keys(hololiverInfo)) {
+        for (const i of Object.keys(liverInfo)) {
             info[i] = 1;
         }
         return info;
