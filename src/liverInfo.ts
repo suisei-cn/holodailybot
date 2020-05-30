@@ -110,4 +110,12 @@ export default {
   角卷绵芽: [],
   常暗永远: [],
   姬森璐娜: [],
+  时雨羽衣: [
+    {
+      type: "voice",
+      payload: "(笑) (via youtu.be/7lmXMVtVxIk)",
+      // ts 989.2 - 991.9
+      extra: "AwACAgEAAxkDAAIDCV7SBTgknMPwTxZbPcgpDMfYaHZAAAKvAAOqQJBGFts_0511SP0ZBA",
+    }
+  ]
 };
