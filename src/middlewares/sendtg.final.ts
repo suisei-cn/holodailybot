@@ -2,7 +2,7 @@ import { FinalMiddleware, AdvancedSelectionResult } from "../types";
 import { giveInlineArticle, giveInlineVoice } from "./sendtg.utils";
 const fetch = require("node-fetch");
 const BOT_KEY = process.env.TELEGRAM_BOT_KEY;
-import hololiverInfo from "../hololiverInfo";
+import liverInfo from "../liverInfo";
 
 const me: FinalMiddleware = {
     type: "final",
@@ -12,7 +12,7 @@ const me: FinalMiddleware = {
         let rnd = result[1];
         let extras = result.length > 2 ? (result as AdvancedSelectionResult)[2] : {};
         // @ts-ignore: Element implicitly has an 'any' type
-        let extraInfo = hololiverInfo[name] || [];
+        let extraInfo = liverInfo[name] || [];
         let text = `今天是${data.now.getFullYear()}年${data.now.getMonth() + 1}月${data.now.getDate()}日，${data.username} 的幸运 Hololiver 是： ${name}！`;
         if (extras.prefix) {
             text = extras.prefix + "\n" + text;
