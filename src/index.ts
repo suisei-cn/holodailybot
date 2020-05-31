@@ -1,7 +1,7 @@
 import express from "express";
 import { Pipeline } from "./main";
 
-import HololiveInput from "./middlewares/hololive.input"
+import VTuberInput from "./middlewares/vtuber.input"
 import InfoMutation from "./middlewares/info.mutate"
 // import GoldenFinger from "./middlewares/goldenfinger/gf.change"
 import BirthdayChange from "./middlewares/birthday.change"
@@ -13,7 +13,7 @@ import AnalyticsFinal from "./middlewares/analytics.final"
 
 const app = express();
 const pipeline = new Pipeline([
-  HololiveInput,
+  VTuberInput,
   InfoMutation,
   BirthdayChange,
   // GoldenFinger,

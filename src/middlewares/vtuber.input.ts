@@ -1,11 +1,11 @@
 import { InputMiddleware, Selections } from "../types";
-import liverInfo from "../liverInfo";
+import vtuberInfo from "../vtuberInfo";
 
 const me: InputMiddleware = {
     type: "input",
     payload() {
         let info: Selections = {}
-        for (const i of Object.keys(liverInfo)) {
+        for (const i of Object.keys(vtuberInfo)) {
             info[i] = 1;
         }
         return info;
