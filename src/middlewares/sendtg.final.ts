@@ -2,7 +2,7 @@ import { FinalMiddleware, AdvancedSelectionResult } from "../types";
 import { giveInlineArticle, giveInlineVoice } from "./sendtg.utils";
 const fetch = require("node-fetch");
 const BOT_KEY = process.env.TELEGRAM_BOT_KEY;
-import liverInfo from "../liverInfo";
+import vtuberInfo from "../vtuberInfo";
 
 const me: FinalMiddleware = {
     type: "final",
@@ -12,8 +12,8 @@ const me: FinalMiddleware = {
         let rnd = result[1];
         let extras = result.length > 2 ? (result as AdvancedSelectionResult)[2] : {};
         // @ts-ignore: Element implicitly has an 'any' type
-        let extraInfo = liverInfo[name] || [];
-        let text = `今天是${data.now.getFullYear()}年${data.now.getMonth() + 1}月${data.now.getDate()}日，${data.username} 的幸运 Hololiver 是： ${name}！`;
+        let extraInfo = vtuberInfo[name] || [];
+        let text = `今天是${data.now.getFullYear()}年${data.now.getMonth() + 1}月${data.now.getDate()}日，${data.username} 的幸运 VTuber 是： ${name}！`;
         if (extras.prefix) {
             text = extras.prefix + "\n" + text;
         }
@@ -21,18 +21,18 @@ const me: FinalMiddleware = {
         if (extraInfo.length !== 0) {
             cookie = extraInfo[Math.floor(rnd * extraInfo.length)];
             if (typeof cookie === "string") {
-                text += `\n今天的 Hololiver 语录：${cookie}`
+                text += `\n今天的 VTuber 语录：${cookie}`
             } else if (typeof cookie === "object") {
                 switch (cookie.type) {
                     case "urlimage": {
-                        text += `\n今天的 Hololiver 梗图：[\u200b](${cookie.payload})`;
+                        text += `\n今天的 VTuber 梗图：[\u200b](${cookie.payload})`;
                         break;
                     }
                     case "voice": {
                         if (cookie.payload)
-                            text += `\n今天的 Hololiver 语录：${cookie.payload}`;
+                            text += `\n今天的 VTuber 语录：${cookie.payload}`;
                         else
-                            text += `\n今天的 Hololiver 语音：`;
+                            text += `\n今天的 VTuber 语音：`;
                         break;
                     }
                 }

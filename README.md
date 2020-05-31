@@ -1,6 +1,6 @@
 # Holodailybot
 
-Unofficial Hololive-style gacha bot on Telegram. Revised.
+Unofficial Hololive-style gacha bot on Telegram. Revised. Not limited to VTubers of Hololive.
 
 [![](https://img.shields.io/badge/Telegram-%40holodailybot-blue.svg)](https://t.me/holodailybot)
 
@@ -20,7 +20,7 @@ Also, we have a `ecosystem.config.js` for [`pm2`](https://pm2.io) users.
 
 Currently we need help on:
 
-* [`liverInfo.ts`](https://github.com/suisei-cn/holodailybot/blob/master/src/liverInfo.ts): For liver's memes.
+* [`vtuberInfo.ts`](https://github.com/suisei-cn/holodailybot/blob/master/src/vtuberInfo.ts): For virtual YouTuber's memes.
 
 ## Golden Fingers
 
