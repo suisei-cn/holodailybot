@@ -13,7 +13,8 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Install and Build 🔧
+      - name: Install, test and build 🔧
         run: |
           yarn
+          yarn test
           yarn build
