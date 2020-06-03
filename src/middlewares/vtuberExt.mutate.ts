@@ -13,7 +13,7 @@ const me: MutationMiddleware = {
                 selections[i] = 1;
             }
         }
-        return selections;
+        return {};
     },
 };
 
