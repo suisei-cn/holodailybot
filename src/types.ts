@@ -9,9 +9,36 @@ export type AdvancedSelectionResult = [string, number, any];
 
 export type SelectionResult = SimpleSelectionResult | AdvancedSelectionResult;
 
+interface User {
+    id: number,
+    first_name: string,
+    last_name?: string
+}
+
+export interface UpdateMessage {
+    message_id: number,
+    from: User,
+    text?: string,
+    chat: {
+        id: number
+    }
+}
+
+export interface UpdateInlineQuery {
+    id: number,
+    from: User,
+    query: string
+}
+
+// @see https://core.telegram.org/bots/api#update
+export type Update = {
+    message: UpdateMessage,
+    inline_query: UpdateInlineQuery
+}
+
 export interface EnvData {
     now: Date;
-    message: any;
+    message: Update;
 }
 
 interface InputPayload {

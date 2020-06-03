@@ -1,9 +1,9 @@
-import { MutationMiddleware, BreakException } from "../types";
+import { MutationMiddleware, BreakException, UpdateMessage, UpdateInlineQuery } from "../types";
 
 const me: MutationMiddleware = {
   type: "mutate",
   payload(_, data) {
-    let message = data.message.message;
+    let message: UpdateMessage | UpdateInlineQuery = data.message.message;
     let inline = false;
     let valid = false;
     let query;
@@ -17,11 +17,11 @@ const me: MutationMiddleware = {
     }
 
     let ret = {
-      id: inline ? message.id : message.message_id,
+      id: inline ? (message as UpdateInlineQuery).id : (message as UpdateMessage).message_id,
       username: message.from.first_name + (message.from.last_name ? " " + message.from.last_name : ""),
       userid: message.from.id,
-      chatid: inline ? -1 : message.chat.id,
-      msg: message.text
+      chatid: inline ? -1 : (message as UpdateMessage).chat.id,
+      msg: (message as UpdateMessage).text || ""
     };
 
     if (!inline) {
@@ -31,7 +31,7 @@ const me: MutationMiddleware = {
         query = ret.msg.replace(/^\/my(@holodailybot)? ?/i, "")
       }
     } else {
-      query = message.query;
+      query = (message as UpdateInlineQuery).query;
     }
     return Object.assign(ret, {
       valid, query, inline
