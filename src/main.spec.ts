@@ -4,10 +4,13 @@ import { Pipeline } from "./main";
 
 import VTuberInput from "./middlewares/vtuber.input"
 import InfoMutation from "./middlewares/info.mutate"
-import ExtMutation from "./middlewares/vtuberExt.mutate";
+import ExtMutation from "./middlewares/vtuberExt.mutate"
 import BirthdayChange from "./middlewares/birthday.change"
 import DebugChange from "./middlewares/debug.change"
 import RandomSelection from "./middlewares/random.select"
+import DebugFinal from "./middlewares/debug.final"
+
+let written: any = {};
 
 const pipeline = new Pipeline([
     VTuberInput,
@@ -15,7 +18,10 @@ const pipeline = new Pipeline([
     ExtMutation,
     BirthdayChange,
     DebugChange,
-    RandomSelection
+    RandomSelection,
+    DebugFinal((k: any) => {
+        written = k;
+    })
 ]);
 
 describe("Pipeline", function () {
@@ -39,6 +45,57 @@ describe("Pipeline", function () {
             }
         );
         assert.equal(result, 200, "Result should return 200");
+        assert.typeOf(written.result[0], "String", "Should return a name");
         done();
-    })
-})
+    });
+
+    it("should responds to debugging", function (done) {
+        let result = pipeline.act(
+            {
+                body: {
+                    // @ts-ignore
+                    message: {
+                        message_id: 440,
+                        from: {
+                            id: 443,
+                            first_name: "Test"
+                        },
+                        chat: {
+                            id: 444
+                        },
+                        text: "/my !debug 星街彗星 0"
+                    }
+                }
+            }
+        );
+        assert.equal(result, 200, "Result should return 200");
+        assert.equal(written.result[0], "星街彗星", "Should return Suisei");
+        assert.isNotEmpty(written.result[2].prefix, "Should have debugging prefix");
+        done();
+    });
+
+    it("should responds to regional-specified debugging", function (done) {
+        let result = pipeline.act(
+            {
+                body: {
+                    // @ts-ignore
+                    message: {
+                        message_id: 440,
+                        from: {
+                            id: 443,
+                            first_name: "Test"
+                        },
+                        chat: {
+                            id: 444
+                        },
+                        text: "/my !debug 鹤伞Ria 0 +cn"
+                    }
+                }
+            }
+        );
+        assert.equal(result, 200, "Result should return 200");
+        assert.equal(written.result[0], "鹤伞Ria", "Should return Ria");
+        assert.isNotEmpty(written.result[2].prefix, "Should have debugging prefix");
+        done();
+    });
+});
