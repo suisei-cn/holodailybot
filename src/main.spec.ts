@@ -49,6 +49,30 @@ describe("Pipeline", function () {
         done();
     });
 
+    it("should give inline query results", function (done) {
+        let result = pipeline.act(
+            {
+                body: {
+                    // @ts-ignore
+                    update_id: 445,
+                    inline_query: {
+                        id: 42,
+                        from: {
+                            id: 444,
+                            first_name: "Test",
+                            last_name: "One"
+                        },
+                        query: ""
+
+                    }
+                }
+            }
+        );
+        assert.equal(result, 200, "Result should return 200");
+        assert.typeOf(written.result[0], "String", "Should return a name");
+        done();
+    });
+
     it("should responds to debugging", function (done) {
         let result = pipeline.act(
             {
