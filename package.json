@@ -9,7 +9,8 @@
     "dev": "concurrently \"npm:build:dev\" \"npm:start:dev\"",
     "build": "tsc",
     "run": "node dist/index.js",
-    "test": "mocha --require ts-node/register src/**/*.spec.ts"
+    "test": "mocha --require ts-node/register src/**/*.spec.ts",
+    "predict": "ts-node src/calc.cli.ts"
   },
   "private": true,
   "repository": {

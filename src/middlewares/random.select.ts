@@ -1,7 +1,7 @@
 import { SelectMiddleware } from "../types";
 const random = require("seedrandom")
 
-function getRandomSeedBasedOnDate(date: Date) {
+export function getRandomSeedBasedOnDate(date: Date) {
     return date.getFullYear() * 10000 + date.getMonth() * 100 + date.getDate();
 }
 

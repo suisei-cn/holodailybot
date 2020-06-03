@@ -18,7 +18,7 @@ export class Pipeline {
         this.pipelines = pipelines
     };
 
-    public act(req: Request): number {
+    public act(req: Request, dataOverride: any = {}): number {
         let body = req.body;
         if (typeof body !== "object") {
             return 400;
@@ -28,6 +28,7 @@ export class Pipeline {
             now: new Date(),
             message: (body as any)
         }
+        data = Object.assign(data, dataOverride);
         let selections: Selections = {};
         let result: SelectionResult;
         for (const i of this.pipelines) {
