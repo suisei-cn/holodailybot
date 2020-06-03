@@ -20,7 +20,8 @@ Also, we have a `ecosystem.config.js` for [`pm2`](https://pm2.io) users.
 
 Currently we need help on:
 
-* [`vtuberInfo.ts`](https://github.com/suisei-cn/holodailybot/blob/master/src/vtuberInfo.ts): For virtual YouTuber's memes.
+* [`vtuberInfo.ts`](https://github.com/suisei-cn/holodailybot/blob/master/src/vtuberInfo.ts): For virtual YouTubers' memes.
+* [`vtuberInfo.cn.ts`](https://github.com/suisei-cn/holodailybot/blob/master/src/vtuberInfo.cn.ts): For virtual uploaders' ("v-up", who may mainly run in Bilibili) memes. Requires `+cn` in query to select.
 
 ## Golden Fingers
 
