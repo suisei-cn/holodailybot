@@ -3,6 +3,7 @@ import { assert } from "chai";
 import { Pipeline } from "./main";
 
 import VTuberInput from "./middlewares/vtuber.input"
+import ValidityMutation from "./middlewares/validity.mutate"
 import InfoMutation from "./middlewares/info.mutate"
 import ExtMutation from "./middlewares/vtuberExt.mutate"
 import BirthdayChange from "./middlewares/birthday.change"
@@ -14,6 +15,7 @@ let written: any = {};
 
 const pipeline = new Pipeline([
     VTuberInput,
+    ValidityMutation,
     InfoMutation,
     ExtMutation,
     BirthdayChange,

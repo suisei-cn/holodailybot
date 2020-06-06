@@ -2,6 +2,7 @@ import express from "express";
 import { Pipeline } from "./main";
 
 import VTuberInput from "./middlewares/vtuber.input"
+import ValidityMutation from "./middlewares/validity.mutate"
 import InfoMutation from "./middlewares/info.mutate"
 import ExtMutation from "./middlewares/vtuberExt.mutate";
 // import GoldenFinger from "./middlewares/goldenfinger/gf.change"
@@ -15,6 +16,7 @@ import AnalyticsFinal from "./middlewares/analytics.final"
 const app = express();
 const pipeline = new Pipeline([
   VTuberInput,
+  ValidityMutation,
   InfoMutation,
   ExtMutation,
   BirthdayChange,
