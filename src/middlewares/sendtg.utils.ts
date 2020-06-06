@@ -15,7 +15,7 @@ export function giveInlineArticle(text: String): Object {
         title: "告诉我吧！今天的幸运 VTuber",
         input_message_content: {
             message_text: text,
-            parse_mode: "markdown"
+            parse_mode: "HTML"
         }
     }
 }

@@ -25,7 +25,7 @@ const me: FinalMiddleware = {
             } else if (typeof cookie === "object") {
                 switch (cookie.type) {
                     case "urlimage": {
-                        text += `\n今天的 VTuber 梗图：[\u200b](${cookie.payload})`;
+                        text += `\n今天的 VTuber 梗图：<a href="${encodeURI(cookie.payload)}">\u200b</a>`;
                         break;
                     }
                     case "voice": {
@@ -70,7 +70,7 @@ const me: FinalMiddleware = {
                             chat_id: data.chatid,
                             voice: cookie.extra,
                             caption: text,
-                            parse_mode: "markdown"
+                            parse_mode: "HTML"
                         }),
                     }
                 );
@@ -85,7 +85,7 @@ const me: FinalMiddleware = {
                         body: JSON.stringify({
                             chat_id: data.chatid,
                             text,
-                            parse_mode: "markdown"
+                            parse_mode: "HTML"
                         }),
                     }
                 );
