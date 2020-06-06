@@ -6,7 +6,6 @@ import VTuberInput from "./middlewares/vtuber.input"
 import ValidityMutation from "./middlewares/validity.mutate"
 import InfoMutation from "./middlewares/info.mutate"
 import ExtMutation from "./middlewares/vtuberExt.mutate"
-import BirthdayChange from "./middlewares/birthday.change"
 import DebugChange from "./middlewares/debug.change"
 import RandomSelection from "./middlewares/random.select"
 import DebugFinal from "./middlewares/debug.final"
@@ -18,7 +17,6 @@ const pipeline = new Pipeline([
     ValidityMutation,
     InfoMutation,
     ExtMutation,
-    BirthdayChange,
     DebugChange,
     RandomSelection,
     DebugFinal((k: any) => {
