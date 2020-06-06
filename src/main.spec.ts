@@ -73,7 +73,7 @@ describe("Pipeline", function () {
         done();
     });
 
-    it("should responds to debugging", function (done) {
+    it("should respond to debugging", function (done) {
         let result = pipeline.act(
             {
                 body: {
@@ -98,7 +98,7 @@ describe("Pipeline", function () {
         done();
     });
 
-    it("should responds to regional-specified debugging", function (done) {
+    it("should respond to regional-specified debugging", function (done) {
         let result = pipeline.act(
             {
                 body: {
