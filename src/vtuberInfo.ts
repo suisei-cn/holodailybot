@@ -125,5 +125,9 @@ export default {
       // ts 989.2 - 991.9
       extra: "AwACAgEAAxkDAAIDCV7SBTgknMPwTxZbPcgpDMfYaHZAAAKvAAOqQJBGFts_0511SP0ZBA",
     }
-  ]
+  ],
+  花譜: [“日本の何処かに棲む、何処にでもいる、何処にもいない16才。”],
+  理芽: [],
+  春猿火: [],
+  ヰ世界情緒: []
 };
