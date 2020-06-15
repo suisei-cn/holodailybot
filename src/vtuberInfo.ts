@@ -86,7 +86,15 @@ export default {
   润羽露西娅: [],
   不知火芙蕾雅: [],
   白银诺艾尔: [],
-  宝钟玛琳: [],
+  宝钟玛琳: [
+    {
+      // https://www.bilibili.com/video/av84855056
+      // https://t.me/Hoshimachi_Suisei/93024 , #long
+      type: "voice",
+      payload: "最终鬼畜宝钟玛琳 (b23.tv/av84855056)",
+      extra: "AwACAgEAAxkDAAIEql7m4iDTp7ymwAOjMSyvDsN5iHLlAAKxAAPFBjlHxJKMa1fWzfUaBA"
+    }
+  ],
   天音彼方: [
     "ハードッコイショドッコイショ！ ソーラン ソーラン！",
     {
