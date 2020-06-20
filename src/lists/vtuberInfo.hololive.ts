@@ -1,3 +1,5 @@
+// This list is strictly limited to Hololive VTubers (including INNK but not Holostars).
+
 export default {
   时乃空: ["そらとものみんな、元気？ときのそらです！"],
   友人A: [
@@ -118,16 +120,4 @@ export default {
   角卷绵芽: [],
   常暗永远: [],
   姬森璐娜: [],
-  时雨羽衣: [
-    {
-      type: "voice",
-      payload: "(笑) (via youtu.be/7lmXMVtVxIk)",
-      // ts 989.2 - 991.9
-      extra: "AwACAgEAAxkDAAIDCV7SBTgknMPwTxZbPcgpDMfYaHZAAAKvAAOqQJBGFts_0511SP0ZBA",
-    }
-  ],
-  花谱: ["日本の何処かに棲む、何処にでもいる、何処にもいない16才。"],
-  理芽: [],
-  春猿火: [],
-  ヰ世界情绪: []
 };
