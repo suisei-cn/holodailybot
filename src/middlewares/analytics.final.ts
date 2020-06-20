@@ -1,4 +1,4 @@
-import { FinalMiddleware } from "../types";
+import { FinalMiddleware, EnvData } from "../types";
 import { getMMDD } from "./utils";
 const fetch = require("node-fetch");
 const BOT_KEY = process.env.TELEGRAM_BOT_KEY;
@@ -15,14 +15,14 @@ const localData = {
 
 const me: FinalMiddleware = {
     type: "final",
-    payload(result, data: any) {
-        let name = result[0];
+    payload(result) {
+        let name = result.name;
         if (localData.analytics[name]) {
             localData.analytics[name] += 1;
         } else {
             localData.analytics[name] = 1;
         }
-        let mmdd = getMMDD(data.now);
+        let mmdd = getMMDD(result.options.date);
         if (localData.lastTime == mmdd) return;
         let totalUsages = Object.values(localData.analytics).reduce((a, b) => a + b);
         localData.lastTime = mmdd;

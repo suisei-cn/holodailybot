@@ -1,3 +1,5 @@
+import { EnvData, ItemOptions } from "../types";
+
 export function getMMDD(d: Date) {
     let month = String(d.getMonth() + 1),
         day = String(d.getDate());

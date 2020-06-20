@@ -11,17 +11,25 @@ function getRngFromSeed(seed: string): number {
 
 const me: SelectMiddleware = {
     type: "select",
-    payload(selection, data: any) {
+    payload(selection, data) {
         let dateSeed = getRandomSeedBasedOnDate(data.now);
-        let rand = getRngFromSeed(String(dateSeed) + String(data.userid) + (data.query || ""));
+        let rand = getRngFromSeed(String(dateSeed) + String(data.user.id) + (data.query || ""));
         let powerTotal = Object.values(selection).reduce((a, b) => a + b);
         let targetPower = rand * powerTotal;
-        let extras = data.extras || {};
         for (let [key, power] of Object.entries(selection)) {
             targetPower -= power;
-            if (targetPower <= 0) return [key, rand, extras];
+            if (targetPower <= 0) return {
+                ended: true,
+                name: key,
+                rand: rand
+            };
         }
-        return [Object.keys(selection)[0], rand, extras];
+
+        return {
+            ended: true,
+            name: Object.keys(selection)[0],
+            rand
+        };
     }
 }
 

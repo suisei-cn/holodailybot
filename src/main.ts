@@ -1,4 +1,5 @@
-import { Selections, PipelineMiddleware, ChangeMiddleware, EnvData, SelectMiddleware, SelectionResult, BreakException } from "./types";
+import { Selections, PipelineMiddleware, ChangeMiddleware, EnvData, SelectMiddleware, SelectionResult, BreakException, PromiseResult, PartialSelectionResult } from "./types";
+import { extractQuery } from "./utils";
 
 enum Steps {
     STEP_INPUT,
@@ -18,20 +19,27 @@ export class Pipeline {
         this.pipelines = pipelines
     };
 
-    public act(req: Request, dataOverride: any = {}): number {
-        let body = req.body;
+    public act(req: Request, dataOverride: any = {}): PromiseResult {
+        let body = req.body || {};
         if (typeof body !== "object") {
             return 400;
         }
+        if (!("message" in body) && !("inline_query" in body)) return 200;
         let step: Steps = Steps.STEP_INPUT;
+        let query = extractQuery(body);
+        if (query === undefined) return 200;
         let data: EnvData = {
             now: new Date(),
-            message: (body as any)
+            message: (body as any),
+            user: ("message" in body) ? (body as any).message.from : (body as any).inline_query.from,
+            query
         }
         data = Object.assign(data, dataOverride);
         let selections: Selections = {};
-        let result: SelectionResult;
+        let result: PartialSelectionResult;
+        let exitNow = false;
         for (const i of this.pipelines) {
+            if (exitNow) break;
             switch (step) {
                 case Steps.STEP_INPUT: {
                     if (i.type !== "input") continue;
@@ -48,11 +56,12 @@ export class Pipeline {
                     if (i.type === "change") {
                         try {
                             let ret = (i as ChangeMiddleware).payload(selections, data);
-                            if (typeof ret === "object" && typeof ret[0] === "string" && typeof ret[1] === "number") {
-                                result = (ret as [string, number]);
-                                step = Steps.STEP_FINAL;
+                            if (ret.ended) {
+                                result = ret;
+                                exitNow = true;
+                                break;
                             } else {
-                                selections = (ret as Selections);
+                                selections = ret.selections;
                             }
                         } catch (e) {
                             exceptionHandler(e, body, data);
@@ -68,30 +77,27 @@ export class Pipeline {
                     } else if (i.type === "select") {
                         try {
                             result = (i as SelectMiddleware).payload(selections, data);
-                            step = Steps.STEP_FINAL;
+                            exitNow = true;
+                            break;
                         } catch (e) {
                             exceptionHandler(e, body, data);
                             return 200;
                         }
                     }
-                    break;
-                }
-                case Steps.STEP_FINAL: {
-                    if (i.type !== "final") continue;
-                    try {
-                        // @ts-ignore: Variable 'result' is used before being assigned.
-                        let ret = i.payload(result, data);
-                        if (ret !== undefined) {
-                            data = Object.assign(data, ret);
-                        }
-                    } catch (e) {
-                        exceptionHandler(e, body, data);
-                        return 200;
-                    }
-
                 }
             }
         }
-        return 200;
+        // Result is not generated
+        // @ts-ignore
+        if (!result) return 200;
+        let realResult: SelectionResult = {
+            ...result,
+            options: {
+                ...result.inherit,
+                username: data.user.first_name + (data.user.last_name || ""),
+                date: data.now,
+            }
+        }
+        return realResult;
     }
 };

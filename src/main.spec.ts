@@ -1,27 +1,17 @@
 import { describe, it } from "mocha";
 import { assert } from "chai";
 import { Pipeline } from "./main";
+import vHolo from "./lists/vtuberInfo.hololive";
 
-import VTuberInput from "./middlewares/vtuber.input"
-import ValidityMutation from "./middlewares/validity.mutate"
-import InfoMutation from "./middlewares/info.mutate"
-import ExtMutation from "./middlewares/vtuberExt.mutate"
+import VTuberInsert from "./middlewares/vtuberinsert.input.arg"
 import DebugChange from "./middlewares/debug.change"
 import RandomSelection from "./middlewares/random.select"
-import DebugFinal from "./middlewares/debug.final"
-
-let written: any = {};
+import { SelectionResult } from "./types";
 
 const pipeline = new Pipeline([
-    VTuberInput,
-    ValidityMutation,
-    InfoMutation,
-    ExtMutation,
+    VTuberInsert(vHolo),
     DebugChange,
-    RandomSelection,
-    DebugFinal((k: any) => {
-        written = k;
-    })
+    RandomSelection
 ]);
 
 describe("Pipeline", function () {
@@ -44,8 +34,7 @@ describe("Pipeline", function () {
                 }
             }
         );
-        assert.equal(result, 200, "Result should return 200");
-        assert.typeOf(written.result[0], "String", "Should return a name");
+        assert.typeOf((result as SelectionResult).name, "string", "Should not spawn errors");
         done();
     });
 
@@ -68,12 +57,11 @@ describe("Pipeline", function () {
                 }
             }
         );
-        assert.equal(result, 200, "Result should return 200");
-        assert.typeOf(written.result[0], "String", "Should return a name");
+        assert.typeOf((result as SelectionResult).name, "String", "Should return a name");
         done();
     });
 
-    it("should respond to debugging", function (done) {
+    it("should respond to command debugging", function (done) {
         let result = pipeline.act(
             {
                 body: {
@@ -91,35 +79,33 @@ describe("Pipeline", function () {
                     }
                 }
             }
-        );
-        assert.equal(result, 200, "Result should return 200");
-        assert.equal(written.result[0], "星街彗星", "Should return Suisei");
-        assert.isNotEmpty(written.result[2].prefix, "Should have debugging prefix");
+        ) as SelectionResult;
+        assert.equal(result.name, "星街彗星", "Should return Suisei");
+        assert.isNotEmpty(result.options.prefix, "Should have debugging prefix");
         done();
     });
 
-    it("should respond to regional-specified debugging", function (done) {
+    it("should respond to inline debugging", function (done) {
         let result = pipeline.act(
             {
                 body: {
                     // @ts-ignore
-                    message: {
-                        message_id: 440,
+                    update_id: 445,
+                    inline_query: {
+                        id: 42,
                         from: {
-                            id: 443,
-                            first_name: "Test"
+                            id: 444,
+                            first_name: "Test",
+                            last_name: "One"
                         },
-                        chat: {
-                            id: 444
-                        },
-                        text: "/my !debug 鹤伞Ria 0 +cn"
+                        query: "!debug 星街彗星 0"
+
                     }
                 }
             }
-        );
-        assert.equal(result, 200, "Result should return 200");
-        assert.equal(written.result[0], "鹤伞Ria", "Should return Ria");
-        assert.isNotEmpty(written.result[2].prefix, "Should have debugging prefix");
+        ) as SelectionResult;
+        assert.equal(result.name, "星街彗星", "Should return Suisei");
+        assert.isNotEmpty(result.options.prefix, "Should have debugging prefix");
         done();
     });
 });

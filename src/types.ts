@@ -1,13 +1,29 @@
+import { Pipeline } from "./main";
+
 export var BreakException = "f3caf30c-291c-44e3-983d-9c33b229968b";
 
 export interface Selections {
     [key: string]: number;
 }
 
-export type SimpleSelectionResult = [string, number];
-export type AdvancedSelectionResult = [string, number, any];
+export interface SelectionsResult {
+    ended: false;
+    selections: Selections;
+    inherit?: any;
+}
 
-export type SelectionResult = SimpleSelectionResult | AdvancedSelectionResult;
+export interface PartialSelectionResult {
+    ended: true,
+    name: string;
+    rand: number;
+    inherit?: any;
+};
+
+export interface SelectionResult extends PartialSelectionResult {
+    options: ItemOptions
+};
+
+export type PromiseResult = SelectionResult | number;
 
 interface User {
     id: number,
@@ -39,6 +55,8 @@ export type Update = {
 export interface EnvData {
     now: Date;
     message: Update;
+    user: User;
+    query: string;
 }
 
 interface InputPayload {
@@ -59,7 +77,7 @@ export interface MutationMiddleware {
     payload: MutationPayload;
 }
 
-type ChangeMiddlewareResponse = Selections | SelectionResult;
+type ChangeMiddlewareResponse = SelectionsResult | PartialSelectionResult;
 
 interface ChangePayload {
     (selections: Selections, data: EnvData): ChangeMiddlewareResponse
@@ -71,7 +89,7 @@ export interface ChangeMiddleware {
 }
 
 interface SelectPayload {
-    (selections: Selections, data: EnvData): SelectionResult
+    (selections: Selections, data: EnvData): PartialSelectionResult
 };
 
 export interface SelectMiddleware {
@@ -80,7 +98,7 @@ export interface SelectMiddleware {
 }
 
 interface FinalPayload {
-    (result: SelectionResult, data: EnvData): void | Object
+    (result: SelectionResult): void | Object
 }
 
 export interface FinalMiddleware {
@@ -89,3 +107,15 @@ export interface FinalMiddleware {
 }
 
 export type PipelineMiddleware = InputMiddleware | MutationMiddleware | ChangeMiddleware | SelectMiddleware | FinalMiddleware;
+
+export interface ItemOptions {
+    username: string;
+    date: Date;
+    prefix?: string;
+}
+
+export interface Dicer {
+    title: string;
+    getText: ((result: SelectionResult) => string);
+    procedures: Pipeline
+}

@@ -1,21 +1,18 @@
 import readline from "readline";
 import { Pipeline } from "./main";
+import vHolo from "./lists/vtuberInfo.hololive";
 
-import VTuberInput from "./middlewares/vtuber.input"
-import InfoMutation from "./middlewares/info.mutate"
-import ExtMutation from "./middlewares/vtuberExt.mutate"
+import VTuberInsert from "./middlewares/vtuberinsert.input.arg"
 import BirthdayChange from "./middlewares/birthday.change"
 import DebugChange from "./middlewares/debug.change"
 import RandomSelection from "./middlewares/random.select"
 import { getRandomSeedBasedOnDate } from "./middlewares/random.select"
-import DebugFinal from "./middlewares/debug.final"
+import DebugFinal from "./middlewares/debug.final.arg"
 
 let written: any = {};
 
 const pipeline = new Pipeline([
-    VTuberInput,
-    InfoMutation,
-    ExtMutation,
+    VTuberInsert(vHolo),
     BirthdayChange,
     DebugChange,
     RandomSelection,
