@@ -1,6 +1,8 @@
 // This list is used to put VTubers that have close relationships with at least one Hololivers.
 
-export default {
+import { ItemPickList } from "../types_list";
+
+const exp: ItemPickList = {
   时雨羽衣: [
     {
       type: "voice",
@@ -10,3 +12,5 @@ export default {
     }
   ],
 };
+
+export default exp;

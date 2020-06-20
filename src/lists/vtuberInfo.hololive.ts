@@ -1,6 +1,8 @@
 // This list is strictly limited to Hololive VTubers (including INNK but not Holostars).
 
-export default {
+import { ItemPickList } from "../types_list";
+
+const exp: ItemPickList = {
   时乃空: ["そらとものみんな、元気？ときのそらです！"],
   友人A: [
     {
@@ -75,6 +77,7 @@ export default {
   百鬼绫目: [
     {
       type: "voice",
+      payload: "Hahahahaha!",
       // https://t.me/suiseihosimati/12973
       extra: "AwACAgEAAxkDAAIBhl6eeOz5etl5vXzb7Bq2vsql_nEaAAKbAAOOKvlEQT6dWIzzWngYBA"
     }
@@ -121,3 +124,5 @@ export default {
   常暗永远: [],
   姬森璐娜: [],
 };
+
+export default exp;

@@ -1,6 +1,8 @@
 // This list is used to put any VTuber not included by the "hololive" and "hololike" list.
 
-export default {
+import { ItemPickList } from "../types_list";
+
+const exp: ItemPickList = {
     花谱: ["日本の何処かに棲む、何処にでもいる、何処にもいない16才。"],
     理芽: [],
     春猿火: [],
@@ -13,3 +15,5 @@ export default {
         }
     ]
 };
+
+export default exp;
