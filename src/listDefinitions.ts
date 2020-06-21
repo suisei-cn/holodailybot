@@ -16,7 +16,7 @@ import { Pipeline } from "./main";
 const exp: Dicer[] = [
     {
         title: "告诉我吧！今天的幸运 Hololiver",
-        getText: (result) => `今天是${getHumanReadableDate(result.options.date)}，${result.options.username}的幸运 Hololiver 是${result.name}！`,
+        getText: (result) => `今天是${getHumanReadableDate(result.options.date)}，${result.options.username} 的幸运 Hololiver 是${result.name}！`,
         procedures: new Pipeline([
             VTuberInsert(vHololive),
             BirthdayChange,
@@ -28,7 +28,7 @@ const exp: Dicer[] = [
     },
     {
         title: "今天也要和 Holo 贴贴！",
-        getText: (result) => `今天是${getHumanReadableDate(result.options.date)}，${result.options.username}和${result.name}贴贴！`,
+        getText: (result) => `今天是${getHumanReadableDate(result.options.date)}，${result.options.username} 和${result.name}贴贴！`,
         procedures: new Pipeline([
             VTuberInsert(Object.assign({}, vHololive, vHololike)),
             // GoldenFinger,
@@ -39,7 +39,7 @@ const exp: Dicer[] = [
     },
     {
         title: "是有趣的 VTuber 浮莲子呢！",
-        getText: (result) => `今天是${getHumanReadableDate(result.options.date)}，VTuber 发现频道给${result.options.username}推荐的 VTuber 是${result.name}！`,
+        getText: (result) => `今天是${getHumanReadableDate(result.options.date)}，VTuber 发现频道给 ${result.options.username} 推荐的 VTuber 是${result.name}！`,
         procedures: new Pipeline([
             VTuberInsert(vMore),
             // GoldenFinger,
