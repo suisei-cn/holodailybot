@@ -12,7 +12,7 @@ export function consumeInlineResults(rets: ConsumeTarget[]) {
         let text = (ret.result.options.prefix + "\n" || "") + ret.text + "\n";
         let payload: ItemPick = defaultPayload;
         if (vAll[name]) {
-            payload = vAll[name][Math.floor(ret.result.rand * vAll[name].length)];
+            payload = vAll[name][Math.floor(ret.result.rand * vAll[name].length)] || "";
         }
         if (typeof payload === "string") {
             // Text payload
@@ -21,7 +21,7 @@ export function consumeInlineResults(rets: ConsumeTarget[]) {
                 id: String(Math.random()),
                 title: ret.title,
                 input_message_content: {
-                    message_text: text + "\n今日语录：" + payload,
+                    message_text: text + (payload !== "" ? "\n今日语录：" + payload : ""),
                     parse_mode: "HTML"
                 }
             });
@@ -56,13 +56,13 @@ export function consumeMessageResult(ret: ConsumeTarget) {
     let name = ret.result.name;
     let payload: ItemPick = defaultPayload;
     if (vAll[name]) {
-        payload = vAll[name][Math.floor(ret.result.rand * vAll[name].length)];
+        payload = vAll[name][Math.floor(ret.result.rand * vAll[name].length)] || "";
     }
     let chatId = (ret.result.env.chat as Chat).id;
     let msgId = ret.result.env.message.message.message_id;
     if (typeof payload === "string") {
         // Text payload
-        tgSendMessage(chatId, text + "\n今日语录：" + payload, msgId);
+        tgSendMessage(chatId, text + (payload !== "" ? "\n今日语录：" + payload : ""), msgId);
     } else if (payload.type === "voice") {
         // Voice payload
         tgSendVoice(chatId, text + "\n今日语音：" + payload.payload, payload.extra, msgId);
