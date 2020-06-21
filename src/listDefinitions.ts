@@ -10,6 +10,7 @@ import BirthdayChange from './middlewares/birthday.change'
 import DebugChange from './middlewares/debug.change'
 import RandomSelection from './middlewares/random.select'
 import ConsoleFinal from './middlewares/console.final'
+import AnalyticsFinal from './middlewares/analytics.final'
 import { Pipeline } from './main';
 
 const exp: Dicer[] = [
@@ -22,7 +23,8 @@ const exp: Dicer[] = [
             // GoldenFinger,
             DebugChange,
             RandomSelection,
-            ConsoleFinal
+            ConsoleFinal,
+            AnalyticsFinal
         ])
     },
     {
@@ -33,7 +35,8 @@ const exp: Dicer[] = [
             // GoldenFinger,
             DebugChange,
             RandomSelection,
-            ConsoleFinal
+            ConsoleFinal,
+            AnalyticsFinal
         ])
     },
     {
@@ -44,7 +47,8 @@ const exp: Dicer[] = [
             // GoldenFinger,
             DebugChange,
             RandomSelection,
-            ConsoleFinal
+            ConsoleFinal,
+            AnalyticsFinal
         ])
     }
 ]

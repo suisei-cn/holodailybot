@@ -1,7 +1,6 @@
 import { FinalMiddleware } from '../types'
 import { getMMDD } from './utils'
-const fetch = require('node-fetch')
-const BOT_KEY = process.env.TELEGRAM_BOT_KEY
+import { tgSendMessage } from '../util.tg'
 const ADMINCHAT_ID = process.env.TELEGRAM_ADMINCHAT_ID
 
 interface AnalyticData {
@@ -35,20 +34,7 @@ const me: FinalMiddleware = {
     text += ' A new day has started! Enjoy! '
     console.log(text)
     if (ADMINCHAT_ID) {
-      fetch(
-        `https://api.telegram.org/bot${BOT_KEY}/sendMessage`,
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json; charset=utf-8'
-          },
-          body: JSON.stringify({
-            chat_id: ADMINCHAT_ID,
-            text,
-            parse_mode: 'markdown'
-          })
-        }
-      )
+      tgSendMessage(Number(ADMINCHAT_ID), text);
     }
     localData.analytics = {}
   }

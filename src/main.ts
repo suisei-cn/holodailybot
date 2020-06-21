@@ -1,4 +1,4 @@
-import { Selections, PipelineMiddleware, ChangeMiddleware, EnvData, SelectMiddleware, BreakException, PromiseResult, PartialSelectionResult } from './types';
+import { Selections, PipelineMiddleware, ChangeMiddleware, EnvData, SelectMiddleware, BreakException, PromiseResult, PartialSelectionResult, SelectionResult, FinalMiddleware } from './types';
 import { extractQuery } from './utils';
 
 enum Steps {
@@ -161,8 +161,9 @@ export class Pipeline {
                 }
             };
         }
-        const realResult = {
+        const realResult: SelectionResult = {
             ...result,
+            ok: true,
             options: {
                 ...result.inherit,
                 username: data.user.first_name + (data.user.last_name || ''),
@@ -170,9 +171,12 @@ export class Pipeline {
             },
             env: data
         }
-        return {
-            ok: true,
-            ...realResult
-        };
+
+        const dupRealResult = Object.assign({}, realResult);
+
+        for (const i of this.pipelines.filter(x => x.type === 'final')) {
+            (i as FinalMiddleware).payload(dupRealResult);
+        }
+        return realResult;
     }
 }

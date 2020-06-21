@@ -120,7 +120,7 @@ export interface SelectMiddleware {
 }
 
 interface FinalPayload {
-    (result: SelectionResult): void | Object
+    (result: SelectionResult): void
 }
 
 export interface FinalMiddleware {
