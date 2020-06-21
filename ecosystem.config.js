@@ -2,7 +2,7 @@ module.exports = {
   apps: [
     {
       name: "Holodaily Bot",
-      script: "dist/index.js",
+      script: "dist/cli.js",
       autorestart: true,
       watch: false,
       max_memory_restart: "100M",
