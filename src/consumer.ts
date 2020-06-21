@@ -5,6 +5,20 @@ import { tgSendMessage, tgSendVoice, answerInlineQuery } from "./util.tg";
 
 const defaultPayload: ItemPickText = "";
 
+function payloadExpander(payload: ItemPick): string {
+    if (typeof payload === "string") {
+        if (payload === "") return "";
+        return "\n今日语录：" + payload;
+    } else if (!payload.type) {
+        return "";
+    } else if (payload.type === "urlimage") {
+        return `今日图片：<a href="${encodeURI(payload.payload)}">\u200b</a>`;
+    } else if (payload.type === "voice") {
+        return "今日语音：" + payload.payload;
+    }
+    return "";
+}
+
 export function consumeInlineResults(rets: ConsumeTarget[]) {
     let msgId = rets[0].result.env.message.inline_query.id;
     let results: InlineQueryResult[] = [];
@@ -14,6 +28,7 @@ export function consumeInlineResults(rets: ConsumeTarget[]) {
         if (vAll[name]) {
             payload = vAll[name][Math.floor(ret.result.rand * vAll[name].length)] || "";
         }
+        const payloadTarget = payloadExpander(payload);
         if (typeof payload === "string") {
             // Text payload
             results.push({
@@ -21,7 +36,7 @@ export function consumeInlineResults(rets: ConsumeTarget[]) {
                 id: String(Math.random()),
                 title: ret.title,
                 input_message_content: {
-                    message_text: text + (payload !== "" ? "\n今日语录：" + payload : ""),
+                    message_text: text + payloadTarget,
                     parse_mode: "HTML"
                 }
             });
@@ -32,7 +47,7 @@ export function consumeInlineResults(rets: ConsumeTarget[]) {
                 id: String(Math.random()),
                 title: ret.title,
                 voice_file_id: payload.extra,
-                caption: text + "今日语音：" + payload.payload,
+                caption: text + payloadTarget,
                 parse_mode: "HTML"
             });
         } else if (payload.type === "urlimage") {
@@ -42,7 +57,7 @@ export function consumeInlineResults(rets: ConsumeTarget[]) {
                 id: String(Math.random()),
                 title: ret.title,
                 input_message_content: {
-                    message_text: `${text}今日图片：<a href="${encodeURI(payload.payload)}">\u200b</a>`,
+                    message_text: text + payloadTarget,
                     parse_mode: "HTML"
                 }
             });
@@ -58,16 +73,17 @@ export function consumeMessageResult(ret: ConsumeTarget) {
     if (vAll[name]) {
         payload = vAll[name][Math.floor(ret.result.rand * vAll[name].length)] || "";
     }
+    const payloadTarget = payloadExpander(payload);
     let chatId = (ret.result.env.chat as Chat).id;
     let msgId = ret.result.env.message.message.message_id;
     if (typeof payload === "string") {
         // Text payload
-        tgSendMessage(chatId, text + (payload !== "" ? "今日语录：" + payload : ""), msgId);
+        tgSendMessage(chatId, text + payloadTarget, msgId);
     } else if (payload.type === "voice") {
         // Voice payload
-        tgSendVoice(chatId, text + "今日语音：" + payload.payload, payload.extra, msgId);
+        tgSendVoice(chatId, text + payloadTarget, payload.extra, msgId);
     } else if (payload.type === "urlimage") {
         // Image payload
-        tgSendMessage(chatId, `${text}今日图片：<a href="${encodeURI(payload.payload)}">\u200b</a>`, msgId);
+        tgSendMessage(chatId, text + payloadTarget, msgId);
     }
 }
