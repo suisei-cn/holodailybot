@@ -9,7 +9,7 @@ export function consumeInlineResults(rets: ConsumeTarget[]) {
     let msgId = rets[0].result.env.message.inline_query.id;
     let results: InlineQueryResult[] = [];
     for (const ret of rets) {
-        let text = (ret.result.options.prefix + "\n" || "") + ret.text + "\n";
+        let text = (ret.result.options.prefix ? (ret.result.options.prefix + "\n") : "") + ret.text + "\n";
         let payload: ItemPick = defaultPayload;
         if (vAll[name]) {
             payload = vAll[name][Math.floor(ret.result.rand * vAll[name].length)] || "";
@@ -52,7 +52,7 @@ export function consumeInlineResults(rets: ConsumeTarget[]) {
 }
 
 export function consumeMessageResult(ret: ConsumeTarget) {
-    let text = (ret.result.options.prefix + "\n" || "") + ret.text + "\n";
+    let text = (ret.result.options.prefix ? (ret.result.options.prefix + "\n") : "") + ret.text + "\n";
     let name = ret.result.name;
     let payload: ItemPick = defaultPayload;
     if (vAll[name]) {
