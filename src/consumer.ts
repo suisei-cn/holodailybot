@@ -25,6 +25,7 @@ export function consumeInlineResults(rets: ConsumeTarget[]) {
     for (const ret of rets) {
         let text = (ret.result.options.prefix ? (ret.result.options.prefix + "\n") : "") + ret.text + "\n";
         let payload: ItemPick = defaultPayload;
+        let name = ret.result.name;
         if (vAll[name]) {
             payload = vAll[name][Math.floor(ret.result.rand * vAll[name].length)] || "";
         }
