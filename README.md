@@ -18,10 +18,11 @@ Also, we have a `ecosystem.config.js` for [`pm2`](https://pm2.io) users.
 
 ## Contribute
 
-Currently we need help on:
+You can add VTubers to the following list. Note that some lists have their rules.
 
-* [`vtuberInfo.ts`](https://github.com/suisei-cn/holodailybot/blob/master/src/vtuberInfo.ts): For virtual YouTubers' memes.
-* [`vtuberInfo.cn.ts`](https://github.com/suisei-cn/holodailybot/blob/master/src/vtuberInfo.cn.ts): For virtual uploaders' ("v-up", who may mainly run in Bilibili) memes. Requires `+cn` in query to select.
+- [`vtuberInfo.hololive.ts`](https://github.com/suisei-cn/holodailybot/blob/master/src/lists/vtuberInfo.hololive.ts): Hololive & INNK only.
+- [`vtuberInfo.hololike.ts`](https://github.com/suisei-cn/holodailybot/blob/master/src/lists/vtuberInfo.hololike.ts): VTubers who have close relationship with at least one VTuber on the `vtuberInfo.hololive.ts` list.
+- [`vtuberInfo.more.ts`](https://github.com/suisei-cn/holodailybot/blob/master/src/lists/vtuberInfo.more.ts): Any VTuber not included by the first two lists.
 
 ## Golden Fingers
 
