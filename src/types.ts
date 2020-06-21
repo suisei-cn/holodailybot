@@ -21,11 +21,23 @@ export interface PartialSelectionResult {
 };
 
 export interface SelectionResult extends PartialSelectionResult {
+    ok: true;
     options: ItemOptions
     env: EnvData
 };
 
-export type PromiseResult = SelectionResult | number;
+interface ErrorWrapper {
+    ok: false;
+    ours: boolean;
+    error: {
+        reason: string;
+        body?: any;
+        data?: any;
+        error?: any;
+    }
+};
+
+export type PromiseResult = SelectionResult | ErrorWrapper;
 
 interface User {
     id: number,

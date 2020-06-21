@@ -42,7 +42,6 @@ describe("Pipeline", function () {
         let result = pipeline.act(
             {
                 body: {
-                    // @ts-ignore
                     update_id: 445,
                     inline_query: {
                         id: 42,
@@ -65,7 +64,6 @@ describe("Pipeline", function () {
         let result = pipeline.act(
             {
                 body: {
-                    // @ts-ignore
                     message: {
                         message_id: 440,
                         from: {
@@ -89,7 +87,6 @@ describe("Pipeline", function () {
         let result = pipeline.act(
             {
                 body: {
-                    // @ts-ignore
                     update_id: 445,
                     inline_query: {
                         id: 42,

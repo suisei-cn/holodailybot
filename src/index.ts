@@ -2,6 +2,7 @@ import express from "express";
 import DiceList from "./listDefinitions";
 import { ConsumeTarget } from "./types";
 import { consumeInlineResults, consumeMessageResult } from "./consumer";
+import { Request, Response } from "express";
 
 export const app = express();
 app.use(express.json());
@@ -10,6 +11,13 @@ app.post("/botd027b3d59c15", (req: Request, res: Response) => {
   let result: ConsumeTarget[] = [];
   for (const i of DiceList) {
     const ret = i.procedures.act(req);
+    if (!ret.ok) {
+      res.send({
+        ok: false,
+        reason: ret
+      })
+      return;
+    }
     if (typeof ret !== "number") {
       result.push({
         result: ret,
@@ -27,8 +35,9 @@ app.post("/botd027b3d59c15", (req: Request, res: Response) => {
       consumeMessageResult(result[0]);
     }
   }
-  // @ts-ignore
-  res.sendStatus(200);
+  res.send({
+    ok: true
+  });
 });
 
 export function run(port: number = Number(process.env.PORT) || 3000) {

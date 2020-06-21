@@ -1,4 +1,4 @@
-import { Selections, PipelineMiddleware, ChangeMiddleware, EnvData, SelectMiddleware, SelectionResult, BreakException, PromiseResult, PartialSelectionResult } from "./types";
+import { Selections, PipelineMiddleware, ChangeMiddleware, EnvData, SelectMiddleware, BreakException, PromiseResult, PartialSelectionResult } from "./types";
 import { extractQuery } from "./utils";
 
 enum Steps {
@@ -19,15 +19,38 @@ export class Pipeline {
         this.pipelines = pipelines
     };
 
-    public act(req: Request, dataOverride: any = {}): PromiseResult {
+    public act(req: { body: any }, dataOverride: any = {}): PromiseResult {
         let body = req.body || {};
         if (typeof body !== "object") {
-            return 400;
+            return {
+                ok: false,
+                ours: true,
+                error: {
+                    reason: "Body is not an object",
+                    body
+                }
+            };
         }
-        if (!("message" in body) && !("inline_query" in body)) return 200;
+        if (!("message" in body) && !("inline_query" in body)) return {
+            ok: false,
+            ours: false,
+            error: {
+                reason: "No body or inline_query there",
+                body
+            }
+        };
         let step: Steps = Steps.STEP_INPUT;
         let query = extractQuery(body);
-        if (query === undefined) return 200;
+        if (query === undefined) {
+            return {
+                ok: false,
+                ours: false,
+                error: {
+                    reason: "No valid query",
+                    body
+                }
+            }
+        }
         let data: EnvData = {
             now: new Date(),
             message: (body as any),
@@ -49,7 +72,16 @@ export class Pipeline {
                         selections = i.payload(data);
                     } catch (e) {
                         exceptionHandler(e, body, data);
-                        return 200;
+                        return {
+                            ok: false,
+                            ours: true,
+                            error: {
+                                reason: "Error on INPUT part",
+                                body,
+                                data,
+                                error: e,
+                            }
+                        };
                     }
                     step = Steps.STEP_CHANGE;
                     break;
@@ -67,14 +99,32 @@ export class Pipeline {
                             }
                         } catch (e) {
                             exceptionHandler(e, body, data);
-                            return 200;
+                            return {
+                                ok: false,
+                                ours: true,
+                                error: {
+                                    reason: "Error on CHANGE part",
+                                    body,
+                                    data,
+                                    error: e,
+                                }
+                            };
                         }
                     } else if (i.type === "mutate") {
                         try {
                             data = Object.assign(data, i.payload(selections, data));
                         } catch (e) {
                             exceptionHandler(e, body, data);
-                            return 200;
+                            return {
+                                ok: false,
+                                ours: true,
+                                error: {
+                                    reason: "Error on MUTATE part",
+                                    body,
+                                    data,
+                                    error: e,
+                                }
+                            };
                         }
                     } else if (i.type === "select") {
                         try {
@@ -83,7 +133,16 @@ export class Pipeline {
                             break;
                         } catch (e) {
                             exceptionHandler(e, body, data);
-                            return 200;
+                            return {
+                                ok: false,
+                                ours: true,
+                                error: {
+                                    reason: "Error on SELECT part",
+                                    body,
+                                    data,
+                                    error: e,
+                                }
+                            };
                         }
                     }
                 }
@@ -91,8 +150,18 @@ export class Pipeline {
         }
         // Result is not generated
         // @ts-ignore
-        if (!result) return 200;
-        let realResult: SelectionResult = {
+        if (!result) {
+            return {
+                ok: false,
+                ours: true,
+                error: {
+                    reason: "No results",
+                    body,
+                    data,
+                }
+            };
+        }
+        let realResult = {
             ...result,
             options: {
                 ...result.inherit,
@@ -101,6 +170,9 @@ export class Pipeline {
             },
             env: data
         }
-        return realResult;
+        return {
+            ok: true,
+            ...realResult
+        };
     }
 };
