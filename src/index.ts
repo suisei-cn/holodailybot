@@ -3,7 +3,7 @@ import DiceList from "./listDefinitions";
 import { ConsumeTarget } from "./types";
 import { consumeInlineResults, consumeMessageResult } from "./consumer";
 
-const app = express();
+export const app = express();
 app.use(express.json());
 // @ts-ignore
 app.post("/botd027b3d59c15", (req: Request, res: Response) => {
@@ -31,7 +31,7 @@ app.post("/botd027b3d59c15", (req: Request, res: Response) => {
   res.sendStatus(200);
 });
 
-export default function (port: number = Number(process.env.PORT) || 3000) {
+export function run(port: number = Number(process.env.PORT) || 3000) {
   app.listen(port, () => {
     console.log(`Server listening on port ${port}`);
   });

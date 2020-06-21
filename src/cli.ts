@@ -1,3 +1,3 @@
-import index from "./index"
+import { run } from "./index"
 
-index()
+run()
