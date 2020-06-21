@@ -1,6 +1,7 @@
 import vHololive from './lists/vtuberInfo.hololive';
 import vHololike from './lists/vtuberInfo.hololike';
 import vMore from './lists/vtuberInfo.more';
+import { info as vMoreInfo } from './lists/vtuberInfo.more';
 import { getHumanReadableDate } from './utils';
 import { Dicer } from './types';
 
@@ -41,7 +42,22 @@ const exp: Dicer[] = [
     },
     {
         title: '是有趣的 VTuber 浮莲子呢！',
-        getText: (result) => `今天是${getHumanReadableDate(result.options.date)}，VTuber 发现频道给 ${result.options.username} 推荐的 VTuber 是${result.name}！`,
+        getText: (result) => {
+            const name = result.name;
+            const annon = `今天是${getHumanReadableDate(result.options.date)}，VTuber 发现频道给 ${result.options.username} 推荐的 VTuber 是${name}！`;
+            const keywords: string[] = [];
+            for (const key of ['Twitter', 'YouTube', 'Bilibili', 'Telegram', 'Wiki']) {
+                const keyName = key.toLowerCase()
+                if (vMoreInfo[name] && vMoreInfo[name][keyName]) {
+                    const unofficial = vMoreInfo[name][keyName + '_official'] === false;
+                    keywords.push(
+                        `<a href="${encodeURI(vMoreInfo[name][keyName])}">${key}</a>${unofficial ? ' (非官方)' : ''}`
+                    )
+                }
+            }
+            if (keywords.length === 0) return annon
+            return annon + '\n' + keywords.join(' ')
+        },
         procedures: new Pipeline([
             VTuberInsert(vMore),
             // GoldenFinger,
