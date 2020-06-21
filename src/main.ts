@@ -32,7 +32,9 @@ export class Pipeline {
             now: new Date(),
             message: (body as any),
             user: ("message" in body) ? (body as any).message.from : (body as any).inline_query.from,
-            query
+            query,
+            isInline: "inline_query" in body,
+            chat: (body as any)?.message?.chat
         }
         data = Object.assign(data, dataOverride);
         let selections: Selections = {};
@@ -96,7 +98,8 @@ export class Pipeline {
                 ...result.inherit,
                 username: data.user.first_name + (data.user.last_name || ""),
                 date: data.now,
-            }
+            },
+            env: data
         }
         return realResult;
     }

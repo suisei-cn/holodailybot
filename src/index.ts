@@ -1,21 +1,31 @@
 import express from "express";
-import { Pipeline } from "./main";
 import DiceList from "./listDefinitions";
-import { SelectionResult } from "./types";
+import { ConsumeTarget } from "./types";
+import { consumeInlineResults, consumeMessageResult } from "./consumer";
 
 const app = express();
 app.use(express.json());
 // @ts-ignore
 app.post("/botd027b3d59c15", (req: Request, res: Response) => {
-  let result: SelectionResult[] = [];
+  let result: ConsumeTarget[] = [];
   for (const i of DiceList) {
     const ret = i.procedures.act(req);
     if (typeof ret !== "number") {
-      result.push(ret);
+      result.push({
+        result: ret,
+        title: i.title,
+        text: i.getText(ret),
+      });
     }
   }
   if (result.length !== 0) {
-    // TODO: integrate them to a tg message
+    if (result[0].result.env.isInline) {
+      // Inline Mode
+      consumeInlineResults(result);
+    } else {
+      // Command Mode, only return the 1st result
+      consumeMessageResult(result[0]);
+    }
   }
   // @ts-ignore
   res.sendStatus(200);

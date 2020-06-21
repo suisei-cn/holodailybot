@@ -7,7 +7,6 @@ import BirthdayChange from "./middlewares/birthday.change"
 import DebugChange from "./middlewares/debug.change"
 import RandomSelection from "./middlewares/random.select"
 import { getRandomSeedBasedOnDate } from "./middlewares/random.select"
-import DebugFinal from "./middlewares/debug.final.arg"
 
 let written: any = {};
 
@@ -16,9 +15,6 @@ const pipeline = new Pipeline([
     BirthdayChange,
     DebugChange,
     RandomSelection,
-    DebugFinal((k: any) => {
-        written = k;
-    })
 ]);
 
 const CALCULATE_FUTURE_THERESHOLD = 360 * 24 * 60 * 60 * 1000; // 1 year

@@ -1,4 +1,5 @@
 import { Pipeline } from "./main";
+import { ItemPickList } from "./types_list";
 
 export var BreakException = "f3caf30c-291c-44e3-983d-9c33b229968b";
 
@@ -21,6 +22,7 @@ export interface PartialSelectionResult {
 
 export interface SelectionResult extends PartialSelectionResult {
     options: ItemOptions
+    env: EnvData
 };
 
 export type PromiseResult = SelectionResult | number;
@@ -29,6 +31,13 @@ interface User {
     id: number,
     first_name: string,
     last_name?: string
+}
+
+export interface Chat {
+    id: number;
+    type: string;
+    title?: string;
+    username?: string;
 }
 
 export interface UpdateMessage {
@@ -41,7 +50,7 @@ export interface UpdateMessage {
 }
 
 export interface UpdateInlineQuery {
-    id: number,
+    id: string,
     from: User,
     query: string
 }
@@ -56,7 +65,9 @@ export interface EnvData {
     now: Date;
     message: Update;
     user: User;
+    chat?: Chat;
     query: string;
+    isInline: boolean;
 }
 
 interface InputPayload {
@@ -117,5 +128,37 @@ export interface ItemOptions {
 export interface Dicer {
     title: string;
     getText: ((result: SelectionResult) => string);
-    procedures: Pipeline
+    procedures: Pipeline;
 }
+
+export interface ConsumeTarget {
+    result: SelectionResult;
+    title: string;
+    text: string;
+}
+
+type ParseMode = "HTML" | "Markdown";
+
+export interface InputTextMessageContent {
+    message_text: string;
+    parse_mode: ParseMode;
+}
+
+export interface InlineQueryResultArticle {
+    type: "article";
+    id: string;
+    title: string;
+    input_message_content: InputTextMessageContent
+}
+
+export interface InlineQueryResultCachedVoice {
+    type: "voice";
+    id: string;
+    voice_file_id: string;
+    title: string;
+    caption?: string;
+    parse_mode?: ParseMode;
+}
+
+export type InlineQueryResult = InlineQueryResultArticle |
+    InlineQueryResultCachedVoice;

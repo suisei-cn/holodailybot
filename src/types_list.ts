@@ -1,4 +1,4 @@
-type ItemPickText = string;
+export type ItemPickText = string;
 type ItemPickAudio = {
     type: "voice",
     payload: string,
