@@ -1,6 +1,7 @@
 import vHololive from './lists/vtuberInfo.hololive';
 import vHololike from './lists/vtuberInfo.hololike';
 import vMore from './lists/vtuberInfo.more';
+import vAll from './lists/vtuberInfo.full';
 import { info as vMoreInfo } from './lists/vtuberInfo.more';
 import { getHumanReadableDate } from './utils';
 import { Dicer } from './types';
@@ -13,6 +14,7 @@ import RandomSelection from './middlewares/random.select'
 import ConsoleFinal from './middlewares/console.final'
 import AnalyticsFinal from './middlewares/analytics.final'
 import { Pipeline } from './main';
+import { ItemPick } from './types_list';
 
 const exp: Dicer[] = [
     {
@@ -44,7 +46,12 @@ const exp: Dicer[] = [
         title: '是有趣的 VTuber 浮莲子呢！',
         getText: (result) => {
             const name = result.name;
-            const annon = `今天是${getHumanReadableDate(result.options.date)}，VTuber 发现频道给 ${result.options.username} 推荐的 VTuber 是${name}！`;
+            const rand = result.rand;
+            let annon = `今天是${getHumanReadableDate(result.options.date)}，VTuber 发现频道给 ${result.options.username} 推荐的 VTuber 是${name}！`;
+            const payload: ItemPick = vAll[name]?.[Math.floor(rand * vAll[name].length)] || ''
+            if (typeof payload === 'object' && payload.type === 'urlimage') {
+                annon = `<a href="${encodeURI(payload.payload)}">\u200b</a>` + annon;
+            }
             const keywords: string[] = [];
             for (const key of ['Twitter', 'YouTube', 'Bilibili', 'Telegram', 'Wiki']) {
                 const keyName = key.toLowerCase()
