@@ -1,12 +1,12 @@
 export type ItemPickText = string;
 type ItemPickAudio = {
-    type: "voice",
+    type: 'voice',
     payload: string,
     extra: string
 };
 
 type ItemPickURLImage = {
-    type: "urlimage",
+    type: 'urlimage',
     payload: string
 };
 

@@ -1,10 +1,10 @@
-import { FinalMiddleware, EnvData } from "../types";
+import { FinalMiddleware } from '../types'
 
 const me: FinalMiddleware = {
-    type: "final",
-    payload(result) {
-        console.log(`${result.options.username} 的结果是： ${result.name}`);
-    }
+  type: 'final',
+  payload(result) {
+    console.log(`${result.options.username} 的结果是： ${result.name}`)
+  }
 }
 
-export default me;
+export default me

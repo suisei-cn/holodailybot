@@ -1,14 +1,14 @@
-import readline from "readline";
-import { Pipeline } from "./main";
-import vHolo from "./lists/vtuberInfo.hololive";
+import readline from 'readline';
+import { Pipeline } from './main';
+import vHolo from './lists/vtuberInfo.hololive';
 
-import VTuberInsert from "./middlewares/vtuberinsert.input.arg"
-import BirthdayChange from "./middlewares/birthday.change"
-import DebugChange from "./middlewares/debug.change"
-import RandomSelection from "./middlewares/random.select"
-import { getRandomSeedBasedOnDate } from "./middlewares/random.select"
+import VTuberInsert from './middlewares/vtuberinsert.input.arg'
+import BirthdayChange from './middlewares/birthday.change'
+import DebugChange from './middlewares/debug.change'
+import RandomSelection from './middlewares/random.select'
+import { getRandomSeedBasedOnDate } from './middlewares/random.select'
 
-let written: any = {};
+const written: any = {};
 
 const pipeline = new Pipeline([
     VTuberInsert(vHolo),
@@ -38,17 +38,17 @@ const ask = askGenerator(rl);
 (async () => {
     let id = -1;
     do {
-        id = Number(await ask("Input your Telegram ID: "));
+        id = Number(await ask('Input your Telegram ID: '));
     } while (isNaN(id));
-    let fullname = "";
+    let fullname = '';
     do {
-        fullname = await ask("Input your Telegram name: ");
-    } while (fullname === "");
-    let vTuberExpected = "";
+        fullname = await ask('Input your Telegram name: ');
+    } while (fullname === '');
+    let vTuberExpected = '';
     do {
-        vTuberExpected = await ask("Input your expected VTuber: ");
-    } while (vTuberExpected === "");
-    let now = Number(new Date());
+        vTuberExpected = await ask('Input your expected VTuber: ');
+    } while (vTuberExpected === '');
+    const now = Number(new Date());
     for (let i = now; i <= now + CALCULATE_FUTURE_THERESHOLD; i += 86400000) {
         pipeline.act(
             {
@@ -60,9 +60,9 @@ const ask = askGenerator(rl);
                         from: {
                             id,
                             first_name: fullname,
-                            last_name: ""
+                            last_name: ''
                         },
-                        query: ""
+                        query: ''
 
                     }
                 }

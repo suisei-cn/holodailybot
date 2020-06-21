@@ -1,11 +1,11 @@
-import { Selections, PipelineMiddleware, ChangeMiddleware, EnvData, SelectMiddleware, BreakException, PromiseResult, PartialSelectionResult } from "./types";
-import { extractQuery } from "./utils";
+import { Selections, PipelineMiddleware, ChangeMiddleware, EnvData, SelectMiddleware, BreakException, PromiseResult, PartialSelectionResult } from './types';
+import { extractQuery } from './utils';
 
 enum Steps {
     STEP_INPUT,
     STEP_CHANGE,
     STEP_FINAL
-};
+}
 
 function exceptionHandler(e: any, body: any, data: any) {
     if (e === BreakException) return;
@@ -17,36 +17,36 @@ export class Pipeline {
 
     constructor(pipelines: PipelineMiddleware[]) {
         this.pipelines = pipelines
-    };
+    }
 
     public act(req: { body: any }, dataOverride: any = {}): PromiseResult {
-        let body = req.body || {};
-        if (typeof body !== "object") {
+        const body = req.body || {};
+        if (typeof body !== 'object') {
             return {
                 ok: false,
                 ours: true,
                 error: {
-                    reason: "Body is not an object",
+                    reason: 'Body is not an object',
                     body
                 }
             };
         }
-        if (!("message" in body) && !("inline_query" in body)) return {
+        if (!('message' in body) && !('inline_query' in body)) return {
             ok: false,
             ours: false,
             error: {
-                reason: "No body or inline_query there",
+                reason: 'No body or inline_query there',
                 body
             }
         };
         let step: Steps = Steps.STEP_INPUT;
-        let query = extractQuery(body);
+        const query = extractQuery(body);
         if (query === undefined) {
             return {
                 ok: false,
                 ours: false,
                 error: {
-                    reason: "No valid query",
+                    reason: 'No valid query',
                     body
                 }
             }
@@ -54,9 +54,9 @@ export class Pipeline {
         let data: EnvData = {
             now: new Date(),
             message: (body as any),
-            user: ("message" in body) ? (body as any).message.from : (body as any).inline_query.from,
+            user: ('message' in body) ? (body as any).message.from : (body as any).inline_query.from,
             query,
-            isInline: "inline_query" in body,
+            isInline: 'inline_query' in body,
             chat: (body as any)?.message?.chat
         }
         data = Object.assign(data, dataOverride);
@@ -67,7 +67,7 @@ export class Pipeline {
             if (exitNow) break;
             switch (step) {
                 case Steps.STEP_INPUT: {
-                    if (i.type !== "input") continue;
+                    if (i.type !== 'input') continue;
                     try {
                         selections = i.payload(data);
                     } catch (e) {
@@ -76,7 +76,7 @@ export class Pipeline {
                             ok: false,
                             ours: true,
                             error: {
-                                reason: "Error on INPUT part",
+                                reason: 'Error on INPUT part',
                                 body,
                                 data,
                                 error: e,
@@ -87,9 +87,9 @@ export class Pipeline {
                     break;
                 }
                 case Steps.STEP_CHANGE: {
-                    if (i.type === "change") {
+                    if (i.type === 'change') {
                         try {
-                            let ret = (i as ChangeMiddleware).payload(selections, data);
+                            const ret = (i as ChangeMiddleware).payload(selections, data);
                             if (ret.ended) {
                                 result = ret;
                                 exitNow = true;
@@ -103,14 +103,14 @@ export class Pipeline {
                                 ok: false,
                                 ours: true,
                                 error: {
-                                    reason: "Error on CHANGE part",
+                                    reason: 'Error on CHANGE part',
                                     body,
                                     data,
                                     error: e,
                                 }
                             };
                         }
-                    } else if (i.type === "mutate") {
+                    } else if (i.type === 'mutate') {
                         try {
                             data = Object.assign(data, i.payload(selections, data));
                         } catch (e) {
@@ -119,14 +119,14 @@ export class Pipeline {
                                 ok: false,
                                 ours: true,
                                 error: {
-                                    reason: "Error on MUTATE part",
+                                    reason: 'Error on MUTATE part',
                                     body,
                                     data,
                                     error: e,
                                 }
                             };
                         }
-                    } else if (i.type === "select") {
+                    } else if (i.type === 'select') {
                         try {
                             result = (i as SelectMiddleware).payload(selections, data);
                             exitNow = true;
@@ -137,7 +137,7 @@ export class Pipeline {
                                 ok: false,
                                 ours: true,
                                 error: {
-                                    reason: "Error on SELECT part",
+                                    reason: 'Error on SELECT part',
                                     body,
                                     data,
                                     error: e,
@@ -155,17 +155,17 @@ export class Pipeline {
                 ok: false,
                 ours: true,
                 error: {
-                    reason: "No results",
+                    reason: 'No results',
                     body,
                     data,
                 }
             };
         }
-        let realResult = {
+        const realResult = {
             ...result,
             options: {
                 ...result.inherit,
-                username: data.user.first_name + (data.user.last_name || ""),
+                username: data.user.first_name + (data.user.last_name || ''),
                 date: data.now,
             },
             env: data
@@ -175,4 +175,4 @@ export class Pipeline {
             ...realResult
         };
     }
-};
+}

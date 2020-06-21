@@ -1,7 +1,6 @@
-import { Pipeline } from "./main";
-import { ItemPickList } from "./types_list";
+import { Pipeline } from './main';
 
-export var BreakException = "f3caf30c-291c-44e3-983d-9c33b229968b";
+export const BreakException = 'f3caf30c-291c-44e3-983d-9c33b229968b';
 
 export interface Selections {
     [key: string]: number;
@@ -18,13 +17,13 @@ export interface PartialSelectionResult {
     name: string;
     rand: number;
     inherit?: any;
-};
+}
 
 export interface SelectionResult extends PartialSelectionResult {
     ok: true;
     options: ItemOptions
     env: EnvData
-};
+}
 
 interface ErrorWrapper {
     ok: false;
@@ -35,7 +34,7 @@ interface ErrorWrapper {
         data?: any;
         error?: any;
     }
-};
+}
 
 export type PromiseResult = SelectionResult | ErrorWrapper;
 
@@ -84,10 +83,10 @@ export interface EnvData {
 
 interface InputPayload {
     (data: EnvData): Selections
-};
+}
 
 export interface InputMiddleware {
-    type: "input";
+    type: 'input';
     payload: InputPayload;
 }
 
@@ -96,7 +95,7 @@ interface MutationPayload {
 }
 
 export interface MutationMiddleware {
-    type: "mutate";
+    type: 'mutate';
     payload: MutationPayload;
 }
 
@@ -107,16 +106,16 @@ interface ChangePayload {
 }
 
 export interface ChangeMiddleware {
-    type: "change";
+    type: 'change';
     payload: ChangePayload;
 }
 
 interface SelectPayload {
     (selections: Selections, data: EnvData): PartialSelectionResult
-};
+}
 
 export interface SelectMiddleware {
-    type: "select";
+    type: 'select';
     payload: SelectPayload;
 }
 
@@ -125,7 +124,7 @@ interface FinalPayload {
 }
 
 export interface FinalMiddleware {
-    type: "final";
+    type: 'final';
     payload: FinalPayload;
 }
 
@@ -149,7 +148,7 @@ export interface ConsumeTarget {
     text: string;
 }
 
-type ParseMode = "HTML" | "Markdown";
+type ParseMode = 'HTML' | 'Markdown';
 
 export interface InputTextMessageContent {
     message_text: string;
@@ -157,14 +156,14 @@ export interface InputTextMessageContent {
 }
 
 export interface InlineQueryResultArticle {
-    type: "article";
+    type: 'article';
     id: string;
     title: string;
     input_message_content: InputTextMessageContent
 }
 
 export interface InlineQueryResultCachedVoice {
-    type: "voice";
+    type: 'voice';
     id: string;
     voice_file_id: string;
     title: string;

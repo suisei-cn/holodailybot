@@ -4,14 +4,14 @@ export function getHumanReadableDate(date: Date) {
 
 export function extractQuery(body: any): string | undefined {
     if (body.message) {
-        let msg = body.message.text || "";
-        let lowerQuery = msg.toLowerCase();
-        if (lowerQuery.startsWith("/my ") || lowerQuery.startsWith("/my@holodailybot") || lowerQuery === "/my" || lowerQuery === "/my@holodailybot") {
-            return msg.replace(/^\/my(@holodailybot)? ?/i, "");
+        const msg = body.message.text || '';
+        const lowerQuery = msg.toLowerCase();
+        if (lowerQuery.startsWith('/my ') || lowerQuery.startsWith('/my@holodailybot') || lowerQuery === '/my' || lowerQuery === '/my@holodailybot') {
+            return msg.replace(/^\/my(@holodailybot)? ?/i, '');
         }
         return;
     } else if (body.inline_query) {
-        return body.inline_query.query || "";
+        return body.inline_query.query || '';
     }
     return;
 }

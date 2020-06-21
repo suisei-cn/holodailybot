@@ -1,8 +1,8 @@
-import express from "express";
-import DiceList from "./listDefinitions";
-import { ConsumeTarget } from "./types";
-import { consumeInlineResults, consumeMessageResult } from "./consumer";
-import { Request, Response } from "express";
+import express from 'express';
+import DiceList from './listDefinitions';
+import { ConsumeTarget } from './types';
+import { consumeInlineResults, consumeMessageResult } from './consumer';
+import { Request, Response } from 'express';
 
 import * as Sentry from '@sentry/node';
 import { RewriteFrames } from '@sentry/integrations';
@@ -25,8 +25,8 @@ process.env.SENTRY_DSN && Sentry.init({
 export const app = express();
 app.use(express.json());
 // @ts-ignore
-app.post("/botd027b3d59c15", (req: Request, res: Response) => {
-  let result: ConsumeTarget[] = [];
+app.post('/botd027b3d59c15', (req: Request, res: Response) => {
+  const result: ConsumeTarget[] = [];
   for (const i of DiceList) {
     const ret = i.procedures.act(req);
     if (!ret.ok) {
@@ -36,7 +36,7 @@ app.post("/botd027b3d59c15", (req: Request, res: Response) => {
       })
       return;
     }
-    if (typeof ret !== "number") {
+    if (typeof ret !== 'number') {
       result.push({
         result: ret,
         title: i.title,
