@@ -63,7 +63,7 @@ const exp: Dicer[] = [
                 }
             }
             if (keywords.length === 0) return annon
-            return annon + '\n' + keywords.join(' ')
+            return annon + '\n关于 TA：' + keywords.join(' / ')
         },
         procedures: new Pipeline([
             VTuberInsert(vMore),
