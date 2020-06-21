@@ -31,7 +31,8 @@ app.post("/botd027b3d59c15", (req: Request, res: Response) => {
   res.sendStatus(200);
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`);
-});
+export default function (port: number = Number(process.env.PORT) || 3000) {
+  app.listen(port, () => {
+    console.log(`Server listening on port ${port}`);
+  });
+}

@@ -4,11 +4,11 @@
   "description": "A interesting telegram bot.",
   "main": "src/index.js",
   "scripts": {
-    "start:dev": "nodemon dist/index.js",
+    "start:dev": "nodemon dist/cli.js",
     "build:dev": "tsc --watch --preserveWatchOutput",
     "dev": "concurrently \"npm:build:dev\" \"npm:start:dev\"",
     "build": "tsc",
-    "run": "node dist/index.js",
+    "run": "node dist/cli.js",
     "test": "mocha --require ts-node/register src/**/*.spec.ts",
     "predict": "ts-node src/calc.cli.ts"
   },
