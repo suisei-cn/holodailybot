@@ -51,6 +51,13 @@ export const info: { [key: string]: any } = {
     telegram: 'https://t.me/kanaria_group',
     bilibili: 'https://space.bilibili.com/2450927',
     wiki: 'https://zh.moegirl.org/鹤伞Ria'
+  },
+  小雀香奈: {
+    youtube: 'https://www.youtube.com/channel/UCASCjjE-gn1I_eFEsF7XrrA',
+    twitter: 'https://twitter.com/KosuzumeKana',
+    telegram: 'https://t.me/kanaria_group',
+    bilibili: 'https://space.bilibili.com/506074310',
+    wiki: 'https://zh.moegirl.org/小雀香奈'
   }
 }
 
