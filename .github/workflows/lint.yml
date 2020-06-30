@@ -11,7 +11,13 @@ jobs:
       - name: Check out Git repository
         uses: actions/checkout@v2
 
-      # Install your linters here
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - name: Install Node.js dependencies
+        run: npm install
 
       - name: Run linters
         uses: samuelmeuli/lint-action@v1
