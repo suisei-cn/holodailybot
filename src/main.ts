@@ -166,7 +166,7 @@ export class Pipeline {
             ok: true,
             options: {
                 ...result.inherit,
-                username: data.user.first_name + (data.user.last_name || ''),
+                username: data.user.first_name + (' ' + data.user.last_name || ''),
                 date: data.now,
             },
             env: data
