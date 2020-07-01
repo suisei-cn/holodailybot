@@ -90,10 +90,10 @@ const me: ChangeMiddleware = {
     if (result) {
       return {
         ended: true,
-        name: result[0],
+        name: result,
         rand: Math.random(),
         inherit: {
-          prefix: `${result[0]}生日快乐！`
+          prefix: `${result}生日快乐！`
         }
       }
     }
