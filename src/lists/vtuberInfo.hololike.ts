@@ -10,7 +10,9 @@ const exp: ItemPickList = {
       // ts 989.2 - 991.9
       extra: 'AwACAgEAAxkDAAIDCV7SBTgknMPwTxZbPcgpDMfYaHZAAAKvAAOqQJBGFts_0511SP0ZBA'
     }
-  ]
+  ],
+  神乐七奈: [],
+  rurudo: [],
 }
 
 export default exp
