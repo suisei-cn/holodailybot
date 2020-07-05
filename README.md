@@ -20,9 +20,9 @@ Also, we have a `ecosystem.config.js` for [`pm2`](https://pm2.io) users.
 
 You can add VTubers to the following list. Note that some lists have their rules.
 
-- [`vtuberInfo.hololive.ts`](https://github.com/suisei-cn/holodailybot/blob/master/src/lists/vtuberInfo.hololive.ts): Hololive & INNK only.
-- [`vtuberInfo.hololike.ts`](https://github.com/suisei-cn/holodailybot/blob/master/src/lists/vtuberInfo.hololike.ts): VTubers who have close relationship with at least one VTuber on the `vtuberInfo.hololive.ts` list.
-- [`vtuberInfo.more.ts`](https://github.com/suisei-cn/holodailybot/blob/master/src/lists/vtuberInfo.more.ts): Any VTuber not included by the first two lists.
+- [`vtuberInfo.hololive.ts`](https://github.com/suisei-cn/holodailybot/blob/goshujin-sama/src/lists/vtuberInfo.hololive.ts): Hololive & INNK only.
+- [`vtuberInfo.hololike.ts`](https://github.com/suisei-cn/holodailybot/blob/goshujin-sama/src/lists/vtuberInfo.hololike.ts): VTubers who have close relationship with at least one VTuber on the `vtuberInfo.hololive.ts` list.
+- [`vtuberInfo.more.ts`](https://github.com/suisei-cn/holodailybot/blob/goshujin-sama/src/lists/vtuberInfo.more.ts): Any VTuber not included by the first two lists.
 
 ## Golden Fingers
 
