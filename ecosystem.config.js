@@ -13,7 +13,7 @@ module.exports = {
         //   will be sent to this Telegram chat.
         TELEGRAM_ADMINCHAT_ID: -1,
         // DSN used by Sentry
-        // SENTRY_DSN: ""
+        // SENTRY_DSN: ''
       },
     },
   ],
