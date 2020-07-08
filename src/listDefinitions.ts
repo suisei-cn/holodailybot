@@ -53,7 +53,7 @@ const exp: Dicer[] = [
                 annon = `<a href="${encodeURI(payload.payload)}">\u200b</a>` + annon;
             }
             const keywords: string[] = [];
-            for (const key of ['Twitter', 'YouTube', 'Bilibili', 'Telegram', 'Wiki']) {
+            for (const key of ['Twitter', 'YouTube', 'Bilibili', 'Telegram', 'Wiki', 'GitHub']) {
                 const keyName = key.toLowerCase()
                 if (vMoreInfo[name] && vMoreInfo[name][keyName]) {
                     const unofficial = vMoreInfo[name][keyName + '_official'] === false;
