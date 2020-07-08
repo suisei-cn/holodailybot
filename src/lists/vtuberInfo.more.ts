@@ -11,11 +11,12 @@ const exp: ItemPickList = {
     {
       type: 'urlimage',
       // https://t.bilibili.com/396130004857483240?tab=2
-      payload: 'https://i0.hdslb.com/bfs/album/c23c249ef2aedfecf9aa683d4e27d8cc1209d2dd.jpg@518w_1e_1c.jpg',
-    } as ItemPick
+      payload:
+        'https://i0.hdslb.com/bfs/album/c23c249ef2aedfecf9aa683d4e27d8cc1209d2dd.jpg@518w_1e_1c.jpg',
+    } as ItemPick,
   ],
   小雀香奈: [],
-  黑狐: []
+  黑狐: [],
 }
 
 export const info: { [key: string]: any } = {
@@ -25,7 +26,7 @@ export const info: { [key: string]: any } = {
     telegram: 'https://t.me/kamitsubaki_kaf',
     telegram_official: false,
     bilibili: 'https://space.bilibili.com/488970166',
-    wiki: 'https://zh.moegirl.org/花谱'
+    wiki: 'https://zh.moegirl.org/花谱',
   },
   理芽: {
     youtube: 'https://www.youtube.com/channel/UCfBkUgaJ6eqYA9_TX2cmq9A',
@@ -33,40 +34,40 @@ export const info: { [key: string]: any } = {
     telegram: 'https://t.me/Virtual_rime',
     telegram_official: false,
     bilibili: 'https://space.bilibili.com/489046950',
-    wiki: 'https://zh.moegirl.org/理芽'
+    wiki: 'https://zh.moegirl.org/理芽',
   },
   春猿火: {
     youtube: 'https://www.youtube.com/channel/UCE7gtjLeZKNXLp5YURzYYeg',
     twitter: 'https://twitter.com/harusaruhi',
     bilibili: 'https://space.bilibili.com/488976992',
-    wiki: 'https://zh.moegirl.org/春猿火'
+    wiki: 'https://zh.moegirl.org/春猿火',
   },
   ヰ世界情绪: {
     youtube: 'https://www.youtube.com/channel/UCah4_WVjmr8XA7i5aigwV-Q',
     twitter: 'https://twitter.com/isekaijoucho',
     bilibili: 'https://space.bilibili.com/488978908',
-    wiki: 'https://zh.moegirl.org/异世界情绪'
+    wiki: 'https://zh.moegirl.org/异世界情绪',
   },
   鹤伞Ria: {
     youtube: 'https://www.youtube.com/channel/UCC12ijOcPxnRSQPLvjWYXUg',
     twitter: 'https://twitter.com/TsukasaRia',
     telegram: 'https://t.me/kanaria_group',
     bilibili: 'https://space.bilibili.com/2450927',
-    wiki: 'https://zh.moegirl.org/鹤伞Ria'
+    wiki: 'https://zh.moegirl.org/鹤伞Ria',
   },
   小雀香奈: {
     youtube: 'https://www.youtube.com/channel/UCASCjjE-gn1I_eFEsF7XrrA',
     twitter: 'https://twitter.com/KosuzumeKana',
     telegram: 'https://t.me/kanaria_group',
     bilibili: 'https://space.bilibili.com/506074310',
-    wiki: 'https://zh.moegirl.org/小雀香奈'
+    wiki: 'https://zh.moegirl.org/小雀香奈',
   },
   黑狐: {
     twitter: 'https://twitter.com/BlackFoxSAR',
     telegram: 'https://t.me/kanaria_group',
     bilibili: 'https://space.bilibili.com/245050',
-    github: 'https://github.com/blackfoxsar/'
-  }
+    github: 'https://github.com/blackfoxsar/',
+  },
 }
 
 export default exp

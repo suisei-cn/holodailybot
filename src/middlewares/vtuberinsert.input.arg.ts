@@ -10,6 +10,6 @@ export default function me(list: ItemPickList) {
         info[i] = 1
       }
       return info
-    }
+    },
   } as InputMiddleware
 }

@@ -3,10 +3,13 @@ import vtuberInfoFull from '../lists/vtuberInfo.full'
 
 const me: ChangeMiddleware = {
   type: 'change',
-  payload (selection, data) {
+  payload(selection, data) {
     const querySelector = data.query.split(' ')
     if (querySelector?.[0] === '!debug') {
-      if (querySelector[1] && Object.keys(vtuberInfoFull).includes(querySelector[1])) {
+      if (
+        querySelector[1] &&
+        Object.keys(vtuberInfoFull).includes(querySelector[1])
+      ) {
         const targetNumber = Number(querySelector[2])
         // @ts-ignore
         const targetLength = vtuberInfoFull[querySelector[1]].length
@@ -16,8 +19,8 @@ const me: ChangeMiddleware = {
             name: querySelector[1],
             rand: targetNumber / targetLength,
             inherit: {
-              prefix: 'DEBUG MODE ON (PICK OUT OF BOUND)'
-            }
+              prefix: 'DEBUG MODE ON (PICK OUT OF BOUND)',
+            },
           }
         }
         return {
@@ -25,17 +28,17 @@ const me: ChangeMiddleware = {
           name: querySelector[1],
           rand: targetNumber / targetLength,
           inherit: {
-            prefix: 'DEBUG MODE ON'
-          }
+            prefix: 'DEBUG MODE ON',
+          },
         }
       }
     }
 
     return {
       ended: false,
-      selections: selection
+      selections: selection,
     }
-  }
+  },
 }
 
 export default me

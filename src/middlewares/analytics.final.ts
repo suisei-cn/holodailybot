@@ -4,12 +4,12 @@ import { tgSendMessage } from '../util.tg'
 const ADMINCHAT_ID = process.env.TELEGRAM_ADMINCHAT_ID
 
 interface AnalyticData {
-  [key: string]: number;
+  [key: string]: number
 }
 
 const localData = {
-  analytics: ({} as AnalyticData),
-  lastTime: ''
+  analytics: {} as AnalyticData,
+  lastTime: '',
 }
 
 const me: FinalMiddleware = {
@@ -23,21 +23,27 @@ const me: FinalMiddleware = {
     }
     const mmdd = getMMDD(result.options.date)
     if (localData.lastTime === mmdd) return
-    const totalUsages = Object.values(localData.analytics).reduce((a, b) => a + b)
+    const totalUsages = Object.values(localData.analytics).reduce(
+      (a, b) => a + b
+    )
     localData.lastTime = mmdd
     let text = `${mmdd}: ${totalUsages} gachas in total.\n`
-    const sortedResults = Object.entries(localData.analytics).sort((b, a) => a[1] - b[1])
+    const sortedResults = Object.entries(localData.analytics).sort(
+      (b, a) => a[1] - b[1]
+    )
     for (const [key, value] of sortedResults) {
-      text += `${key}: ${value} (${((value / totalUsages) * 100).toFixed(2)}%)\n`
+      text += `${key}: ${value} (${((value / totalUsages) * 100).toFixed(
+        2
+      )}%)\n`
     }
     text += '-----------------------------------\n'
     text += ' A new day has started! Enjoy! '
     console.log(text)
     if (ADMINCHAT_ID) {
-      tgSendMessage(Number(ADMINCHAT_ID), text);
+      tgSendMessage(Number(ADMINCHAT_ID), text)
     }
     localData.analytics = {}
-  }
+  },
 }
 
 export default me
