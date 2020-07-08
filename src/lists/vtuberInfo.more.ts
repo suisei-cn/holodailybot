@@ -14,7 +14,8 @@ const exp: ItemPickList = {
       payload: 'https://i0.hdslb.com/bfs/album/c23c249ef2aedfecf9aa683d4e27d8cc1209d2dd.jpg@518w_1e_1c.jpg',
     } as ItemPick
   ],
-  小雀香奈: []
+  小雀香奈: [],
+  黑狐: []
 }
 
 export const info: { [key: string]: any } = {
@@ -59,6 +60,12 @@ export const info: { [key: string]: any } = {
     telegram: 'https://t.me/kanaria_group',
     bilibili: 'https://space.bilibili.com/506074310',
     wiki: 'https://zh.moegirl.org/小雀香奈'
+  },
+  黑狐: {
+    twitter: 'https://twitter.com/BlackFoxSAR',
+    telegram: 'https://t.me/kanaria_group',
+    bilibili: 'https://space.bilibili.com/245050',
+    github: 'https://github.com/blackfoxsar/'
   }
 }
 
