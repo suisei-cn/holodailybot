@@ -17,6 +17,7 @@ const exp: ItemPickList = {
   ],
   小雀香奈: [],
   黑狐: [],
+  ななひら: [],
 }
 
 export const info: { [key: string]: any } = {
@@ -67,6 +68,11 @@ export const info: { [key: string]: any } = {
     telegram: 'https://t.me/kanaria_group',
     bilibili: 'https://space.bilibili.com/245050',
     github: 'https://github.com/blackfoxsar/',
+  },
+  ななひら: {
+    youtube: 'https://www.youtube.com/channel/UC_fYA9QRK-aJnFTgvR_4zug',
+    twitter: 'https://twitter.com/nanahira',
+    wiki: 'https://zh.moegirl.org.cn/Nanahira',
   },
 }
 
