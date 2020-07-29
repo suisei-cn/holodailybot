@@ -7,14 +7,6 @@ const exp: ItemPickList = {
   理芽: [],
   春猿火: [],
   ヰ世界情绪: [],
-  鹤伞Ria: [
-    {
-      type: 'urlimage',
-      // https://t.bilibili.com/396130004857483240?tab=2
-      payload:
-        'https://i0.hdslb.com/bfs/album/c23c249ef2aedfecf9aa683d4e27d8cc1209d2dd.jpg@518w_1e_1c.jpg',
-    } as ItemPick,
-  ],
   小雀香奈: [],
   黑狐: [],
   ななひら: [],
@@ -48,13 +40,6 @@ export const info: { [key: string]: any } = {
     twitter: 'https://twitter.com/isekaijoucho',
     bilibili: 'https://space.bilibili.com/488978908',
     wiki: 'https://zh.moegirl.org.cn/异世界情绪',
-  },
-  鹤伞Ria: {
-    youtube: 'https://www.youtube.com/channel/UCC12ijOcPxnRSQPLvjWYXUg',
-    twitter: 'https://twitter.com/TsukasaRia',
-    telegram: 'https://t.me/kanaria_group',
-    bilibili: 'https://space.bilibili.com/2450927',
-    wiki: 'https://zh.moegirl.org.cn/鹤伞Ria',
   },
   小雀香奈: {
     youtube: 'https://www.youtube.com/channel/UCASCjjE-gn1I_eFEsF7XrrA',
