@@ -15,12 +15,20 @@ const me: ChangeMiddleware = {
         result = '润羽露西娅'
         break
       }
+      case '0130': {
+        result = '尾丸波尔卡'
+        break
+      }
       case '0214': {
         result = '癒月巧可'
         break
       }
       case '0222': {
         result = '猫又小粥'
+        break
+      }
+      case '0302': {
+        result = '桃铃音音'
         break
       }
       case '0305': {
@@ -79,6 +87,10 @@ const me: ChangeMiddleware = {
         result = '大神澪'
         break
       }
+      case '0908': {
+        result = '狮白牡丹'
+        break
+      }
       case '1001': {
         result = '戌神沁音'
         break
@@ -91,8 +103,16 @@ const me: ChangeMiddleware = {
         result = '姬森璐娜'
         break
       }
+      case '1028': {
+        result = '魔乃阿萝耶'
+        break
+      }
       case '1031': {
         result = '夜空梅露'
+        break
+      }
+      case '1115': {
+        result = '雪花菈米'
         break
       }
       case '1124': {
