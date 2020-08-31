@@ -136,7 +136,6 @@ const exp: ItemPickList = {
   雪花菈米: [],
   桃铃音音: [],
   狮白牡丹: [],
-  魔乃阿萝耶: [],
 }
 
 export default exp
