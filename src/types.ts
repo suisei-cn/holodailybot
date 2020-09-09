@@ -179,3 +179,9 @@ export interface InlineQueryResultCachedVoice {
 export type InlineQueryResult =
   | InlineQueryResultArticle
   | InlineQueryResultCachedVoice
+
+export interface VTuberInfo {
+  [name: string]: {
+    [platform: string]: string | boolean
+  }
+}

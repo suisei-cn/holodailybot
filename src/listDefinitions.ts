@@ -65,20 +65,24 @@ const exp: Dicer[] = [
       }
       const keywords: string[] = []
       for (const key of [
+        'Web',
         'Twitter',
         'YouTube',
         'Bilibili',
+        'Niconico',
+        'Pixiv',
         'Telegram',
         'Wiki',
         'GitHub',
+        'Userlocal',
       ]) {
         const keyName = key.toLowerCase()
         if (vMoreInfo[name] && vMoreInfo[name][keyName]) {
           const unofficial = vMoreInfo[name][keyName + '_official'] === false
           keywords.push(
-            `<a href="${encodeURI(vMoreInfo[name][keyName])}">${key}</a>${
-              unofficial ? ' (非官方)' : ''
-            }`
+            `<a href="${encodeURI(
+              String(vMoreInfo[name][keyName])
+            )}">${key}</a>${unofficial ? ' (非官方)' : ''}`
           )
         }
       }

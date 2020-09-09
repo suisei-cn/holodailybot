@@ -1,6 +1,8 @@
 // This list is used to put any VTuber not included by the "hololive" and "hololike" list.
 
 import { ItemPickList } from '../types_list'
+import extrasInfo from './extras.info.json'
+import { VTuberInfo } from '../types'
 
 const exp: ItemPickList = {
   花谱: ['日本の何処かに棲む、何処にでもいる、何処にもいない16才。'],
@@ -12,7 +14,7 @@ const exp: ItemPickList = {
   ななひら: [],
 }
 
-export const info: { [key: string]: any } = {
+const builtinInfo: VTuberInfo = {
   花谱: {
     youtube: 'https://www.youtube.com/channel/UCQ1U65-CQdIoZ2_NA4Z4F7A',
     twitter: 'https://twitter.com/virtual_kaf',
@@ -61,4 +63,13 @@ export const info: { [key: string]: any } = {
   },
 }
 
-export default exp
+export const info = Object.assign(extrasInfo, builtinInfo)
+
+const emptyItems: ItemPickList = {}
+for (const i of Object.keys(extrasInfo)) {
+  emptyItems[i] = []
+}
+
+export const fullExp = Object.assign(emptyItems, exp)
+
+export default fullExp
