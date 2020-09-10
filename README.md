@@ -24,7 +24,7 @@ You can add VTubers to the following list. Note that some lists have their rules
 - [`vtuberInfo.hololike.ts`](https://github.com/suisei-cn/holodailybot/blob/goshujin-sama/src/lists/vtuberInfo.hololike.ts): VTubers who have close relationship with at least one VTuber on the `vtuberInfo.hololive.ts` list.
 - [`vtuberInfo.more.ts`](https://github.com/suisei-cn/holodailybot/blob/goshujin-sama/src/lists/vtuberInfo.more.ts): Any VTuber not included by the first two lists.
 
-The list for `vtuberInfo.more.ts` will be updated at 0:00 every Friday (CST) using the source of [VDB](https://github.com/dd-center/vdb).
+The list for `vtuberInfo.more.ts` will be updated at 23:25 every Thursday (CST) using the source of [VDB](https://github.com/dd-center/vdb).
 
 ## Golden Fingers
 

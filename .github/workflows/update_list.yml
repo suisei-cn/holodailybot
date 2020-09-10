@@ -5,8 +5,8 @@ on:
     branches:
       - goshujin-sama
   schedule:
-    # Update Fri 0:00 (CST) per week
-    - cron: "0 16 * * 4"
+    # Update Thu 23:25 (CST) per week
+    - cron: "25 15 * * 4"
 
 jobs:
   build:
