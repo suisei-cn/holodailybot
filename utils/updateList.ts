@@ -1,7 +1,7 @@
 import fetch from 'node-fetch'
 import { writeFileSync } from 'fs'
 
-const list_url = 'http://127.0.0.1:8080/list.json'
+const list_url = 'https://vdb.vtbs.moe/json/list.json'
 
 interface Vtuber {
   uuid: string
@@ -51,8 +51,7 @@ async function main() {
     info[name] = personInfo
   }
   console.log('len=', Object.keys(exp).length)
-  writeFileSync('exp.json', JSON.stringify(exp, null, 2))
-  writeFileSync('info.json', JSON.stringify(info, null, 2))
+  writeFileSync('src/lists/extras.info.json', JSON.stringify(info, null, 2))
 }
 
 main()

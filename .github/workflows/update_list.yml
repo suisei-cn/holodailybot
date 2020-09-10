@@ -1,0 +1,39 @@
+name: Update VTuber lists
+
+on:
+  push:
+    branches:
+      - goshujin-sama
+  schedule:
+    # Update Fri 0:00 (CST) per week
+    - cron: "0 16 * * 4"
+
+jobs:
+  build:
+    if: "(contains(github.event_name, 'schedule') || contains(github.event.commits[0].message, '\n/update'))"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+        with:
+          ref: goshujin-sama
+          persist-credentials: false
+
+      - name: Fetch and update 🔧
+        run: |
+          yarn
+          yarn add ts-node
+          node_modules/.bin/ts-node utils/updateList.ts
+
+      - name: Commit files
+        run: |
+          git config --local user.email "noreply@suisei.moe"
+          git config --local user.name "Suisei Bot"
+          git add src/lists/extras.info.json
+          git commit -m "feat: update extras.info.json"
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          branch: goshujin-sama
+          github_token: ${{ secrets.GITHUB_TOKEN }}
