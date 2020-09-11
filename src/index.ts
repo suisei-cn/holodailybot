@@ -53,9 +53,8 @@ app.post('/botd027b3d59c15', (req: Request, res: Response) => {
       // Inline Mode
       consumeInlineResults(result)
     } else {
-      const query = result[0].result.env.query.toLowerCase()
-      const targetResult = result.filter((x) =>
-        query.startsWith('/' + x.dicer.command)
+      const targetResult = result.filter(
+        (x) => x.result.env.command == x.dicer.command.toLowerCase()
       )
       if (targetResult.length > 0) {
         consumeMessageResult(targetResult[0])

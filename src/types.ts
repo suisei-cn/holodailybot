@@ -78,6 +78,7 @@ export interface EnvData {
   user: User
   chat?: Chat
   query: string
+  command: string
   isInline: boolean
 }
 

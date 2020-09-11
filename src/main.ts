@@ -74,7 +74,8 @@ export class Pipeline {
         'message' in body
           ? (body as any).message.from
           : (body as any).inline_query.from,
-      query,
+      query: query[0],
+      command: query[1],
       isInline: 'inline_query' in body,
       chat: (body as any)?.message?.chat,
     }
