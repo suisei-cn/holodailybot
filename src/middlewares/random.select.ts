@@ -12,10 +12,14 @@ function getRngFromSeed(seed: string): number {
 const me: SelectMiddleware = {
   type: 'select',
   payload(selection, data) {
+    const randomContainDate = data.command !== 'discover'
     const dateSeed = getRandomSeedBasedOnDate(data.now)
-    const rand = getRngFromSeed(
+    let rand = getRngFromSeed(
       String(dateSeed) + String(data.user.id) + (data.query || '')
     )
+    if (!randomContainDate) {
+      rand = Math.random()
+    }
     const powerTotal = Object.values(selection).reduce((a, b) => a + b)
     let targetPower = rand * powerTotal
     for (const [key, power] of Object.entries(selection)) {
