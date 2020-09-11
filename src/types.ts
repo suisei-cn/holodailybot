@@ -143,6 +143,7 @@ export interface ItemOptions {
 
 export interface Dicer {
   title: string
+  command: string
   getText: (result: SelectionResult) => string
   procedures: Pipeline
 }
@@ -151,6 +152,7 @@ export interface ConsumeTarget {
   result: SelectionResult
   title: string
   text: string
+  dicer: Dicer
 }
 
 type ParseMode = 'HTML' | 'Markdown'

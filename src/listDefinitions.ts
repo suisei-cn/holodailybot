@@ -19,6 +19,7 @@ import { ItemPick } from './types_list'
 const exp: Dicer[] = [
   {
     title: '告诉我吧！今天的幸运 Hololiver',
+    command: 'my',
     getText: (result) =>
       `今天是${getHumanReadableDate(result.options.date)}，${
         result.options.username
@@ -35,6 +36,7 @@ const exp: Dicer[] = [
   },
   {
     title: '今天也要和 Holo 贴贴！',
+    command: 'tie',
     getText: (result) =>
       `今天是${getHumanReadableDate(result.options.date)}，${
         result.options.username
@@ -50,6 +52,7 @@ const exp: Dicer[] = [
   },
   {
     title: '是有趣的 VTuber 浮莲子呢！',
+    command: 'discover',
     getText: (result) => {
       const name = result.name
       const rand = result.rand

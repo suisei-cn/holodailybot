@@ -44,6 +44,7 @@ app.post('/botd027b3d59c15', (req: Request, res: Response) => {
         result: ret,
         title: i.title,
         text: i.getText(ret),
+        dicer: i,
       })
     }
   }
@@ -52,8 +53,15 @@ app.post('/botd027b3d59c15', (req: Request, res: Response) => {
       // Inline Mode
       consumeInlineResults(result)
     } else {
-      // Command Mode, only return the 1st result
-      consumeMessageResult(result[0])
+      const query = result[0].result.env.query.toLowerCase()
+      const targetResult = result.filter((x) =>
+        query.startsWith('/' + x.dicer.command)
+      )
+      if (targetResult.length > 0) {
+        consumeMessageResult(targetResult[0])
+      } else {
+        consumeMessageResult(result[0])
+      }
     }
   }
   res.send({
