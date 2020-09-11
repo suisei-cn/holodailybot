@@ -5,16 +5,9 @@ export function getHumanReadableDate(date: Date) {
 export function extractQuery(body: any): string | undefined {
   if (body.message) {
     const msg = body.message.text || ''
-    const lowerQuery = msg.toLowerCase()
-    if (
-      lowerQuery.startsWith('/my ') ||
-      lowerQuery.startsWith('/my@holodailybot') ||
-      lowerQuery === '/my' ||
-      lowerQuery === '/my@holodailybot'
-    ) {
-      return msg.replace(/^\/my(@holodailybot)? ?/i, '')
-    }
-    return
+    const lowerQuery: string = msg.toLowerCase()
+    if (!lowerQuery.startsWith('/') || lowerQuery.length === 1) return
+    return msg.replace(/^\/[a-z-_]+(@[a-z0-9-_]+)? ?/i, '')
   } else if (body.inline_query) {
     return body.inline_query.query || ''
   }
