@@ -33,6 +33,9 @@ app.post('/botd027b3d59c15', (req: Request, res: Response) => {
   const result: ConsumeTarget[] = []
   if ((req.body?.message?.text as string)?.startsWith('/start')) {
     handleSpecialCommands(req.body)
+    res.send({
+      ok: true,
+    })
     return
   }
   for (const i of DiceList) {
