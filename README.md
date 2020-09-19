@@ -6,9 +6,10 @@ Unofficial Hololive-style gacha bot on Telegram. Revised. Not limited to VTubers
 
 ## Usage
 
-```
+```sh
 export PORT=3000
 export TELEGRAM_BOT_KEY=BOT_KEY
+# export SLACK_WEBHOOK_URL=SLACK_WEBHOOK_URL # if you want to use the reporting feature
 npm install
 npm run build
 npm run run
