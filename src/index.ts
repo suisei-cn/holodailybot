@@ -3,6 +3,7 @@ import DiceList from './listDefinitions'
 import { ConsumeTarget } from './types'
 import { consumeInlineResults, consumeMessageResult } from './consumer'
 import { Request, Response } from 'express'
+import handleSpecialCommands from './specials'
 
 import * as Sentry from '@sentry/node'
 import { RewriteFrames } from '@sentry/integrations'
@@ -30,6 +31,10 @@ app.use(express.json())
 // @ts-ignore
 app.post('/botd027b3d59c15', (req: Request, res: Response) => {
   const result: ConsumeTarget[] = []
+  if ((req.body?.message?.text as string)?.startsWith('/start')) {
+    handleSpecialCommands(req.body)
+    return
+  }
   for (const i of DiceList) {
     const ret = i.procedures.act(req)
     if (!ret.ok) {

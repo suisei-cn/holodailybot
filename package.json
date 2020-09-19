@@ -31,6 +31,7 @@
   "dependencies": {
     "@sentry/integrations": "^5.17.0",
     "@sentry/node": "^5.17.0",
+    "base64url": "^3.0.1",
     "express": "^4.17.1",
     "node-fetch": "^2.6.1",
     "seedrandom": "^3.0.5",

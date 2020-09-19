@@ -16,6 +16,8 @@ import AnalyticsFinal from './middlewares/analytics.final'
 import { Pipeline } from './main'
 import { ItemPick } from './types_list'
 
+import base64url from 'base64url'
+
 const exp: Dicer[] = [
   {
     title: '告诉我吧！今天的幸运 Hololiver',
@@ -90,7 +92,14 @@ const exp: Dicer[] = [
         }
       }
       if (keywords.length === 0) return annon
-      return annon + '\n关于 TA：' + keywords.join(' / ')
+      return (
+        annon +
+        '\n关于 TA：' +
+        keywords.join(' / ') +
+        `\n[这个 VTuber 已经毕业？<a href="https://t.me/holodailybot?start=${base64url(
+          `R|${name}`
+        )}">点此报告</a>]`
+      )
     },
     procedures: new Pipeline([
       VTuberInsert(vMore),
