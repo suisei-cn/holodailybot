@@ -2,6 +2,7 @@ import fetch from 'node-fetch'
 import { writeFileSync } from 'fs'
 
 const list_url = 'https://vdb.vtbs.moe/json/list.json'
+const excludeList = require('./exclude.info.json')
 
 interface Vtuber {
   uuid: string
@@ -26,6 +27,7 @@ async function main() {
   const info: { [name: string]: Record<string, string> } = {}
   for (const k of data) {
     const name = k.name.cn || k.name[k.name.default]
+    if (excludeList.includes(name)) continue
     for (const [lang, val] of Object.entries(k.name)) {
       if (lang === 'default') continue
       if (lang === 'extra') continue

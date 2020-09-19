@@ -104,3 +104,4 @@ dist
 .tern-port
 
 /utils/*.json
+!/utils/exclude.info.json
