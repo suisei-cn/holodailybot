@@ -1,4 +1,5 @@
 import { tgSendMessage } from './util.tg'
+import fetch from 'node-fetch'
 
 import base64url from 'base64url'
 
