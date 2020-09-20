@@ -7,6 +7,10 @@ const me: ChangeMiddleware = {
     const md = getMMDD(data.now)
     let result = ''
     switch (md) {
+      case '0106': {
+        result = '华生阿米莉亚'
+        break
+      }
       case '0112': {
         result = '兔田佩克拉'
         break
@@ -43,12 +47,20 @@ const me: ChangeMiddleware = {
         result = '不知火芙蕾雅'
         break
       }
+      case '0404': {
+        result = '森美声'
+        break
+      }
       case '0422': {
         result = '天音彼方'
         break
       }
       case '0515': {
         result = '时乃空'
+        break
+      }
+      case '0520': {
+        result = '一伊那尓栖'
         break
       }
       case '0523': {
@@ -63,8 +75,16 @@ const me: ChangeMiddleware = {
         result = '桐生可可'
         break
       }
+      case '0620': {
+        result = '噶呜古拉'
+        break
+      }
       case '0702': {
         result = '大空昴'
+        break
+      }
+      case '0706': {
+        result = '小鸟游琪亚拉'
         break
       }
       case '0722': {
