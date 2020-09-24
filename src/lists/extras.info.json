@@ -67,6 +67,10 @@
     "youtube": "https://www.youtube.com/channel/UCg8TPE5nLLOqlNnBivmQwww",
     "twitter": "https://twitter.com/MIYA_KIMINO"
   },
+  "Marpril": {
+    "youtube": "https://www.youtube.com/channel/UCWhv732tk4DAQ7X32qHKrfA",
+    "userlocal": "https://virtual-youtuber.userlocal.jp/user/EF175BE84DE68FA8_f2856d"
+  },
   "Maya Putri": {
     "bilibili": "https://space.bilibili.com/455888811",
     "youtube": "https://www.youtube.com/channel/UCyZoDBhW8cLrzZ-dqKdQqEg",
@@ -142,6 +146,12 @@
     "bilibili": "https://space.bilibili.com/102668397",
     "youtube": "https://www.youtube.com/channel/UCiBXVFuA-IPRrmb9r5cTT2w",
     "twitter": "https://twitter.com/L0L0_0707"
+  },
+  "sunyeojin": {
+    "bilibili": "https://space.bilibili.com/1869304",
+    "youtube": "https://www.youtube.com/channel/UCGZz3jSTHO8VP17BZ6MeitQ",
+    "twitter": "https://twitter.com/HlME_SUN",
+    "twitch": "https://www.twitch.tv/hime_sun"
   },
   "あいらぶゆう": {
     "youtube": "https://www.youtube.com/channel/UCsNcV1BacT_HirptnIawqkQ",
@@ -434,11 +444,6 @@
   "エイレーン 改 （Eilene Channel)": {
     "youtube": "https://www.youtube.com/channel/UCO6i768QTqAmGeV-iqZU2pg",
     "userlocal": "https://virtual-youtuber.userlocal.jp/user/70240307FA89ED77_f81688"
-  },
-  "ena": {
-    "youtube": "https://www.youtube.com/channel/UCAjPpHpxhxZF9EiROXwr9kQ",
-    "bilibili": "https://space.bilibili.com/1869304",
-    "twitter": "https://twitter.com/ena_vtuber"
   },
   "エリー・コニファー": {
     "youtube": "https://www.youtube.com/channel/UCpNH2Zk2gw3JBjWAKSyZcQQ",
@@ -1530,11 +1535,6 @@
     "youtube": "https://www.youtube.com/channel/UC_1Okh7IBMyazrTJD_ymYsQ",
     "booth": "https://yuzuki-rin.booth.pm"
   },
-  "柴山あずき": {
-    "youtube": "https://www.youtube.com/channel/UCaQWd2sDWGPCYp66CwPoSCg",
-    "twitter": "https://twitter.com/shibayama_azuki",
-    "userlocal": "https://virtual-youtuber.userlocal.jp/user/02C50E78887F69F0_24e339"
-  },
   "桃ゐ咲鬼": {
     "youtube": "https://www.youtube.com/channel/UCp01G7ZvzZh_Rn0J9QsCFbg",
     "twitter": "https://twitter.com/momoi__saki",
@@ -2181,11 +2181,6 @@
     "bilibili": "https://space.bilibili.com/488970166",
     "twitter": "https://twitter.com/virtual_kaf",
     "userlocal": "https://virtual-youtuber.userlocal.jp/user/FBDC0B685D0E6049_343b86"
-  },
-  "花野蜜": {
-    "youtube": "https://www.youtube.com/channel/UCuwpvDAYMV0nV98DQk-W9mQ",
-    "twitter": "https://twitter.com/MitsuHanano",
-    "userlocal": "https://virtual-youtuber.userlocal.jp/user/C7A73AEAB59399C4_4b1130"
   },
   "花鋏響": {
     "youtube": "https://www.youtube.com/channel/UC4OeUf_KfYRrwksschtRYow",
