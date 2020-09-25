@@ -1,7 +1,9 @@
 import { tgSendMessage } from './util.tg'
 import fetch from 'node-fetch'
+import extrasInfo from './lists/extras.info.json'
 
 import base64url from 'base64url'
+import { VTuberInfo } from './types'
 
 const SLACK_WEBHOOK_URL = process.env.SLACK_WEBHOOK_URL
 
@@ -24,7 +26,11 @@ async function reportVTuber(text: string, uid: number, uname: string) {
       'Content-Type': 'application/json; charset=utf-8',
     },
     body: JSON.stringify({
-      text: `Reported VTuber: ${text}\nReporter: ${uname} (id: ${uid})`,
+      text:
+        `Reported VTuber: ${text}\nReporter: ${uname} (id: ${uid})` +
+        '\n' +
+        // @ts-ignore
+        JSON.stringify(extrasInfo[text] ?? {}, null, 2),
     }),
   })
 }
