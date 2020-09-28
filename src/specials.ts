@@ -3,7 +3,6 @@ import fetch from 'node-fetch'
 import extrasInfo from './lists/extras.info.json'
 
 import base64url from 'base64url'
-import { VTuberInfo } from './types'
 
 const SLACK_WEBHOOK_URL = process.env.SLACK_WEBHOOK_URL
 
