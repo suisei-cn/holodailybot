@@ -38,6 +38,12 @@ app.post('/botd027b3d59c15', (req: Request, res: Response) => {
     })
     return
   }
+  if (!isResponsive(req.body?.message?.text)) {
+    res.send({
+      ok: true,
+    })
+    return
+  }
   for (const i of DiceList) {
     const ret = i.procedures.act(req)
     if (!ret.ok) {
@@ -80,4 +86,12 @@ export function run(port: number = Number(process.env.PORT) || 3000) {
   app.listen(port, () => {
     console.log(`Server listening on port ${port}`)
   })
+}
+
+function isResponsive(cmd: string) {
+  const commands = DiceList.filter((x) => x.command)
+  for (const i of commands) {
+    if (cmd.startsWith('/' + i)) return true
+  }
+  return false
 }
