@@ -88,8 +88,9 @@ export function run(port: number = Number(process.env.PORT) || 3000) {
   })
 }
 
-function isResponsive(cmd: string) {
-  const commands = DiceList.filter((x) => x.command)
+function isResponsive(cmd?: string) {
+  if (!cmd) return true
+  const commands = DiceList.map((x) => x.command)
   for (const i of commands) {
     if (cmd.startsWith('/' + i)) return true
   }
