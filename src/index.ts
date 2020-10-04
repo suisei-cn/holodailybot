@@ -32,7 +32,7 @@ app.use(express.json())
 // @ts-ignore
 app.post('/botd027b3d59c15', (req: Request, res: Response) => {
   const result: ConsumeTarget[] = []
-  if (extractCommand(req.body?.message?.text as string) === 'start') {
+  if (extractCommand((req.body?.message?.text as string) || '') === 'start') {
     handleSpecialCommands(req.body)
     res.send({
       ok: true,
