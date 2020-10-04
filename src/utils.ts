@@ -16,3 +16,9 @@ export function extractQuery(body: any): string[] | undefined {
   }
   return
 }
+
+export function extractCommand(query: string): string {
+  const match = query.match(regEx)
+  if (match === null || match.length < 2) return ''
+  return match[1]
+}

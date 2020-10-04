@@ -7,6 +7,7 @@ import handleSpecialCommands from './specials'
 
 import * as Sentry from '@sentry/node'
 import { RewriteFrames } from '@sentry/integrations'
+import { extractCommand } from './utils'
 declare global {
   namespace NodeJS {
     interface Global {
@@ -31,7 +32,7 @@ app.use(express.json())
 // @ts-ignore
 app.post('/botd027b3d59c15', (req: Request, res: Response) => {
   const result: ConsumeTarget[] = []
-  if ((req.body?.message?.text as string)?.startsWith('/start')) {
+  if (extractCommand(req.body?.message?.text as string) === 'start') {
     handleSpecialCommands(req.body)
     res.send({
       ok: true,
@@ -91,8 +92,6 @@ export function run(port: number = Number(process.env.PORT) || 3000) {
 function isResponsive(cmd?: string) {
   if (!cmd) return true
   const commands = DiceList.map((x) => x.command)
-  for (const i of commands) {
-    if (cmd.startsWith('/' + i)) return true
-  }
-  return false
+  const command = extractCommand(cmd)
+  return commands.includes(command)
 }
