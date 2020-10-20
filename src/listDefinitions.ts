@@ -42,7 +42,7 @@ const exp: Dicer[] = [
     command: 'tie',
     getText: (result) =>
       `${getHumanReadableDate(result.options.date)}，你和${
-        emojiList[name] || ''
+        emojiList[result.name] || ''
       }${result.name}贴贴！`,
     procedures: new Pipeline([
       VTuberInsert(Object.assign({}, vHololive, vHololike)),
