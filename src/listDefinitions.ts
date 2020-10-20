@@ -5,6 +5,7 @@ import vAll from './lists/vtuberInfo.full'
 import { info as vMoreInfo } from './lists/vtuberInfo.more'
 import { getHumanReadableDate } from './utils'
 import { Dicer } from './types'
+import emojiList from './lists/emoji'
 
 import VTuberInsert from './middlewares/vtuberinsert.input.arg'
 // import GoldenFinger from "./middlewares/goldenfinger/gf.change"
@@ -23,9 +24,9 @@ const exp: Dicer[] = [
     title: '告诉我吧！今天的幸运 Hololiver',
     command: 'my',
     getText: (result) =>
-      `今天是${getHumanReadableDate(result.options.date)}，${
-        result.options.username
-      } 的幸运 Hololiver 是${result.name}！`,
+      `${getHumanReadableDate(result.options.date)}，你的幸运 Hololiver 是${
+        emojiList[name] || ''
+      }${result.name}！`,
     procedures: new Pipeline([
       VTuberInsert(vHololive),
       BirthdayChange,
@@ -40,9 +41,9 @@ const exp: Dicer[] = [
     title: '今天也要和 Holo 贴贴！',
     command: 'tie',
     getText: (result) =>
-      `今天是${getHumanReadableDate(result.options.date)}，${
-        result.options.username
-      } 和${result.name}贴贴！`,
+      `${getHumanReadableDate(result.options.date)}，你和${
+        emojiList[name] || ''
+      }${result.name}贴贴！`,
     procedures: new Pipeline([
       VTuberInsert(Object.assign({}, vHololive, vHololike)),
       // GoldenFinger,
@@ -58,11 +59,9 @@ const exp: Dicer[] = [
     getText: (result) => {
       const name = result.name
       const rand = result.rand
-      let annon = `今天是${getHumanReadableDate(
+      let annon = `${getHumanReadableDate(
         result.options.date
-      )}，VTuber 发现频道给 ${
-        result.options.username
-      } 推荐的 VTuber 是${name}！`
+      )}，VTuber 发现频道推荐的 VTuber 是${emojiList[name] || ''}${name}！`
       const payload: ItemPick =
         vAll[name]?.[Math.floor(rand * vAll[name].length)] || ''
       if (typeof payload === 'object' && payload.type === 'urlimage') {
