@@ -25,7 +25,7 @@ const exp: Dicer[] = [
     command: 'my',
     getText: (result) =>
       `${getHumanReadableDate(result.options.date)}，你的幸运 Hololiver 是${
-        emojiList[name] || ''
+        emojiList[result.name] || ''
       }${result.name}！`,
     procedures: new Pipeline([
       VTuberInsert(vHololive),
