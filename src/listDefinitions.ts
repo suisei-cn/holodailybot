@@ -95,7 +95,7 @@ const exp: Dicer[] = [
         annon +
         '\n关于 TA：' +
         keywords.join(' / ') +
-        `\n[这个 VTuber 已经毕业？<a href="https://t.me/holodailybot?start=${base64url(
+        `\n[链接有误/已经毕业？<a href="https://t.me/holodailybot?start=${base64url(
           `R|${name}`
         )}">点此报告</a>]`
       )
