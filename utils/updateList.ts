@@ -3,6 +3,7 @@ import { writeFileSync } from 'fs'
 
 const list_url = 'https://vdb.vtbs.moe/json/list.json'
 const excludeList = require('./exclude.info.json')
+const nameMap = require('./namemap.info.json')
 
 interface Vtuber {
   uuid: string
@@ -26,7 +27,8 @@ async function main() {
   const exp: { [name: string]: any } = {}
   const info: { [name: string]: Record<string, string> } = {}
   for (const k of data) {
-    const name = k.name.cn || k.name[k.name.default]
+    let name = k.name.cn || k.name[k.name.default]
+    if (nameMap[name]) name = nameMap[name]
     if (excludeList.includes(name)) continue
     for (const [lang, val] of Object.entries(k.name)) {
       if (lang === 'default') continue

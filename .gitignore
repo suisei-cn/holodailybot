@@ -105,3 +105,4 @@ dist
 
 /utils/*.json
 !/utils/exclude.info.json
+!/utils/namemap.info.json
