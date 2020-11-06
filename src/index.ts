@@ -1,5 +1,5 @@
 import express from 'express'
-import DiceList from './listDefinitions'
+import diceFactory from './listDefinitions'
 import { ConsumeTarget } from './types'
 import { consumeInlineResults, consumeMessageResult } from './consumer'
 import { Request, Response } from 'express'
@@ -7,7 +7,7 @@ import handleSpecialCommands from './specials'
 
 import * as Sentry from '@sentry/node'
 import { RewriteFrames } from '@sentry/integrations'
-import { extractCommand } from './utils'
+import { extractCommand, getLang } from './utils'
 declare global {
   namespace NodeJS {
     interface Global {
@@ -33,6 +33,7 @@ app.use(express.json())
 app.post('/botd027b3d59c15', (req: Request, res: Response) => {
   const result: ConsumeTarget[] = []
   if (extractCommand((req.body?.message?.text as string) || '') === 'start') {
+    // Special commands (e.g. report)
     handleSpecialCommands(req.body)
     res.send({
       ok: true,
@@ -40,12 +41,15 @@ app.post('/botd027b3d59c15', (req: Request, res: Response) => {
     return
   }
   if (!isResponsive(req.body?.message?.text)) {
+    // shall not repont to that message
     res.send({
       ok: true,
     })
     return
   }
-  for (const i of DiceList) {
+  // Inject i18n
+  const lang = getLang(req.body)
+  for (const i of diceFactory(lang)) {
     const ret = i.procedures.act(req)
     if (!ret.ok) {
       res.send({
@@ -91,7 +95,7 @@ export function run(port: number = Number(process.env.PORT) || 3000) {
 
 function isResponsive(cmd?: string) {
   if (!cmd) return true
-  const commands = DiceList.map((x) => x.command)
+  const commands = diceFactory('').map((x) => x.command)
   const command = extractCommand(cmd)
   return commands.includes(command)
 }
