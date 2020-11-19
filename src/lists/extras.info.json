@@ -1,10 +1,4 @@
 {
-  "69on": {
-    "youtube": "https://www.youtube.com/channel/UCx9sSKp4rNsHonHYMNjTv_g",
-    "twitter": "https://twitter.com/otonashi9on",
-    "bilibili": "https://space.bilibili.com/14712304",
-    "pixiv": "https://www.pixiv.net/member.php?id=35147571"
-  },
   "A.I.D": {
     "twitter": "https://twitter.com/project_aid_",
     "web": "https://www.projectaid.net",
@@ -85,6 +79,11 @@
     "bilibili": "https://space.bilibili.com/473935898",
     "twitter": "https://twitter.com/MicheleRCotton"
   },
+  "Mikado帝": {
+    "youtube": "https://www.youtube.com/channel/UCO-FZDAG0mOvgu6jmGg1tiA",
+    "twitter": "https://twitter.com/mikado_HS",
+    "bilibili": "https://space.bilibili.com/500893486"
+  },
   "未来明": {
     "twitter": "https://twitter.com/miraiakari_prj",
     "youtube": "https://www.youtube.com/channel/UCMYtONm441rBogWK_xPH9HA",
@@ -139,10 +138,6 @@
     "twitter": "https://twitter.com/yuni_vsinger",
     "userlocal": "https://virtual-youtuber.userlocal.jp/user/10E0A22BFD47B979_880d33"
   },
-  "羽月奏ちゆ": {
-    "bilibili": "https://space.bilibili.com/399546557",
-    "youtube": "https://www.youtube.com/channel/UCfm7sKrU6VVo6o3LwPjJOmQ"
-  },
   "rurudo": {
     "bilibili": "https://space.bilibili.com/102668397",
     "youtube": "https://www.youtube.com/channel/UCiBXVFuA-IPRrmb9r5cTT2w",
@@ -153,11 +148,6 @@
     "youtube": "https://www.youtube.com/channel/UCGZz3jSTHO8VP17BZ6MeitQ",
     "twitter": "https://twitter.com/HlME_SUN",
     "twitch": "https://www.twitch.tv/hime_sun"
-  },
-  "あいらぶゆう": {
-    "youtube": "https://www.youtube.com/channel/UCsNcV1BacT_HirptnIawqkQ",
-    "bilibili": "https://space.bilibili.com/472019066",
-    "twitter": "https://twitter.com/C0C0R0_Y0U"
   },
   "あおい'sきっず -あおいずきっず-": {
     "youtube": "https://www.youtube.com/channel/UCIao2WtbCciU8GApFr2pLIA",
@@ -254,10 +244,6 @@
     "youtube": "https://www.youtube.com/channel/UCt30jJgChL8qeT9VPadidSw",
     "twitter": "https://twitter.com/ui_shig",
     "pixiv": "https://www.pixiv.net/member.php?id=431873"
-  },
-  "すいとーよ": {
-    "youtube": "https://www.youtube.com/channel/UCjaTnZujzaZMpmFr7jVzSww",
-    "twitter": "https://twitter.com/suitouyoo"
   },
   "すやすやネムノキ": {
     "youtube": "https://www.youtube.com/channel/UCcEXdLbhQtqzxT6wc0ye2ag",
@@ -553,11 +539,6 @@
     "youtube": "https://www.youtube.com/channel/UCrhx4PaF3uIo9mDcTxHnmIg",
     "bilibili": "https://space.bilibili.com/1576121",
     "twitter": "https://twitter.com/par1y"
-  },
-  "破鼓": {
-    "youtube": "https://www.youtube.com/channel/UCu5DbFfYe3KiwhcmanCvSVg",
-    "twitter": "https://twitter.com/pandei_ch",
-    "userlocal": "https://virtual-youtuber.userlocal.jp/user/62E80546C414CBC6_91a480"
   },
   "ヒヅキミウ": {
     "youtube": "https://www.youtube.com/channel/UCM6iy_rSgSMbFjx10Z6VVGA",
@@ -926,12 +907,6 @@
     "twitter": "https://twitter.com/udukikohh",
     "userlocal": "https://virtual-youtuber.userlocal.jp/user/F24B0CAB1547B384_9c19f6"
   },
-  "双月": {
-    "twitter": "https://twitter.com/soutsukiyunaria",
-    "youtube": "https://www.youtube.com/channel/UCpqw54aSbBJw8WbL-PV6wfQ",
-    "peing": "https://peing.net/zh-CN/soutsukiyunaria",
-    "bilibili": "https://space.bilibili.com/62359"
-  },
   "双叶汐音": {
     "bilibili": "https://space.bilibili.com/399592717",
     "youtube": "https://www.youtube.com/channel/UCuqcPmdBvwHEWGx00XYCFWg",
@@ -999,6 +974,11 @@
     "twitter": "https://twitter.com/natsuiromatsuri",
     "userlocal": "https://virtual-youtuber.userlocal.jp/user/6EF142E2238D3AA2_27e73c"
   },
+  "夏诺雅": {
+    "bilibili": "https://space.bilibili.com/1612112",
+    "youtube": "https://www.youtube.com/channel/UCEAYn1JzHW7BGOaaDWDtqnQ",
+    "twitch": "https://www.twitch.tv/chatnoir_ice"
+  },
   "夕刻ロベル": {
     "youtube": "https://www.youtube.com/channel/UCANDOlYTJT7N5jlRC3zfzVA",
     "twitter": "https://twitter.com/yukokuroberu"
@@ -1026,12 +1006,6 @@
     "marshmallow": "https://marshmallow-qa.com/neonnight_exe",
     "youtube": "https://www.youtube.com/channel/UCLQIMDHNE0ZGAiHIdMbq7dw",
     "booth": "https://neonnight-exe.booth.pm"
-  },
-  "夜桜たま": {
-    "youtube": "https://www.youtube.com/channel/UCOefINa2_BmpuX4BbHjdk9A",
-    "bilibili": "https://space.bilibili.com/365308305",
-    "twitter": "https://twitter.com/YozakuraTama",
-    "userlocal": "https://virtual-youtuber.userlocal.jp/user/22A3D45804D5AC20_ce216d"
   },
   "夜樱诺娅": {
     "bilibili": "https://space.bilibili.com/551202872",
@@ -1082,6 +1056,11 @@
     "bilibili": "https://space.bilibili.com/389859190",
     "twitter": "https://twitter.com/oozorasubaru",
     "userlocal": "https://virtual-youtuber.userlocal.jp/user/936A5DB3F944614F_859d31"
+  },
+  "天使なの": {
+    "bilibili": "https://space.bilibili.com/1666868191",
+    "youtube": "https://www.youtube.com/channel/UCxBmyZNQDFJVr9-ZE7hAYfA",
+    "twitter": "https://twitter.com/angelnano1004"
   },
   "天宫心": {
     "youtube": "https://www.youtube.com/channel/UCkIimWZ9gBJRamKF0rmPU8w",
@@ -1270,6 +1249,10 @@
     "twitter": "https://twitter.com/_Civia",
     "youtube": "https://www.youtube.com/channel/UCgNVXGlZIFK96XdEY20sVjg"
   },
+  "常夏あいみ": {
+    "youtube": "https://www.youtube.com/channel/UCIzspiyqiPDtfND-3MlQ41A",
+    "twitter": "https://twitter.com/lovepea0721"
+  },
   "常闇永远": {
     "youtube": "https://www.youtube.com/channel/UC1uv2Oq6kNxgATlCiez59hw",
     "twitter": "https://twitter.com/tokoyamitowa",
@@ -1378,11 +1361,6 @@
     "youtube": "https://www.youtube.com/channel/UCzeNz4SVio_XLLYQLX8DhJw",
     "twitter": "https://twitter.com/hoshimiya_toto",
     "userlocal": "https://virtual-youtuber.userlocal.jp/user/4A6DE3982A9A7FD0_7f3802"
-  },
-  "星屑れん": {
-    "youtube": "https://www.youtube.com/channel/UCEmKIZezKaWL4ek4Lfj0eaw",
-    "twitter": "https://twitter.com/len_hoshikuzu",
-    "userlocal": "https://virtual-youtuber.userlocal.jp/user/2B623B2F19293752_01e768"
   },
   "星川莎拉": {
     "bilibili": "https://space.bilibili.com/666726796",
@@ -1668,6 +1646,12 @@
     "youtube": "https://www.youtube.com/channel/UC61P6oww6JXAJ6NYT_b5_Vg",
     "twitter": "https://twitter.com/_takigawamiu",
     "userlocal": "https://virtual-youtuber.userlocal.jp/user/31E2A24898F7A4CF_44707b"
+  },
+  "エーテル": {
+    "bilibili": "https://space.bilibili.com/1825301994",
+    "youtube": "https://www.youtube.com/channel/UCGkBaeuL9-PBNfsk6hyalfw",
+    "twitter": "https://twitter.com/AT_Crescentia",
+    "niconico": "https://www.nicovideo.jp/user/89617251"
   },
   "润羽露西娅": {
     "youtube": "https://www.youtube.com/channel/UCl_gCybOJRIgOXw6Qb4qJzQ",
@@ -1983,10 +1967,11 @@
     "twitter": "https://twitter.com/taketori_karuta",
     "bilibili": "https://space.bilibili.com/399554022"
   },
-  "竹花ノート": {
+  "竹花诺特": {
     "youtube": "https://www.youtube.com/channel/UCuPrcSmgo6twlAQzwYPlSkQ",
     "twitter": "https://twitter.com/nano_phan",
-    "userlocal": "https://virtual-youtuber.userlocal.jp/user/F876812927A55460_68bf8c"
+    "userlocal": "https://virtual-youtuber.userlocal.jp/user/F876812927A55460_68bf8c",
+    "bilibili": "https://space.bilibili.com/612560157"
   },
   "笹木咲": {
     "youtube": "https://www.youtube.com/channel/UCoztvTULBYd3WmStqYeoHcA",
@@ -2159,10 +2144,20 @@
     "twitter": "https://twitter.com/Kyo_Hanabasami",
     "userlocal": "https://virtual-youtuber.userlocal.jp/user/15B2A757B57F2768_9abbd7"
   },
+  "花云燻": {
+    "bilibili": "https://space.bilibili.com/521780993",
+    "youtube": "https://www.youtube.com/channel/UCTJ15i3Bl-QbeBA4NCcpyJA",
+    "twitter": "https://twitter.com/Kuyuri_Officia",
+    "web": "https://hanagumo.jp"
+  },
   "華香院つばき": {
     "youtube": "https://www.youtube.com/channel/UCI-xaXiiRD_2l8qxQRIpeEw",
     "twitter": "https://twitter.com/kakyoin_tsubaki",
     "userlocal": "https://virtual-youtuber.userlocal.jp/user/2FEB9A06E7ED3D25_d0d329"
+  },
+  "萌々嫁もか": {
+    "youtube": "https://www.youtube.com/channel/UCOobfYvyNQqWHBpEaMnXr7w",
+    "twitter": "https://twitter.com/mochatan0214"
   },
   "葉加瀬冬雪": {
     "youtube": "https://www.youtube.com/channel/UCGYAYLDE7TZiiC8U6teciDQ",
@@ -2263,12 +2258,6 @@
     "youtube": "https://www.youtube.com/channel/UCrdPLxZE3IoofDDP2TQiUhQ",
     "twitter": "https://twitter.com/Liver_eriy"
   },
-  "道明寺ここあ": {
-    "youtube": "https://www.youtube.com/channel/UCCebk1_w5oiMUTRxdNJq0sA",
-    "bilibili": "https://space.bilibili.com/381951501",
-    "twitter": "https://twitter.com/kokoa_domyoji",
-    "userlocal": "https://virtual-youtuber.userlocal.jp/user/D758763519B04FA6_f83eb3"
-  },
   "邪神ちゃんねる": {
     "youtube": "https://www.youtube.com/channel/UChu8Yu_w9z8DGFtXzuGvDlg",
     "bilibili": "https://space.bilibili.com/384230128"
@@ -2293,10 +2282,6 @@
     "bilibili": "https://space.bilibili.com/12645374",
     "twitter": "https://twitter.com/KongoIroha",
     "userlocal": "https://virtual-youtuber.userlocal.jp/user/1DBC5193FCBBB92D_fd173a"
-  },
-  "金魚坂めいろ": {
-    "youtube": "https://www.youtube.com/channel/UC69URn8iP4u8D_zUp-IJ1sg",
-    "twitter": "https://twitter.com/meiro_oO"
   },
   "鈴谷アキ": {
     "youtube": "https://www.youtube.com/channel/UCpnvhOIJ6BN-vPkYU9ls-Eg",
@@ -2439,6 +2424,11 @@
     "youtube": "https://www.youtube.com/channel/UC5Oe-wG53cRHkpV3aHXfLUQ",
     "twitter": "https://twitter.com/Yuika_Kazami"
   },
+  "风纸七鸣": {
+    "youtube": "https://www.youtube.com/channel/UCOozmdnOhOrk3mojTazi-TQ",
+    "bilibili": "https://space.bilibili.com/692283833",
+    "twitter": "https://twitter.com/fugaminanana"
+  },
   "飛鳥ひな": {
     "youtube": "https://www.youtube.com/channel/UCiSRx1a2k-0tOg-fs6gAolQ",
     "twitter": "https://twitter.com/hina__asuka",
@@ -2465,10 +2455,6 @@
     "bilibili": "https://space.bilibili.com/6055289",
     "twitter": "https://twitter.com/re2_takatsuki",
     "userlocal": "https://virtual-youtuber.userlocal.jp/user/D9593084BF0FDB05_3953d8"
-  },
-  "鬼ヶ島ちゃんねるฅ •ω• ฅ": {
-    "youtube": "https://www.youtube.com/channel/UCkzKSwRcM4Vp45dMynHDa5A",
-    "twitter": "https://twitter.com/onigashima_s"
   },
   "魔使マオ": {
     "youtube": "https://www.youtube.com/channel/UCerkculBD7YLc_vOGrF7tKg",
@@ -2560,6 +2546,7 @@
   },
   "黛灰": {
     "youtube": "https://www.youtube.com/channel/UCb5JxV6vKlYVknoJB8TnyYg",
-    "twitter": "https://twitter.com/mayuzumi_X"
+    "twitter": "https://twitter.com/mayuzumi_X",
+    "bilibili": "https://space.bilibili.com/628292887"
   }
 }
