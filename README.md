@@ -27,6 +27,8 @@ You can add VTubers to the following list. Note that some lists have their rules
 
 The list for `vtuberInfo.more.ts` will be updated at 23:25 every Thursday (CST) using the source of [VDB](https://github.com/dd-center/vdb).
 
+If you notice any VTuber given by `@holodailybot` that is not active anymore, you can click the report link, or send a pull request to add his/her/its name to [`utils/exclude.info.json`)(https://github.com/suisei-cn/holodailybot/blob/goshujin-sama/utils/exclude.info.json).
+
 ## Golden Fingers
 
 The demo instance of @holodailybot on Telegram includes a special undisclosed middleware which contains some golden fingers. Try interacting with the bot and dig surprises!
