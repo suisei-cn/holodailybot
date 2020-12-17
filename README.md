@@ -25,7 +25,11 @@ You can add VTubers to the following list. Note that some lists have their rules
 - [`vtuberInfo.hololike.ts`](https://github.com/suisei-cn/holodailybot/blob/goshujin-sama/src/lists/vtuberInfo.hololike.ts): VTubers who have close relationship with at least one VTuber on the `vtuberInfo.hololive.ts` list.
 - [`vtuberInfo.more.ts`](https://github.com/suisei-cn/holodailybot/blob/goshujin-sama/src/lists/vtuberInfo.more.ts): Any VTuber not included by the first two lists.
 
-The list for `vtuberInfo.more.ts` will be updated at 23:25 every Thursday (CST) using the source of [VDB](https://github.com/dd-center/vdb).
+The list for `vtuberInfo.more.ts` will be updated at 23:25 every Thursday (CST) using the source of [VDB](https://github.com/dd-center/vdb). To be eligible for this list, an entry should:
+* Have not graduated
+* Fulfill at least 1 of the following:
+  * Have an official account on any platform other than Bilibili
+  * Have an official account on YouTube
 
 If you notice any VTuber given by `@holodailybot` that is not active anymore, you can click the report link, or send a pull request to add his/her/its name to [`utils/exclude.info.json`)(https://github.com/suisei-cn/holodailybot/blob/goshujin-sama/utils/exclude.info.json).
 

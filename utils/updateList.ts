@@ -23,7 +23,11 @@ async function main() {
   const source: Vtuber[] = origin.vtbs
   const data = source
     .filter((x) => x.type === 'vtuber')
-    .filter((x) => x.accounts.filter((y) => y.platform === 'youtube').length)
+    .filter(
+      (x) =>
+        x.accounts.filter((y) => y.platform !== 'bilibili').length > 1 ||
+        x.accounts.filter((y) => y.platform === 'youtube').length
+    )
   const exp: { [name: string]: any } = {}
   const info: { [name: string]: Record<string, string> } = {}
   for (const k of data) {
