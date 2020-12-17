@@ -18,6 +18,7 @@ import { Pipeline } from './main'
 import { ItemPick } from './types_list'
 
 import base64url from 'base64url'
+import { getInfoLine } from './infoParser'
 
 const exp: Dicer[] = [
   {
@@ -67,34 +68,12 @@ const exp: Dicer[] = [
       if (typeof payload === 'object' && payload.type === 'urlimage') {
         annon = `<a href="${encodeURI(payload.payload)}">\u200b</a>` + annon
       }
-      const keywords: string[] = []
-      for (const key of [
-        'Web',
-        'Twitter',
-        'YouTube',
-        'Bilibili',
-        'Niconico',
-        'Pixiv',
-        'Telegram',
-        'Wiki',
-        'GitHub',
-        'Userlocal',
-      ]) {
-        const keyName = key.toLowerCase()
-        if (vMoreInfo[name] && vMoreInfo[name][keyName]) {
-          const unofficial = vMoreInfo[name][keyName + '_official'] === false
-          keywords.push(
-            `<a href="${encodeURI(
-              String(vMoreInfo[name][keyName])
-            )}">${key}</a>${unofficial ? ' (非官方)' : ''}`
-          )
-        }
-      }
+      const keywords = getInfoLine(vMoreInfo[name])
       if (keywords.length === 0) return annon
       return (
         annon +
         '\n关于 TA：' +
-        keywords.join(' / ') +
+        keywords.slice(0, 4).join(' / ') +
         `\n[链接有误/已经毕业？<a href="https://t.me/holodailybot?start=${base64url(
           `R|${name}`
         )}">点此报告</a>]`
