@@ -12,7 +12,7 @@ interface Vtuber {
   accounts: {
     id: string
     type: string
-    platform: 'youtube' | 'twitter' | 'bilibili' | 'userlocal' | string
+    platform: string
   }[]
   name: Record<string, string>
 }
