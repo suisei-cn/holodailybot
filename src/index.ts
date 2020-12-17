@@ -60,6 +60,7 @@ app.post('/botd027b3d59c15', (req: Request, res: Response) => {
         title: i.title,
         text: i.getText(ret),
         dicer: i,
+        disablePreview: i.command === 'discover',
       })
     }
   }

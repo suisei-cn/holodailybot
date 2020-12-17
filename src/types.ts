@@ -154,6 +154,7 @@ export interface ConsumeTarget {
   title: string
   text: string
   dicer: Dicer
+  disablePreview: boolean
 }
 
 type ParseMode = 'HTML' | 'Markdown'
@@ -161,6 +162,7 @@ type ParseMode = 'HTML' | 'Markdown'
 export interface InputTextMessageContent {
   message_text: string
   parse_mode: ParseMode
+  disable_web_page_preview: boolean
 }
 
 export interface InlineQueryResultArticle {

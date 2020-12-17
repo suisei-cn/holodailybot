@@ -43,6 +43,7 @@ export function consumeInlineResults(rets: ConsumeTarget[]) {
         input_message_content: {
           message_text: text + payloadTarget,
           parse_mode: 'HTML',
+          disable_web_page_preview: ret.disablePreview,
         },
       })
     } else if (payload.type === 'voice') {
@@ -64,6 +65,7 @@ export function consumeInlineResults(rets: ConsumeTarget[]) {
         input_message_content: {
           message_text: text + payloadTarget,
           parse_mode: 'HTML',
+          disable_web_page_preview: ret.disablePreview,
         },
       })
     }
@@ -86,12 +88,12 @@ export function consumeMessageResult(ret: ConsumeTarget) {
   const msgId = ret.result.env.message.message.message_id
   if (typeof payload === 'string') {
     // Text payload
-    tgSendMessage(chatId, text + payloadTarget, msgId)
+    tgSendMessage(chatId, text + payloadTarget, msgId, ret.disablePreview)
   } else if (payload.type === 'voice') {
     // Voice payload
     tgSendVoice(chatId, text + payloadTarget, payload.extra, msgId)
   } else if (payload.type === 'urlimage') {
     // Image payload
-    tgSendMessage(chatId, text + payloadTarget, msgId)
+    tgSendMessage(chatId, text + payloadTarget, msgId, ret.disablePreview)
   }
 }

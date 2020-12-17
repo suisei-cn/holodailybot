@@ -3,7 +3,12 @@ import fetch from 'node-fetch'
 
 const BOT_KEY = process.env.TELEGRAM_BOT_KEY
 
-export async function tgSendMessage(chat_id: number, text: string, rep = 0) {
+export async function tgSendMessage(
+  chat_id: number,
+  text: string,
+  rep = 0,
+  disablePreview: boolean = false
+) {
   const result = await fetch(
     `https://api.telegram.org/bot${BOT_KEY}/sendMessage`,
     {
@@ -16,6 +21,7 @@ export async function tgSendMessage(chat_id: number, text: string, rep = 0) {
         text,
         reply_to_message_id: rep === 0 ? undefined : rep,
         parse_mode: 'HTML',
+        disable_web_page_preview: disablePreview,
       }),
     }
   )
