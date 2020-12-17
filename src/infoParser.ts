@@ -38,7 +38,10 @@ const fmtPlatforms = platforms.map((x) => {
       name: x,
     }
   }
-  return x
+  return {
+    slug: x.slug.toLowerCase(),
+    name: x.name,
+  }
 })
 
 export const platformNames = fmtPlatforms.map((x) => x.slug)
