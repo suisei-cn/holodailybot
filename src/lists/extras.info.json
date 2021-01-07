@@ -1095,7 +1095,6 @@
   "大田マト": {
     "bilibili": "https://space.bilibili.com/386258676",
     "youtube": "https://www.youtube.com/channel/UCY-rzz8F3xdJ9NS3Y5iAGjw",
-    "github": "https://github.com/forte1st",
     "twitter": "https://twitter.com/ootamato"
   },
   "大神澪": {
@@ -1240,6 +1239,11 @@
     "twitter": "https://twitter.com/fuji_aoi_0618",
     "userlocal": "https://virtual-youtuber.userlocal.jp/user/30421103775B4424_30be23"
   },
+  "小可学妹": {
+    "bilibili": "https://space.bilibili.com/14387072",
+    "163music": "https://music.163.com/#/user/home?id=544163262",
+    "weibo": "https://www.weibo.com/u/6377117491"
+  },
   "小东人魚": {
     "youtube": "https://www.youtube.com/channel/UCV2m2UifDGr3ebjSnDv5rUA",
     "twitter": "https://twitter.com/kohigashihitona",
@@ -1323,7 +1327,7 @@
   "幡多乃姹萝": {
     "bilibili": "https://space.bilibili.com/13479495",
     "twitter": "https://twitter.com/hatano_vtuber",
-    "youtube": "https://www.youtube.com/channel/UC7HljgIDR-1P9mfwbvpbTZA",
+    "web": "https://www.youtube.com/channel/UC7HljgIDR-1P9mfwbvpbTZA",
     "marshmallow": "https://marshmallow-qa.com/hatano_vtuber"
   },
   "弦月藤士郎": {
@@ -1578,8 +1582,9 @@
   "柚木凛": {
     "bilibili": "https://space.bilibili.com/472631497",
     "twitter": "https://twitter.com/Rin_Yuzukich",
-    "youtube": "https://www.youtube.com/channel/UC_1Okh7IBMyazrTJD_ymYsQ",
-    "booth": "https://yuzuki-rin.booth.pm"
+    "web": "https://www.youtube.com/channel/UC_1Okh7IBMyazrTJD_ymYsQ",
+    "booth": "https://yuzuki-rin.booth.pm",
+    "youtube": "https://www.youtube.com/channel/UCjyTdk30ZMuTd3_MNdpHE0A"
   },
   "桃铃音音": {
     "bilibili": "https://space.bilibili.com/624252709",
