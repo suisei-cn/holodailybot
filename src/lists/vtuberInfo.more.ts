@@ -61,6 +61,10 @@ const builtinInfo: VTuberInfo = {
     twitter: 'https://twitter.com/nanahira',
     wiki: 'https://zh.moegirl.org.cn/Nanahira',
   },
+  桜田ハネ: {
+    youtube: 'https://www.youtube.com/channel/UCJeVbXxw2wt-80eRSA0wgJg',
+    twitter: 'https://twitter.com/SakuradaHane'
+  }
 }
 
 export const info = Object.assign(extrasInfo, builtinInfo)
