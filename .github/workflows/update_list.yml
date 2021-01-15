@@ -26,6 +26,7 @@ jobs:
           node_modules/.bin/ts-node utils/updateList.ts
 
       - name: Commit files
+        continue-on-error: true
         run: |
           git config --local user.email "noreply@suisei.moe"
           git config --local user.name "Suisei Bot"
