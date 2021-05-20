@@ -171,6 +171,12 @@
     "twitter": "https://twitter.com/yuni_vsinger",
     "userlocal": "https://virtual-youtuber.userlocal.jp/user/10E0A22BFD47B979_880d33"
   },
+  "波罗之鬼": {
+    "youtube": "https://www.youtube.com/channel/UCMkILyjhk3YhIa-W1lxInNA",
+    "twitter": "https://twitter.com/haranooni",
+    "instagram": "https://www.instagram.com/haranooni/",
+    "userlocal": "https://virtual-youtuber.userlocal.jp/user/568268D5DFC1332A_7c0e8c"
+  },
   "kamitsubaki_jp": {
     "bilibili": "https://space.bilibili.com/502445912",
     "twitter": "https://twitter.com/kamitsubaki_jp",
@@ -1139,6 +1145,11 @@
     "twitter": "https://twitter.com/amamiya_kokoro",
     "bilibili": "https://space.bilibili.com/488976342"
   },
+  "天川花乃official": {
+    "bilibili": "https://space.bilibili.com/482515510",
+    "youtube": "https://www.youtube.com/channel/UCxJ9SJLG7dA00M7VoEe4ltw",
+    "twitter": "https://twitter.com/sb_hano_"
+  },
   "天曰ひよ": {
     "bilibili": "https://space.bilibili.com/27403816",
     "twitter": "https://twitter.com/amaihiyo",
@@ -1381,8 +1392,8 @@
     "pixiv": "https://www.pixiv.net/member.php?id=41811776"
   },
   "恋乃夜舞": {
-    "bilibili": "https://space.bilibili.com/1647299264",
-    "twitter": "https://twitter.com/i/user/twitter.com/i/user/1361877309846740994",
+    "bilibili": "https://space.bilibili.com/1900434152",
+    "twitter": "https://twitter.com/koinoya_mai",
     "youtube": "https://www.youtube.com/channel/UCgttI8QfdWhvd3SRtCYcJzw"
   },
   "愛園愛美": {
@@ -1456,6 +1467,11 @@
     "bilibili": "https://space.bilibili.com/5730",
     "twitter": "https://twitter.com/MaiR_Hoshino",
     "userlocal": "https://virtual-youtuber.userlocal.jp/user/D300537D3D568E70_c161d1"
+  },
+  "星奈铃-官方WACTOR": {
+    "bilibili": "https://space.bilibili.com/1089059487",
+    "youtube": "https://www.youtube.com/channel/UCqTymU8oHTygrEzas_gVBFg",
+    "twitter": "https://twitter.com/HoshinaSuzu"
   },
   "星宮とと": {
     "youtube": "https://www.youtube.com/channel/UCzeNz4SVio_XLLYQLX8DhJw",
@@ -2365,6 +2381,15 @@
     "youtube": "https://www.youtube.com/channel/UCufQu4q65z63IgE4cfKs1BQ",
     "twitter": "https://twitter.com/KataribeTsumugu",
     "userlocal": "https://virtual-youtuber.userlocal.jp/user/3BFABA7DC8CA3FFB_ac4493"
+  },
+  "赛小盐": {
+    "other": "https://cyannyan.com/",
+    "twitter": "https://twitter.com/CyanNyan6",
+    "youtube": "https://www.youtube.com/channel/UC9wbdkwvYVSgKtOZ3Oov98g",
+    "twitch": "https://www.twitch.tv/cyannyan39",
+    "peing": "https://peing.net/zh-CN/cyannyan6",
+    "telegram": "https://t.me/vtbcyan",
+    "github": "https://github.com/CyanNyan"
   },
   "赤井心": {
     "youtube": "https://www.youtube.com/channel/UC1CfXB_kRs3C-zaeTG3oGyg",
