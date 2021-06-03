@@ -18,6 +18,12 @@
     "twitter": "https://twitter.com/AZKi_VDiVA",
     "userlocal": "https://virtual-youtuber.userlocal.jp/user/A26E0A67F0DDDA63_021612"
   },
+  "晓月梦": {
+    "youtube": "https://www.youtube.com/channel/UCwKirAYzzWUQRTC-aAB-aRQ",
+    "twitter": "https://twitter.com/akatsukiyumerin",
+    "twitch": "https://www.twitch.tv/akatsukiyumerin",
+    "other": "https://discord.com/invite/qNhJs5xbfp"
+  },
   "Azulim": {
     "youtube": "https://www.youtube.com/channel/UCARI2g7r-PHaxrIcAYsMfmA",
     "twitter": "https://twitter.com/azuma_lim",
@@ -49,6 +55,12 @@
     "bilibili": "https://space.bilibili.com/488979186",
     "youtube": "https://www.youtube.com/channel/UCJSzxbt4Acel9JdeLiY7tJQ",
     "twitter": "https://twitter.com/DUST_CELL"
+  },
+  "Dadi": {
+    "youtube": "https://www.youtube.com/channel/UCSXOBKJSKfNsVy_nUqew03g",
+    "twitter": "https://twitter.com/Dadidabest",
+    "telegram": "https://t.me/dadisecrets",
+    "other": "https://discord.com/invite/5v69Djpq9d"
   },
   "Eve SCP": {
     "youtube": "https://www.youtube.com/channel/UChGY3OpdU6wzFzygJ_Rjvlw",
@@ -213,6 +225,10 @@
     "bilibili": "https://space.bilibili.com/1472906636",
     "twitter": "https://twitter.com/ywwuyi",
     "twitch": "https://www.twitch.tv/wuyikoei"
+  },
+  "あいらぶゆう": {
+    "bilibili": "https://space.bilibili.com/472019066",
+    "youtube": "https://www.youtube.com/channel/UCsNcV1BacT_HirptnIawqkQ"
   },
   "あおい'sきっず -あおいずきっず-": {
     "youtube": "https://www.youtube.com/channel/UCIao2WtbCciU8GApFr2pLIA",
@@ -499,7 +515,7 @@
     "userlocal": "https://virtual-youtuber.userlocal.jp/user/70240307FA89ED77_f81688"
   },
   "ena": {
-    "web": "https://www.youtube.com/channel/UCAjPpHpxhxZF9EiROXwr9kQ",
+    "youtube": "https://www.youtube.com/channel/UCAjPpHpxhxZF9EiROXwr9kQ",
     "twitter": "https://twitter.com/ena_vtuber"
   },
   "艾莉・柯妮法": {
@@ -583,7 +599,7 @@
   "ジーン・ウィンクルム": {
     "twitter": "https://twitter.com/JeanV_019",
     "userlocal": "https://virtual-youtuber.userlocal.jp/user/13C5C9CCA968B01F_314759",
-    "web": "https://www.youtube.com/channel/UCEIF-2ZtpEK4BbFQwwjtelg"
+    "youtube": "https://www.youtube.com/channel/UCEIF-2ZtpEK4BbFQwwjtelg"
   },
   "ディープウェブ・アンダーグラウンド": {
     "youtube": "https://www.youtube.com/channel/UCSgheR9xOIcQjlkeXqIofLQ",
@@ -837,7 +853,7 @@
   "來夢めると": {
     "youtube": "https://www.youtube.com/channel/UC6VgjSSJUqYfGb3N6uTr7PQ",
     "twitter": "https://twitter.com/raimumeruto",
-    "web": "https://space.bilibili.com/3568142",
+    "bilibili": "https://space.bilibili.com/3568142",
     "userlocal": "https://virtual-youtuber.userlocal.jp/user/D0DE82D755044DF7_790d71"
   },
   "健屋花那": {
@@ -1043,7 +1059,7 @@
   },
   "夏目シシ": {
     "bilibili": "https://space.bilibili.com/345819729",
-    "web": "https://www.youtube.com/channel/UCo5uTjnUikW0giyrKOIrOQA",
+    "youtube": "https://www.youtube.com/channel/UCo5uTjnUikW0giyrKOIrOQA",
     "twitter": "https://twitter.com/n_sisi_channel"
   },
   "夏色祭": {
@@ -1177,7 +1193,7 @@
   },
   "天衣ゆめ": {
     "twitter": "https://twitter.com/yume_amagoromo",
-    "web": "https://www.youtube.com/channel/UC_XeQHdkpmyDBAabMjn8nvw"
+    "youtube": "https://www.youtube.com/channel/UC_XeQHdkpmyDBAabMjn8nvw"
   },
   "天野ピカミィ": {
     "youtube": "https://www.youtube.com/channel/UCajhBT4nMrg3DLS-bLL2RCg",
@@ -1356,7 +1372,7 @@
   "幡多乃姹萝": {
     "bilibili": "https://space.bilibili.com/13479495",
     "twitter": "https://twitter.com/hatano_vtuber",
-    "web": "https://www.youtube.com/channel/UC7HljgIDR-1P9mfwbvpbTZA",
+    "youtube": "https://www.youtube.com/channel/UC7HljgIDR-1P9mfwbvpbTZA",
     "marshmallow": "https://marshmallow-qa.com/hatano_vtuber"
   },
   "幸祜-koko-": {
@@ -1626,9 +1642,8 @@
   "柚木凛": {
     "bilibili": "https://space.bilibili.com/1093614539",
     "twitter": "https://twitter.com/Rin_Yuzukich",
-    "web": "https://www.youtube.com/channel/UCjyTdk30ZMuTd3_MNdpHE0A",
-    "booth": "https://yuzuki-rin.booth.pm",
-    "youtube": "https://www.youtube.com/channel/UC5XwaZwSc01j8nXaTLzazqw"
+    "youtube": "https://www.youtube.com/channel/UC5XwaZwSc01j8nXaTLzazqw",
+    "booth": "https://yuzuki-rin.booth.pm"
   },
   "桃铃音音": {
     "bilibili": "https://space.bilibili.com/624252709",
@@ -1737,6 +1752,10 @@
     "pixiv": "https://www.pixiv.net/member.php?id=864512",
     "bilibili": "https://space.bilibili.com/436846433",
     "userlocal": "https://virtual-youtuber.userlocal.jp/user/UCuP6SgYbqVg2Vkp1Q866O8A"
+  },
+  "法元明菜": {
+    "youtube": "https://www.youtube.com/channel/UC6hdjP0rVgCp27DMeY_tQBA",
+    "twitter": "https://twitter.com/homoto_akina"
   },
   "泡沫メモリ": {
     "youtube": "https://www.youtube.com/channel/UClV7gDF9sUzu4jJCK7rCYkQ",
@@ -2225,6 +2244,11 @@
     "twitter": "https://twitter.com/hanemiya_noa",
     "userlocal": "https://virtual-youtuber.userlocal.jp/user/E1747C9721C248C7_b35018"
   },
+  "羽澄照乌愈": {
+    "bilibili": "https://space.bilibili.com/1861416807",
+    "youtube": "https://www.youtube.com/channel/UCzuuoFRzF16kL9Ukfpmsq3g",
+    "twitter": "https://twitter.com/pastelV_milk14"
+  },
   "翎澈": {
     "bilibili": "https://space.bilibili.com/35892690",
     "youtube": "https://www.youtube.com/channel/UC7jFoGjZQrax3rgd3SB6WmQ",
@@ -2287,7 +2311,7 @@
   },
   "花町すみれ": {
     "twitter": "https://twitter.com/hanamachisumire",
-    "web": "https://www.youtube.com/channel/UCtzZEx6zvmZuMqvn0M2P9cA"
+    "youtube": "https://www.youtube.com/channel/UCtzZEx6zvmZuMqvn0M2P9cA"
   },
   "花畑チャイカ": {
     "youtube": "https://www.youtube.com/channel/UCsFn_ueskBkMCEyzCEqAOvg",
@@ -2383,9 +2407,9 @@
     "userlocal": "https://virtual-youtuber.userlocal.jp/user/3BFABA7DC8CA3FFB_ac4493"
   },
   "赛小盐": {
-    "other": "https://cyannyan.com/",
+    "other": "https://cyannyan.com/Discord",
     "twitter": "https://twitter.com/CyanNyan6",
-    "youtube": "https://www.youtube.com/channel/UC9wbdkwvYVSgKtOZ3Oov98g",
+    "youtube": "https://www.youtube.com/channel/UC9waeFu44i5NwB7x48Tq6Bw",
     "twitch": "https://www.twitch.tv/cyannyan39",
     "peing": "https://peing.net/zh-CN/cyannyan6",
     "telegram": "https://t.me/vtbcyan",
@@ -2521,7 +2545,7 @@
     "twitter": "https://twitter.com/acoereisuke"
   },
   "陆婉莹": {
-    "web": "https://www.youtube.com/channel/UC0JVGxi9cVk1JW-JNgfVDXw",
+    "youtube": "https://www.youtube.com/channel/UC0JVGxi9cVk1JW-JNgfVDXw",
     "bilibili": "https://space.bilibili.com/337827661",
     "twitter": "https://twitter.com/RikuEnei",
     "userlocal": "https://virtual-youtuber.userlocal.jp/user/97EFAF6DEA0EF2B3_4b8846"
@@ -2668,10 +2692,9 @@
   },
   "鳴神裁": {
     "bilibili": "https://space.bilibili.com/236022662",
-    "web": "https://www.youtube.com/channel/UCR1vMiGggY5jSDL_eTkXJCA",
     "marshmallow": "https://marshmallow-qa.com/narukami_sabaki",
     "twitter": "https://twitter.com/narukami_sabaki",
-    "youtube": "https://www.youtube.com/channel/UC4XkrZwqFWeHNOS3uI5Oh_Q"
+    "youtube": "https://www.youtube.com/channel/UCR1vMiGggY5jSDL_eTkXJCA"
   },
   "鴨見カモミ": {
     "youtube": "https://www.youtube.com/channel/UCL-2thbJ7grC9fmGF4OLuTg",
@@ -2730,8 +2753,8 @@
   },
   "黒兎みみ": {
     "bilibili": "https://space.bilibili.com/1996012015",
-    "youtube": "https://www.youtube.com/channel/https://www.youtube.com/channel/UC7VqT2rLOpVH6LmZsMbNyPg",
-    "twitter": "https://twitter.com/https://twitter.com/mimi_emoechi"
+    "youtube": "https://www.youtube.com/channel/UC7VqT2rLOpVH6LmZsMbNyPg",
+    "twitter": "https://twitter.com/mimi_emoechi"
   },
   "黑咲凛": {
     "bilibili": "https://space.bilibili.com/430817403",
