@@ -50,6 +50,7 @@ async function main() {
     const personInfo: any = {}
     for (const acct of k.accounts) {
       // switch (acct.platform) {
+      if (personInfo[acct.platform]) continue
       personInfo[acct.platform] = linkSyntax[acct.platform].replace(
         '{id}',
         acct.id
