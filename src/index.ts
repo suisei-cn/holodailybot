@@ -6,25 +6,11 @@ import { Request, Response } from 'express'
 import handleSpecialCommands from './specials'
 
 import * as Sentry from '@sentry/node'
-import { RewriteFrames } from '@sentry/integrations'
 import { extractCommand } from './utils'
-declare global {
-  namespace NodeJS {
-    interface Global {
-      __rootdir__: string
-    }
-  }
-}
-global.__rootdir__ = __dirname || process.cwd()
 
 process.env.SENTRY_DSN &&
   Sentry.init({
     dsn: process.env.SENTRY_DSN,
-    integrations: [
-      new RewriteFrames({
-        root: global.__rootdir__,
-      }),
-    ],
   })
 
 export const app = express()
