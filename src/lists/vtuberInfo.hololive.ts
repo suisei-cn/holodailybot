@@ -95,7 +95,6 @@ const exp: ItemPickList = {
   猫又小粥: [],
   戌神沁音: [],
   兔田佩克拉: [],
-  润羽露西娅: [],
   不知火芙蕾雅: [],
   白银诺艾尔: [],
   宝钟玛琳: [
@@ -128,7 +127,6 @@ const exp: ItemPickList = {
         'AwACAgEAAxkDAAIBk16fEZdiN96uZrdETUO6cW_IkiHPAAKrAAOOKvlEM6Q_WvHjT2IYBA',
     },
   ],
-  桐生可可: [],
   角卷绵芽: [],
   常暗永远: [],
   姬森璐娜: [],
