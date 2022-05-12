@@ -453,9 +453,7 @@
     "userlocal": "https://virtual-youtuber.userlocal.jp/user/115F781D0ACA2EFE_910cc3"
   },
   "めたもえ": {
-    "youtube": "https://www.youtube.com/channel/UCqHhsPDG1LlnhvgIn4O9gHA",
-    "twitter": "https://twitter.com/MetamoeTube",
-    "bilibili": "https://space.bilibili.com/401795607"
+    "youtube": "https://www.youtube.com/channel/UCqHhsPDG1LlnhvgIn4O9gHA"
   },
   "めんだこちゃん": {
     "youtube": "https://www.youtube.com/channel/UCXHPI-3mWB-4rfvjFoHAFWw",
@@ -683,7 +681,6 @@
   },
   "玛露": {
     "youtube": "https://www.youtube.com/channel/UC_9nmotxi7FAfiJpo1RKy8A",
-    "bilibili": "https://space.bilibili.com/387995724",
     "twitter": "https://twitter.com/maaru_witch",
     "userlocal": "https://virtual-youtuber.userlocal.jp/user/DE9FF6CB84701060_6808de"
   },
@@ -808,11 +805,6 @@
   "不破湊": {
     "youtube": "https://www.youtube.com/channel/UC6wvdADTJ88OfIbJYIpAaDA",
     "twitter": "https://twitter.com/Fuwa_Minato"
-  },
-  "丝茉茉i": {
-    "bilibili": "https://space.bilibili.com/27564630",
-    "weibo": "https://www.weibo.com/u/5347952275",
-    "163music": "https://music.163.com/#/user/home?id=402002999"
   },
   "久遠たま": {
     "youtube": "https://www.youtube.com/channel/UCBC7vYFNQoGPupe5NxPG4Bw"
@@ -1169,8 +1161,7 @@
   },
   "夢月ましろ": {
     "youtube": "https://www.youtube.com/channel/UClf0kZBKcBVKVOAjGEGbQ-A",
-    "twitter": "https://twitter.com/msr0n",
-    "bilibili": "https://space.bilibili.com/431113669"
+    "twitter": "https://twitter.com/msr0n"
   },
   "梦月萝娅": {
     "youtube": "https://www.youtube.com/channel/UCCVwhI5trmaSxfcze_Ovzfw",
@@ -1313,8 +1304,7 @@
   "宇森hinako": {
     "youtube": "https://www.youtube.com/channel/UChqYnJlFxlBi6DfRz6jRenQ",
     "twitter": "https://twitter.com/Hinako_Umori",
-    "userlocal": "https://virtual-youtuber.userlocal.jp/user/D3C23659C76E8D81_d8b095",
-    "bilibili": "https://space.bilibili.com/4175516"
+    "userlocal": "https://virtual-youtuber.userlocal.jp/user/D3C23659C76E8D81_d8b095"
   },
   "安堂いなり": {
     "youtube": "https://www.youtube.com/channel/UCWwwXXd_RPzj3LAyEfBslsg",
@@ -1476,6 +1466,11 @@
     "twitter": "https://twitter.com/OtogibaraEra",
     "userlocal": "https://virtual-youtuber.userlocal.jp/user/6B40BC6DE45B6981_9eba59",
     "bilibili": "https://space.bilibili.com/436596838"
+  },
+  "御先蔵馬": {
+    "bilibili": "https://space.bilibili.com/1944648347",
+    "twitter": "https://twitter.com/kuramaosk",
+    "youtube": "https://www.youtube.com/channel/UCS8w-7krErjLdDXY93yAeLA"
   },
   "御門モモ": {
     "youtube": "https://www.youtube.com/channel/UCXwBmY44rKiHaTkH9vzOfag",
@@ -2037,7 +2032,6 @@
     "bilibili": "https://space.bilibili.com/390389908"
   },
   "珈百璃_Official": {
-    "bilibili": "https://space.bilibili.com/543382144",
     "youtube": "https://www.youtube.com/channel/UCFvEuP2EDkvrgJpHI6-pyNw",
     "twitter": "https://twitter.com/gabri_elchan"
   },
@@ -2528,11 +2522,6 @@
     "twitter": "https://twitter.com/Kuyuri_Officia",
     "web": "https://hanagumo.jp"
   },
-  "莲水彩": {
-    "bilibili": "https://space.bilibili.com/2161652",
-    "pixiv": "https://www.pixiv.net/member.php?id=49886616",
-    "twitter": "https://twitter.com/hasumi_aya"
-  },
   "華香院つばき": {
     "youtube": "https://www.youtube.com/channel/UCI-xaXiiRD_2l8qxQRIpeEw",
     "twitter": "https://twitter.com/kakyoin_tsubaki",
@@ -2551,6 +2540,9 @@
   "葉山舞鈴": {
     "youtube": "https://www.youtube.com/channel/UCfipDDn7wY-C-SoUChgxCQQ",
     "twitter": "https://twitter.com/Hayama_Marin"
+  },
+  "葛城奇跡": {
+    "youtube": "https://www.youtube.com/channel/UCOnatvMEoDD-ARYySwnvr6g"
   },
   "葛叶": {
     "youtube": "https://www.youtube.com/channel/UCSFCh5NL4qXrAy9u-u2lX3g",
@@ -2927,10 +2919,11 @@
     "twitter": "https://twitter.com/txzxrx_tkmr",
     "bilibili": "https://space.bilibili.com/408265707"
   },
-  "鹿乃": {
+  "鹿乃まほろ": {
     "youtube": "https://www.youtube.com/channel/UCfuz6xYbYFGsWWBi3SpJI1w",
     "twitter": "https://twitter.com/kano_hanayori",
-    "bilibili": "https://space.bilibili.com/316381099"
+    "bilibili": "https://space.bilibili.com/316381099",
+    "weiboByName": "https://www.weibo.com/n/kano_dayo"
   },
   "黄ノ星つくりOfficial": {
     "bilibili": "https://space.bilibili.com/690147773",
