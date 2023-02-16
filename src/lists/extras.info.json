@@ -81,6 +81,9 @@
     "youtube": "https://www.youtube.com/channel/UCIeSUTOTkF9Hs7q3SGcO-Ow",
     "twitter": "https://twitter.com/EliraPendora"
   },
+  "Emma Hazy Minami": {
+    "youtube": "https://www.youtube.com/channel/UCK6iAvM8b__ft-ABdDCvQng"
+  },
   "Enna Alouette": {
     "youtube": "https://www.youtube.com/channel/UCR6qhsLpn62WVxCBK1dkLow",
     "twitter": "https://twitter.com/EnnaAlouette"
@@ -99,6 +102,11 @@
     "bilibili": "https://space.bilibili.com/1281805827",
     "youtube": "https://www.youtube.com/channel/UCGhqxhovNfaPBpxfCruy9EA",
     "twitter": "https://twitter.com/Fulgur_Ovid"
+  },
+  "HACHI": {
+    "twitter": "https://twitter.com/8HaChi_hacchi",
+    "youtube": "https://www.youtube.com/channel/UC7XCjKxBEct0uAukpQXNFPw",
+    "bilibili": "https://space.bilibili.com/9979698"
   },
   "Hetmes Askalana": {
     "bilibili": "https://space.bilibili.com/51269394",
@@ -1528,7 +1536,8 @@
   },
   "山神カルタ": {
     "youtube": "https://www.youtube.com/channel/UCllKI7VjyANuS1RXatizfLQ",
-    "twitter": "https://twitter.com/karuta_Yamagami"
+    "twitter": "https://twitter.com/karuta_Yamagami",
+    "bilibili": "https://space.bilibili.com/35958802"
   },
   "岸堂天真": {
     "youtube": "https://www.youtube.com/channel/UCGNI4MENvnsymYjKiZwv9eg",
@@ -1564,6 +1573,11 @@
     "bilibili": "https://space.bilibili.com/701522855",
     "youtube": "https://www.youtube.com/channel/UC7Gow-kNHq21oejSIDg9PAg",
     "twitter": "https://twitter.com/KOKO__virtual"
+  },
+  "幽游Yuu": {
+    "bilibili": "https://space.bilibili.com/5570510",
+    "peing": "https://peing.net/zh-CN/zigong",
+    "email": "yuulive@qq.com"
   },
   "弦月藤士郎": {
     "youtube": "https://www.youtube.com/channel/UCGw7lrT-rVZCWHfdG9Frcgg",
@@ -1686,7 +1700,7 @@
     "bilibili": "https://space.bilibili.com/451066708",
     "weibo": "https://www.weibo.com/u/7309941235",
     "popiask": "https://www.popiask.cn/V2RI0J",
-    "email": "xinkemusume@sina.com"
+    "email": "xinke_business@sina.com"
   },
   "日之隈兰": {
     "youtube": "https://www.youtube.com/channel/UCRvpMpzAXBRKJQuk-8-Sdvg",
@@ -1785,12 +1799,9 @@
   },
   "月下顾久": {
     "bilibili": "https://space.bilibili.com/10046401",
-    "twitter": "https://twitter.com/7hants",
     "github": "https://github.com/7hants",
     "peing": "https://peing.net/zh-CN/7hants",
     "popiask": "https://www.popiask.cn/7hants",
-    "web": "https://www.bilibiliai.cn/",
-    "email": "s7hants@vup.asia",
     "weibo": "https://www.weibo.com/u/7213745106",
     "youtube": "https://www.youtube.com/channel/UCXAb5Ze2_rMbPhYD2KwKAQw"
   },
@@ -2524,11 +2535,6 @@
     "twitter": "https://twitter.com/murasakishionch",
     "userlocal": "https://virtual-youtuber.userlocal.jp/user/16C333A50D34A929_0dcb05"
   },
-  "紫宮": {
-    "bilibili": "https://space.bilibili.com/5570510",
-    "peing": "https://peing.net/zh-CN/zigong",
-    "email": "zigonglive@qq.com"
-  },
   "紫桃爱音": {
     "youtube": "https://www.youtube.com/channel/UCUKngXhjnKJ6KCyuC7ejI_w",
     "bilibili": "https://space.bilibili.com/442902274"
@@ -2776,10 +2782,11 @@
     "twitter": "https://twitter.com/tsunomakiwatame",
     "bilibili": "https://space.bilibili.com/491474050"
   },
-  "語部紡": {
+  "语部纺": {
     "youtube": "https://www.youtube.com/channel/UCufQu4q65z63IgE4cfKs1BQ",
     "twitter": "https://twitter.com/KataribeTsumugu",
-    "userlocal": "https://virtual-youtuber.userlocal.jp/user/3BFABA7DC8CA3FFB_ac4493"
+    "userlocal": "https://virtual-youtuber.userlocal.jp/user/3BFABA7DC8CA3FFB_ac4493",
+    "bilibili": "https://space.bilibili.com/9254842"
   },
   "赛小盐": {
     "other": "https://cyannyan.com/",
@@ -3090,8 +3097,8 @@
   "鳥羽樂奈": {
     "youtube": "https://www.youtube.com/channel/UCFEd5V7VcxBPPcuMGpmvkQA"
   },
-  "鳴神裁": {
-    "bilibili": "https://space.bilibili.com/236022662",
+  "鸣神裁": {
+    "bilibili": "https://space.bilibili.com/1629850247",
     "marshmallow": "https://marshmallow-qa.com/narukami_sabaki",
     "twitter": "https://twitter.com/narukami_sabaki",
     "youtube": "https://www.youtube.com/channel/UC4XkrZwqFWeHNOS3uI5Oh_Q"
@@ -3185,5 +3192,8 @@
     "youtube": "https://www.youtube.com/channel/UCb5JxV6vKlYVknoJB8TnyYg",
     "twitter": "https://twitter.com/mayuzumi_X",
     "bilibili": "https://space.bilibili.com/628292887"
+  },
+  "龍ヶ崎リン": {
+    "youtube": "https://www.youtube.com/channel/UC2hc-00y-MSR6eYA4eQ4tjQ"
   }
 }
