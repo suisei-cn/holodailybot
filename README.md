@@ -1,3 +1,9 @@
+The Holodailybot project is going to **sunset** on Feb 15, 2024.
+
+Anyone interested may still be able to selfhost the bot.
+
+----
+
 # Holodailybot
 
 Unofficial Hololive-style gacha bot on Telegram. Revised. Not limited to VTubers of Hololive.
